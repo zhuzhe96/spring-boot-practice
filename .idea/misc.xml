@@ -10,6 +10,7 @@
         <option value="$PROJECT_DIR$/scheduling-tasks/pom.xml" />
         <option value="$PROJECT_DIR$/h2-service/pom.xml" />
         <option value="$PROJECT_DIR$/consuming-rest/pom.xml" />
+        <option value="$PROJECT_DIR$/relational-data-access/pom.xml" />
       </list>
     </option>
   </component>
