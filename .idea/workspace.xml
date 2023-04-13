@@ -4,7 +4,55 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="修改文件,使得可以在gitee上面查看">
+      <change afterPath="$PROJECT_DIR$/.idea/google-java-format.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/Quote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/Value.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consuming-rest/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consuming-rest/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consuming-rest/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consuming-rest/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consuming-rest/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consuming-rest/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consuming-rest/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consuming-rest/src/main/java/com/zhuzhe/consumingrest/ConsumingRestApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consuming-rest/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/consuming-rest/src/test/java/com/zhuzhe/consumingrest/ConsumingRestApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/src/main/java/com/zhuzhe/h2service/H2ServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/src/main/java/com/zhuzhe/h2service/controller/QuoteController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/src/main/java/com/zhuzhe/h2service/entity/Quote.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/src/main/java/com/zhuzhe/h2service/entity/QuoteResource.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/src/main/java/com/zhuzhe/h2service/loader/DatabaseLoader.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/src/main/java/com/zhuzhe/h2service/repository/QuoteRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/h2-service/src/test/java/com/zhuzhe/h2service/H2ServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/src/main/java/com/zhuzhe/schedulingtasks/ScheduledTasks.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/src/main/java/com/zhuzhe/schedulingtasks/SchedulingTasksApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/scheduling-tasks/src/test/java/com/zhuzhe/schedulingtasks/SchedulingTasksApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,8 +62,12 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="Record" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -47,27 +99,35 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/idea_project/test-spring",
+    "last_opened_file_path": "E:/git_project/test-spring",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "af2531ac30f60cf43a7ff619bdd90bf5",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring" />
+      <recent name="E:\git_project\test-spring\restful-web" />
+      <recent name="E:\git_project\test-spring\common" />
       <recent name="E:\idea_project\test-spring" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.zhuzhe.schedulingtasks" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.zhuzhe.common.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.CommonApplicationTests.contextLoads">
+  <component name="RunManager" selected="Spring Boot.ConsumingRestApplication">
     <configuration name="CommonApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common" />
       <extension name="coverage">
@@ -84,6 +144,20 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ConsumingRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="consuming-rest" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.consumingrest.ConsumingRestApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="H2ServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="h2-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.h2service.H2ServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RestfulWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="restful-web" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.restfulweb.RestfulWebApplication" />
@@ -91,8 +165,18 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SchedulingTasksApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="scheduling-tasks" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.schedulingtasks.SchedulingTasksApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.ConsumingRestApplication" />
+      <item itemvalue="Spring Boot.H2ServiceApplication" />
+      <item itemvalue="Spring Boot.SchedulingTasksApplication" />
       <item itemvalue="Spring Boot.RestfulWebApplication" />
     </list>
     <recent_temporary>
@@ -110,10 +194,43 @@
       <option name="presentableId" value="Default" />
       <updated>1681201775176</updated>
       <workItem from="1681201776312" duration="5111000" />
+      <workItem from="1681207650439" duration="2505000" />
+      <workItem from="1681271807759" duration="8573000" />
     </task>
+    <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
+      <created>1681208032479</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681208032479</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修改文件,使得可以在gitee上面查看">
+      <created>1681208237938</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681208237938</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改gitgnore,避免把模块中的HELP.md文件给删除了" />
+    <MESSAGE value="修改文件,使得可以在gitee上面查看" />
+    <option name="LAST_COMMIT_MESSAGE" value="修改文件,使得可以在gitee上面查看" />
   </component>
 </project>
