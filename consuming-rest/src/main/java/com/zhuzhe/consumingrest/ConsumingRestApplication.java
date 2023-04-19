@@ -26,7 +26,7 @@ public class ConsumingRestApplication {
   @Bean
   public CommandLineRunner run(RestTemplate restTemplate) throws Exception {
     return args -> {
-      var quote = restTemplate.getForObject("http://localhost:5001/api/random", Quote.class);
+      var quote = restTemplate.getForObject("http://localhost:5002/api/random", Quote.class);
       log.info(quote.toString());
     };
   }

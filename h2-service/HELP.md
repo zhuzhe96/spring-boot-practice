@@ -5,6 +5,6 @@
 官网地址:https://www.h2database.com/
 
 * 启动后提供RESTful接口
-* 查询全部接口：http://localhost:5001/api
-* 根据id查询接口：http://localhost:5001/api/1
-* 随机id查询接口：http://localhost:5001/api/random
+* 查询全部接口：http://localhost:5002/api
+* 根据id查询接口：http://localhost:5002/api/1
+* 随机id查询接口：http://localhost:5002/api/random
