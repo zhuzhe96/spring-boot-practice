@@ -24,7 +24,7 @@ public class ControllerExceptionHandler {
   @ExceptionHandler(MaxUploadSizeExceededException.class)
   public ResponseEntity<?> handleMaxUploadSizeExceeded(MaxUploadSizeExceededException e) {
     log.info("全局异常处理: 上传文件大小限制"+e);
-    // 这里能成功处理返回的关键是server.tomcat.max-swallow-size=-1
+    // 这里能成功处理返回的关键是server.tomcat.max-swallow-size=-1 zhuzhe
     return ResponseEntity.status(HttpStatus.PAYLOAD_TOO_LARGE)
         .body("上传文件超过服务器限制,上传失败");
   }
