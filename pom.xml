@@ -32,6 +32,8 @@
     <module>h2-service</module>
     <module>consuming-rest</module>
     <module>relational-data-access</module>
+    <module>uploading-files</module>
+    <module>authenticating-ldap</module>
   </modules>
 
   <!--统一管理版本号-->
@@ -65,6 +67,16 @@
       <dependency>
         <groupId>com.zhuzhe</groupId>
         <artifactId>relational-data-access</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zhuzhe</groupId>
+        <artifactId>uploading-files</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zhuzhe</groupId>
+        <artifactId>authenticating-ldap</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
     </dependencies>
