@@ -11,6 +11,7 @@
         <module name="common" />
         <module name="scheduling-tasks" />
         <module name="uploading-files" />
+        <module name="messaging-redis" />
         <module name="consuming-rest" />
         <module name="authenticating-ldap" />
         <module name="h2-service" />
@@ -23,6 +24,7 @@
       <module name="common" options="-parameters" />
       <module name="consuming-rest" options="-parameters" />
       <module name="h2-service" options="-parameters" />
+      <module name="messaging-redis" options="-parameters" />
       <module name="relational-data-access" options="-parameters" />
       <module name="restful-web" options="-parameters" />
       <module name="scheduling-tasks" options="-parameters" />

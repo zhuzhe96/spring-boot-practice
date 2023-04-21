@@ -4,38 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 回滚后提交的代码，这里将把master和new-module进行同步。">
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="chore: 删掉无用的模块配置，统一由父模块做maven管理。">
+      <change afterPath="$PROJECT_DIR$/messaging-redis/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-redis/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-redis/src/main/java/com/zhuzhe/messagingredis/MessagingRedisApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-redis/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-redis/src/test/java/com/zhuzhe/messagingredis/MessagingRedisApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consuming-rest/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consuming-rest/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consuming-rest/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consuming-rest/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/consuming-rest/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2-service/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2-service/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2-service/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/relational-data-access/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/relational-data-access/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/relational-data-access/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/relational-data-access/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/relational-data-access/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restful-web/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restful-web/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restful-web/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restful-web/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/restful-web/mvnw.cmd" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling-tasks/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling-tasks/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling-tasks/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling-tasks/mvnw" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling-tasks/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -97,8 +77,11 @@
     "node.js.selected.package.eslint": "(autodetect)",
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "1ec4b82838223334d3b179d26338dae1",
+    "spring.configuration.checksum": "a77d0ba3dea21858d31e1b0488eeed7f",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -154,6 +137,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MessagingRedisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="messaging-redis" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.messagingredis.MessagingRedisApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RelationalDataAccessApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="relational-data-access" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.relationaldataaccess.RelationalDataAccessApplication" />
@@ -184,6 +174,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.MessagingRedisApplication" />
       <item itemvalue="Spring Boot.AuthenticatingLdapApplication" />
       <item itemvalue="Spring Boot.UploadingFilesApplication" />
       <item itemvalue="Spring Boot.ConsumingRestApplication" />
@@ -194,6 +185,8 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
         <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
@@ -210,6 +203,7 @@
       <workItem from="1681207650439" duration="2505000" />
       <workItem from="1681271807759" duration="11340000" />
       <workItem from="1682047675915" duration="1082000" />
+      <workItem from="1682048915668" duration="1004000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
