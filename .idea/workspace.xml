@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/Customer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/relational-data-access/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/relational-data-access/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/relational-data-access/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/relational-data-access/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/relational-data-access/mvnw" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/relational-data-access/mvnw.cmd" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/relational-data-access/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/relational-data-access/src/main/java/com/zhuzhe/relationaldataaccess/RelationalDataAccessApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/relational-data-access/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/relational-data-access/src/test/java/com/zhuzhe/relationaldataaccess/RelationalDataAccessApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Record" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="MavenImportPreferences">
+    <option name="generalSettings">
+      <MavenGeneralSettings>
+        <option name="localRepository" value="D:\software\apache-maven-3.9.1\repository" />
+        <option name="mavenHome" value="D:/software/apache-maven-3.9.1" />
+        <option name="userSettingsFile" value="D:\software\apache-maven-3.9.1\conf\settings.xml" />
+      </MavenGeneralSettings>
+    </option>
+    <option name="importingSettings">
+      <MavenImportingSettings>
+        <option name="workspaceImportEnabled" value="true" />
+      </MavenImportingSettings>
+    </option>
+  </component>
+  <component name="ProjectId" id="2OGzb5dHAkMaE6TnRDBbVkwlAqJ" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "E:/git_project/test-spring",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "af2531ac30f60cf43a7ff619bdd90bf5",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring" />
+      <recent name="E:\git_project\test-spring\restful-web" />
+      <recent name="E:\git_project\test-spring\common" />
+      <recent name="E:\idea_project\test-spring" />
+    </key>
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="com.zhuzhe.schedulingtasks" />
+    </key>
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zhuzhe.common.entity" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Spring Boot.RelationalDataAccessApplication">
+    <configuration name="CommonApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhuzhe.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhuzhe.common" />
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.CommonApplicationTests" />
+      <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ConsumingRestApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="consuming-rest" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.consumingrest.ConsumingRestApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="H2ServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="h2-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.h2service.H2ServiceApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RelationalDataAccessApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="relational-data-access" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.relationaldataaccess.RelationalDataAccessApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="RestfulWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="restful-web" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.restfulweb.RestfulWebApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SchedulingTasksApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="scheduling-tasks" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.schedulingtasks.SchedulingTasksApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.ConsumingRestApplication" />
+      <item itemvalue="Spring Boot.H2ServiceApplication" />
+      <item itemvalue="Spring Boot.RelationalDataAccessApplication" />
+      <item itemvalue="Spring Boot.SchedulingTasksApplication" />
+      <item itemvalue="Spring Boot.RestfulWebApplication" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="" />
+      <created>1681201775176</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1681201775176</updated>
+      <workItem from="1681201776312" duration="5111000" />
+      <workItem from="1681207650439" duration="2505000" />
+      <workItem from="1681271807759" duration="11340000" />
+    </task>
+    <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
+      <created>1681208032479</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1681208032479</updated>
+    </task>
+    <task id="LOCAL-00002" summary="修改文件,使得可以在gitee上面查看">
+      <created>1681208237938</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1681208237938</updated>
+    </task>
+    <task id="LOCAL-00003" summary="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。">
+      <created>1681352620083</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1681352620083</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="修改gitgnore,避免把模块中的HELP.md文件给删除了" />
+    <MESSAGE value="修改文件,使得可以在gitee上面查看" />
+    <MESSAGE value="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。" />
+  </component>
+</project>
