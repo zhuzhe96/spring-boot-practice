@@ -5,22 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/Customer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relational-data-access/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relational-data-access/.mvn/wrapper/maven-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relational-data-access/.mvn/wrapper/maven-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relational-data-access/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relational-data-access/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relational-data-access/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relational-data-access/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relational-data-access/src/main/java/com/zhuzhe/relationaldataaccess/RelationalDataAccessApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relational-data-access/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/relational-data-access/src/test/java/com/zhuzhe/relationaldataaccess/RelationalDataAccessApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authenticating-ldap/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authenticating-ldap/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/main/java/com/zhuzhe/authenticatingldap/AuthenticatingLdapApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/main/java/com/zhuzhe/authenticatingldap/config/WebSecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/main/java/com/zhuzhe/authenticatingldap/controller/HomeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/main/resources/test-server.ldif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/test/java/com/zhuzhe/authenticatingldap/AuthenticatingLdapApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/authenticating-ldap/.gitignore" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/uploading-files/.gitignore" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -78,7 +73,7 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "af2531ac30f60cf43a7ff619bdd90bf5",
+    "spring.configuration.checksum": "1ec4b82838223334d3b179d26338dae1",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -96,7 +91,7 @@
       <recent name="com.zhuzhe.common.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.RelationalDataAccessApplication">
+  <component name="RunManager" selected="Spring Boot.UploadingFilesApplication">
     <configuration name="CommonApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common" />
       <extension name="coverage">
@@ -109,6 +104,13 @@
       <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.CommonApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AuthenticatingLdapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="authenticating-ldap" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.authenticatingldap.AuthenticatingLdapApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -148,8 +150,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="UploadingFilesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="uploading-files" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.uploadingfiles.UploadingFilesApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.AuthenticatingLdapApplication" />
+      <item itemvalue="Spring Boot.UploadingFilesApplication" />
       <item itemvalue="Spring Boot.ConsumingRestApplication" />
       <item itemvalue="Spring Boot.H2ServiceApplication" />
       <item itemvalue="Spring Boot.RelationalDataAccessApplication" />
@@ -173,6 +184,7 @@
       <workItem from="1681201776312" duration="5111000" />
       <workItem from="1681207650439" duration="2505000" />
       <workItem from="1681271807759" duration="11340000" />
+      <workItem from="1682047675915" duration="351000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>

@@ -10,13 +10,16 @@
         <module name="restful-web" />
         <module name="common" />
         <module name="scheduling-tasks" />
+        <module name="uploading-files" />
         <module name="consuming-rest" />
+        <module name="authenticating-ldap" />
         <module name="h2-service" />
       </profile>
     </annotationProcessing>
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="authenticating-ldap" options="-parameters" />
       <module name="common" options="-parameters" />
       <module name="consuming-rest" options="-parameters" />
       <module name="h2-service" options="-parameters" />
@@ -24,6 +27,7 @@
       <module name="restful-web" options="-parameters" />
       <module name="scheduling-tasks" options="-parameters" />
       <module name="test-spring" options="" />
+      <module name="uploading-files" options="-parameters" />
     </option>
   </component>
 </project>
