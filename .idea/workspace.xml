@@ -4,18 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。">
-      <change afterPath="$PROJECT_DIR$/authenticating-ldap/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authenticating-ldap/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/main/java/com/zhuzhe/authenticatingldap/AuthenticatingLdapApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/main/java/com/zhuzhe/authenticatingldap/config/WebSecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/main/java/com/zhuzhe/authenticatingldap/controller/HomeController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/main/resources/test-server.ldif" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/authenticating-ldap/src/test/java/com/zhuzhe/authenticatingldap/AuthenticatingLdapApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authenticating-ldap/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploading-files/.gitignore" beforeDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 回滚后提交的代码，这里将把master和new-module进行同步。">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consuming-rest/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consuming-rest/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consuming-rest/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consuming-rest/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/consuming-rest/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/h2-service/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/h2-service/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/h2-service/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/h2-service/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/h2-service/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/relational-data-access/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/relational-data-access/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/relational-data-access/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/relational-data-access/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/relational-data-access/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restful-web/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restful-web/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restful-web/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restful-web/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/restful-web/mvnw.cmd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling-tasks/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling-tasks/.mvn/wrapper/maven-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling-tasks/.mvn/wrapper/maven-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling-tasks/mvnw" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/scheduling-tasks/mvnw.cmd" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +51,11 @@
     </option>
   </component>
   <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="MarkdownSettingsMigration">
@@ -184,7 +209,7 @@
       <workItem from="1681201776312" duration="5111000" />
       <workItem from="1681207650439" duration="2505000" />
       <workItem from="1681271807759" duration="11340000" />
-      <workItem from="1682047675915" duration="351000" />
+      <workItem from="1682047675915" duration="1082000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -207,7 +232,14 @@
       <option name="project" value="LOCAL" />
       <updated>1681352620083</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="feature: 回滚后提交的代码，这里将把master和new-module进行同步。">
+      <created>1682048245651</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1682048245651</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -218,7 +250,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -228,6 +272,7 @@
     <MESSAGE value="修改gitgnore,避免把模块中的HELP.md文件给删除了" />
     <MESSAGE value="修改文件,使得可以在gitee上面查看" />
     <MESSAGE value="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。" />
-    <option name="LAST_COMMIT_MESSAGE" value="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。" />
+    <MESSAGE value="feature: 回滚后提交的代码，这里将把master和new-module进行同步。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 回滚后提交的代码，这里将把master和new-module进行同步。" />
   </component>
 </project>
