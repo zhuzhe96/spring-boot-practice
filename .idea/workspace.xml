@@ -4,18 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="chore: 删掉无用的模块配置，统一由父模块做maven管理。">
-      <change afterPath="$PROJECT_DIR$/messaging-redis/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-redis/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-redis/src/main/java/com/zhuzhe/messagingredis/MessagingRedisApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-redis/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-redis/src/test/java/com/zhuzhe/messagingredis/MessagingRedisApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: messaging-redis增加Redis的消息发送接收功能。">
+      <change afterPath="$PROJECT_DIR$/messaging-redis/src/main/java/com/zhuzhe/messagingredis/Receiver.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-redis/src/main/resources/log4j.properties" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-redis/src/main/java/com/zhuzhe/messagingredis/MessagingRedisApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-redis/src/main/java/com/zhuzhe/messagingredis/MessagingRedisApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,7 +65,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/git_project/test-spring",
+    "last_opened_file_path": "E:/git_project/test-spring/messaging-redis/src/main/resources",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -81,12 +75,13 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "a77d0ba3dea21858d31e1b0488eeed7f",
+    "spring.configuration.checksum": "24dd50bb294011466cb7383cab61ed07",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring\messaging-redis\src\main\resources" />
       <recent name="E:\git_project\test-spring" />
       <recent name="E:\git_project\test-spring\restful-web" />
       <recent name="E:\git_project\test-spring\common" />
@@ -99,7 +94,7 @@
       <recent name="com.zhuzhe.common.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.UploadingFilesApplication">
+  <component name="RunManager" selected="Spring Boot.MessagingRedisApplication">
     <configuration name="CommonApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common" />
       <extension name="coverage">
@@ -188,6 +183,7 @@
         <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
         <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
         <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -204,6 +200,7 @@
       <workItem from="1681271807759" duration="11340000" />
       <workItem from="1682047675915" duration="1082000" />
       <workItem from="1682048915668" duration="1004000" />
+      <workItem from="1682240760626" duration="6368000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -267,6 +264,8 @@
     <MESSAGE value="修改文件,使得可以在gitee上面查看" />
     <MESSAGE value="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。" />
     <MESSAGE value="feature: 回滚后提交的代码，这里将把master和new-module进行同步。" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 回滚后提交的代码，这里将把master和new-module进行同步。" />
+    <MESSAGE value="feature: 新增redis消息模块。" />
+    <MESSAGE value="feature: messaging-redis增加Redis的消息发送接收功能。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: messaging-redis增加Redis的消息发送接收功能。" />
   </component>
 </project>
