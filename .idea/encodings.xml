@@ -5,6 +5,7 @@
     <file url="file://$PROJECT_DIR$/common/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/consuming-rest/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/h2-service/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/messaging-rabbitmq/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/messaging-redis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/messaging-redis/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/relational-data-access/src/main/java" charset="UTF-8" />

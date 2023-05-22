@@ -12,7 +12,6 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>com.zhuzhe</groupId>
   <artifactId>authenticating-ldap</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>authenticating-ldap</name>
@@ -28,6 +27,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-security</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.yaml</groupId>
+          <artifactId>snakeyaml</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <!--LDAP依赖-->
     <dependency>

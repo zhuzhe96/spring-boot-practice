@@ -12,7 +12,6 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>com.zhuzhe</groupId>
   <artifactId>h2-service</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>h2-service</name>

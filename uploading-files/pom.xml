@@ -12,7 +12,6 @@
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 
-  <groupId>com.zhuzhe</groupId>
   <artifactId>uploading-files</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>uploading-files</name>
@@ -28,6 +27,12 @@
     <dependency>
       <groupId>org.springframework.boot</groupId>
       <artifactId>spring-boot-starter-thymeleaf</artifactId>
+      <exclusions>
+        <exclusion>
+          <groupId>org.yaml</groupId>
+          <artifactId>snakeyaml</artifactId>
+        </exclusion>
+      </exclusions>
     </dependency>
     <dependency>
       <groupId>com.zhuzhe</groupId>
