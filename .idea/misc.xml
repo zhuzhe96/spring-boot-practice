@@ -13,6 +13,7 @@
         <option value="$PROJECT_DIR$/relational-data-access/pom.xml" />
         <option value="$PROJECT_DIR$/messaging-redis/pom.xml" />
         <option value="$PROJECT_DIR$/messaging-rabbitmq/pom.xml" />
+        <option value="$PROJECT_DIR$/accessing-data-neo4j/pom.xml" />
       </list>
     </option>
   </component>

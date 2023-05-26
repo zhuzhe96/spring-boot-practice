@@ -4,17 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加一个消息队列的模块">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/LogInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/rabbit_5b0105e8d29d_2023-5-26.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/main/java/com/zhuzhe/messagingrabbitmq/config/RabbitMQConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/main/java/com/zhuzhe/messagingrabbitmq/consumer/LogConsumer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/main/java/com/zhuzhe/messagingrabbitmq/provider/MessageRunner.java" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 完成RabbitMQ消息队列的功能开发，在官网的接收基础上增加了支持对象的传递、支持消息重试机制、支持消息重试超过次数后由死信队列处理的逻辑。并调通整个流程，附加了RabbitMQ的配置导出文件。">
+      <change afterPath="$PROJECT_DIR$/accessing-data-neo4j/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-neo4j/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/AccessingDataNeo4jApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/test/java/com/zhuzhe/accessingdataneo4j/AccessingDataNeo4jApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-rabbitmq/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-rabbitmq/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-rabbitmq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-rabbitmq/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-rabbitmq/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -45,6 +45,7 @@
       <MavenGeneralSettings>
         <option name="localRepository" value="D:\software\apache-maven-3.9.1\repository" />
         <option name="mavenHome" value="D:/software/apache-maven-3.9.1" />
+        <option name="useMavenConfig" value="true" />
         <option name="userSettingsFile" value="D:\software\apache-maven-3.9.1\conf\settings.xml" />
       </MavenGeneralSettings>
     </option>
@@ -70,7 +71,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/git_project/test-spring/messaging-rabbitmq",
+    "last_opened_file_path": "E:/git_project/test-spring/accessing-data-neo4j",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -80,7 +81,7 @@
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
     "settings.editor.selected.configurable": "MavenSettings",
-    "spring.configuration.checksum": "7f270cc42972452e1f7ceed5b5482162",
+    "spring.configuration.checksum": "6aa2dfbf4fdf5117f228be261c4ebd77",
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
@@ -99,7 +100,7 @@
       <recent name="com.zhuzhe.common.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MessagingRabbitmqApplication">
+  <component name="RunManager" selected="Spring Boot.AccessingDataNeo4jApplication">
     <configuration name="CommonApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common" />
       <extension name="coverage">
@@ -112,6 +113,13 @@
       <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.CommonApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
       <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AccessingDataNeo4jApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="accessing-data-neo4j" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.accessingdataneo4j.AccessingDataNeo4jApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -181,6 +189,7 @@
     </configuration>
     <list>
       <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.AccessingDataNeo4jApplication" />
       <item itemvalue="Spring Boot.MessagingRabbitmqApplication" />
       <item itemvalue="Spring Boot.MessagingRedisApplication" />
       <item itemvalue="Spring Boot.AuthenticatingLdapApplication" />
@@ -218,7 +227,8 @@
       <workItem from="1683359160921" duration="63000" />
       <workItem from="1683874521494" duration="3208000" />
       <workItem from="1684746353694" duration="3964000" />
-      <workItem from="1684985660066" duration="16962000" />
+      <workItem from="1684985660066" duration="18847000" />
+      <workItem from="1685080541473" duration="550000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -248,7 +258,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682048245651</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="feature: 完成RabbitMQ消息队列的功能开发，在官网的接收基础上增加了支持对象的传递、支持消息重试机制、支持消息重试超过次数后由死信队列处理的逻辑。并调通整个流程，附加了RabbitMQ的配置导出文件。">
+      <created>1685072690352</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1685072690352</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -269,13 +286,6 @@
                       </list>
                     </value>
                   </entry>
-                  <entry key="text">
-                    <value>
-                      <list>
-                        <option value="异常" />
-                      </list>
-                    </value>
-                  </entry>
                 </map>
               </option>
             </State>
@@ -292,6 +302,7 @@
     <MESSAGE value="feature: 新增redis消息模块。" />
     <MESSAGE value="feature: messaging-redis增加Redis的消息发送接收功能。" />
     <MESSAGE value="feature: 加一个消息队列的模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 加一个消息队列的模块" />
+    <MESSAGE value="feature: 完成RabbitMQ消息队列的功能开发，在官网的接收基础上增加了支持对象的传递、支持消息重试机制、支持消息重试超过次数后由死信队列处理的逻辑。并调通整个流程，附加了RabbitMQ的配置导出文件。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 完成RabbitMQ消息队列的功能开发，在官网的接收基础上增加了支持对象的传递、支持消息重试机制、支持消息重试超过次数后由死信队列处理的逻辑。并调通整个流程，附加了RabbitMQ的配置导出文件。" />
   </component>
 </project>

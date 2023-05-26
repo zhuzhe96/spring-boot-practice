@@ -14,6 +14,7 @@
   * authenticating-ldap【5006】[LDAP验证](./authenticating-ldap/HELP.md)
   * messaging-redis【5007】[Redis消息](./messaging-redis/HELP.md)
   * messaging-rabbitmq【5008】[RabbitMQ消息](./messaging-rabbitmq/HELP.md)
+  * accessing-data-neo4j【5009】[neo4j数据库](./accessing-data-neo4j/HELP.md)
 ---
 ### 项目信息
 * spring boot version : 3.0.5
