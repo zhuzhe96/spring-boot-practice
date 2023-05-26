@@ -5,25 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加一个消息队列的模块">
-      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/main/java/com/zhuzhe/messagingrabbitmq/MessagingRabbitmqApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/test/java/com/zhuzhe/messagingrabbitmq/MessagingRabbitmqApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/LogInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/rabbit_5b0105e8d29d_2023-5-26.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/main/java/com/zhuzhe/messagingrabbitmq/config/RabbitMQConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/main/java/com/zhuzhe/messagingrabbitmq/consumer/LogConsumer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/main/java/com/zhuzhe/messagingrabbitmq/provider/MessageRunner.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/authenticating-ldap/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/authenticating-ldap/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/consuming-rest/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/consuming-rest/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/h2-service/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/h2-service/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-redis/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-redis/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/relational-data-access/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/relational-data-access/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/restful-web/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/restful-web/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/scheduling-tasks/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/scheduling-tasks/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/uploading-files/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/uploading-files/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-rabbitmq/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-rabbitmq/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-rabbitmq/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-rabbitmq/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-rabbitmq/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-rabbitmq/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -41,7 +32,7 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="new-module" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
@@ -68,38 +59,38 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/git_project/test-spring/messaging-redis/src/main/resources&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.0&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;MavenSettings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;24dd50bb294011466cb7383cab61ed07&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "E:/git_project/test-spring/messaging-rabbitmq",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.0",
+    "project.structure.side.proportion": "0.0",
+    "settings.editor.selected.configurable": "MavenSettings",
+    "spring.configuration.checksum": "7f270cc42972452e1f7ceed5b5482162",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring\messaging-rabbitmq" />
       <recent name="E:\git_project\test-spring\messaging-redis\src\main\resources" />
       <recent name="E:\git_project\test-spring" />
       <recent name="E:\git_project\test-spring\restful-web" />
       <recent name="E:\git_project\test-spring\common" />
-      <recent name="E:\idea_project\test-spring" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.zhuzhe.schedulingtasks" />
@@ -108,7 +99,7 @@
       <recent name="com.zhuzhe.common.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.H2ServiceApplication">
+  <component name="RunManager" selected="Spring Boot.MessagingRabbitmqApplication">
     <configuration name="CommonApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common" />
       <extension name="coverage">
@@ -227,6 +218,7 @@
       <workItem from="1683359160921" duration="63000" />
       <workItem from="1683874521494" duration="3208000" />
       <workItem from="1684746353694" duration="3964000" />
+      <workItem from="1684985660066" duration="16962000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -274,6 +266,13 @@
                     <value>
                       <list>
                         <option value="master" />
+                      </list>
+                    </value>
+                  </entry>
+                  <entry key="text">
+                    <value>
+                      <list>
+                        <option value="异常" />
                       </list>
                     </value>
                   </entry>

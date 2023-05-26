@@ -2,6 +2,7 @@
 
 * 项目使用多模块结构,思路来自：[SpringBoot多模块项目构建](https://cloud.tencent.com/developer/article/2141489)
 * 项目是根据官网学习，官网地址：[Spring官网概要](https://spring.io/guides)
+* 会在已有的基础模块上实现比较经典的案例
 * 目前已构建模块
   * common: [公用的实体和工具模块](./common/HELP.md)
   * restful-web【5000】: [测试 RESTful Web 服务](./restful-web/HELP.md)
@@ -12,6 +13,7 @@
   * uploading-files【5005】：[文件上传](./uploading-files/HELP.md)
   * authenticating-ldap【5006】[LDAP验证](./authenticating-ldap/HELP.md)
   * messaging-redis【5007】[Redis消息](./messaging-redis/HELP.md)
+  * messaging-rabbitmq【5008】[RabbitMQ消息](./messaging-rabbitmq/HELP.md)
 ---
 ### 项目信息
 * spring boot version : 3.0.5
