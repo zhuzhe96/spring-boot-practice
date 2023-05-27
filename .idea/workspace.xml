@@ -4,20 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 增加neo4j数据库的模块实现代码,存在一个问题,就是role的关联不起作用">
-      <change afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/controller/PersonController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/service/PersonService.java" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="fix: 解决role没有尝试关联关系的bug">
+      <change afterPath="$PROJECT_DIR$/validating-input/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validating-input/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validating-input/src/main/java/com/zhuzhe/validatinginput/ValidatingInputApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validating-input/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validating-input/src/test/java/com/zhuzhe/validatinginput/ValidatingInputApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-neo4j/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-neo4j/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-neo4j/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-neo4j/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/AccessingDataNeo4jApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/AccessingDataNeo4jApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/controller/MovieController.java" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/controller/MovieController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/entity/Movie.java" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/entity/Movie.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/entity/Person.java" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/entity/Person.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/repository/MovieRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/repository/MovieRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/repository/PersonRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/repository/PersonRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/service/MovieService.java" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-neo4j/src/main/java/com/zhuzhe/accessingdataneo4j/service/MovieService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,8 +79,8 @@
     "node.js.selected.package.tslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
     "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.50689656",
     "settings.editor.selected.configurable": "preferences.pluginManager",
     "spring.configuration.checksum": "6aa2dfbf4fdf5117f228be261c4ebd77",
     "vue.rearranger.settings.migration": "true"
@@ -108,7 +104,7 @@
       <recent name="com.zhuzhe.common.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.AccessingDataNeo4jApplication">
+  <component name="RunManager" selected="Spring Boot.ValidatingInputApplication">
     <configuration name="CommonApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common" />
       <extension name="coverage">
@@ -195,9 +191,17 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="ValidatingInputApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="validating-input" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.validatinginput.ValidatingInputApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
       <item itemvalue="Spring Boot.AccessingDataNeo4jApplication" />
+      <item itemvalue="Spring Boot.ValidatingInputApplication" />
       <item itemvalue="Spring Boot.MessagingRabbitmqApplication" />
       <item itemvalue="Spring Boot.MessagingRedisApplication" />
       <item itemvalue="Spring Boot.AuthenticatingLdapApplication" />
@@ -236,7 +240,7 @@
       <workItem from="1683874521494" duration="3208000" />
       <workItem from="1684746353694" duration="3964000" />
       <workItem from="1684985660066" duration="18847000" />
-      <workItem from="1685080541473" duration="23188000" />
+      <workItem from="1685080541473" duration="24130000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -287,7 +291,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685096938800</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="fix: 解决role没有尝试关联关系的bug">
+      <created>1685157537088</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1685157537088</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -327,6 +338,7 @@
     <MESSAGE value="feature: 完成RabbitMQ消息队列的功能开发，在官网的接收基础上增加了支持对象的传递、支持消息重试机制、支持消息重试超过次数后由死信队列处理的逻辑。并调通整个流程，附加了RabbitMQ的配置导出文件。" />
     <MESSAGE value="feature: 新增一个访问neo4j数据库的模块" />
     <MESSAGE value="feature: 增加neo4j数据库的模块实现代码,存在一个问题,就是role的关联不起作用" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 增加neo4j数据库的模块实现代码,存在一个问题,就是role的关联不起作用" />
+    <MESSAGE value="fix: 解决role没有尝试关联关系的bug" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 解决role没有尝试关联关系的bug" />
   </component>
 </project>

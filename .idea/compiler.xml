@@ -14,6 +14,7 @@
         <module name="scheduling-tasks" />
         <module name="messaging-rabbitmq" />
         <module name="uploading-files" />
+        <module name="validating-input" />
         <module name="messaging-redis" />
         <module name="consuming-rest" />
         <module name="authenticating-ldap" />
@@ -35,6 +36,7 @@
       <module name="scheduling-tasks" options="-parameters" />
       <module name="test-spring" options="" />
       <module name="uploading-files" options="-parameters" />
+      <module name="validating-input" options="-parameters" />
     </option>
   </component>
 </project>

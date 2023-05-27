@@ -14,6 +14,7 @@
         <option value="$PROJECT_DIR$/messaging-redis/pom.xml" />
         <option value="$PROJECT_DIR$/messaging-rabbitmq/pom.xml" />
         <option value="$PROJECT_DIR$/accessing-data-neo4j/pom.xml" />
+        <option value="$PROJECT_DIR$/validating-input/pom.xml" />
       </list>
     </option>
   </component>
