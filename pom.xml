@@ -36,6 +36,7 @@
     <module>uploading-files</module>
     <module>messaging-redis</module>
     <module>messaging-rabbitmq</module>
+    <module>accessing-data-neo4j</module>
   </modules>
 
   <!--统一管理版本号-->
@@ -89,6 +90,11 @@
       <dependency>
         <groupId>com.zhuzhe</groupId>
         <artifactId>messaging-rabbitmq</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zhuzhe</groupId>
+        <artifactId>accessing-data-neo4j</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
     </dependencies>

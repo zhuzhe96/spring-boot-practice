@@ -1,7 +1,6 @@
 package com.zhuzhe.accessingdataneo4j.entity;
 
 import java.util.UUID;
-import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.data.neo4j.core.schema.GeneratedValue;
@@ -11,7 +10,6 @@ import org.springframework.data.neo4j.core.schema.Property;
 
 @Data
 @NoArgsConstructor
-@AllArgsConstructor
 @Node("Person")
 public class Person {
   @Id

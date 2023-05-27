@@ -22,10 +22,10 @@ public class Movie {
   private String title;
   @Property
   private String description;
-  // Movie->roles 由电影指向演员, 说明一个电影有多个演员
+  // Movie->roles 由电影指向演员, 说明这个电影由多个演员演绎 1->n
   @Relationship(type = "has_outgoing", direction = Direction.OUTGOING)
   private List<Role> roles;
-  // Movie<-directors 由导演指向电影, 说明一个电影有多个导演
+  // directors->Movie 由导演指向电影, 说明多个导演开拍了这个电影 n->1
   @Relationship(type = "has_incoming", direction = Direction.INCOMING)
   private List<Person> directors;
 
