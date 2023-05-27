@@ -4,17 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="fix: 解决role没有尝试关联关系的bug">
-      <change afterPath="$PROJECT_DIR$/validating-input/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validating-input/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validating-input/src/main/java/com/zhuzhe/validatinginput/ValidatingInputApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validating-input/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validating-input/src/test/java/com/zhuzhe/validatinginput/ValidatingInputApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加一个新的数据校验的模块">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/annotation/ValidForm.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/DataStatus.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/Form.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/ResultData.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/validator/FormValidator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validating-input/src/main/java/com/zhuzhe/validatinginput/advice/ResponseAdvice.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/validating-input/src/main/java/com/zhuzhe/validatinginput/controller/TestController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/advice/ControllerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/advice/ControllerExceptionHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validating-input/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/validating-input/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validating-input/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/validating-input/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/validating-input/src/main/java/com/zhuzhe/validatinginput/ValidatingInputApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/validating-input/src/main/java/com/zhuzhe/validatinginput/ValidatingInputApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -24,8 +27,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Record" />
         <option value="Interface" />
+        <option value="Record" />
+        <option value="AnnotationType" />
         <option value="Class" />
       </list>
     </option>
@@ -101,6 +105,7 @@
       <recent name="com.zhuzhe.schedulingtasks" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zhuzhe.common.annotation" />
       <recent name="com.zhuzhe.common.entity" />
     </key>
   </component>
@@ -240,7 +245,7 @@
       <workItem from="1683874521494" duration="3208000" />
       <workItem from="1684746353694" duration="3964000" />
       <workItem from="1684985660066" duration="18847000" />
-      <workItem from="1685080541473" duration="24130000" />
+      <workItem from="1685080541473" duration="36422000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -298,7 +303,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685157537088</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="feature: 加一个新的数据校验的模块">
+      <created>1685158379715</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1685158379715</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -339,6 +351,14 @@
     <MESSAGE value="feature: 新增一个访问neo4j数据库的模块" />
     <MESSAGE value="feature: 增加neo4j数据库的模块实现代码,存在一个问题,就是role的关联不起作用" />
     <MESSAGE value="fix: 解决role没有尝试关联关系的bug" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 解决role没有尝试关联关系的bug" />
+    <MESSAGE value="feature: 加一个新的数据校验的模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 加一个新的数据校验的模块" />
+  </component>
+  <component name="XDebuggerManager">
+    <pin-to-top-manager>
+      <pinned-members>
+        <PinnedItemInfo parentTag="org.springframework.validation.BeanPropertyBindingResult" memberName="autoGrowCollectionLimit" />
+      </pinned-members>
+    </pin-to-top-manager>
   </component>
 </project>
