@@ -15,6 +15,8 @@
   * messaging-redis【5007】[Redis消息](./messaging-redis/HELP.md)
   * messaging-rabbitmq【5008】[RabbitMQ消息](./messaging-rabbitmq/HELP.md)
   * accessing-data-neo4j【5009】[neo4j数据库](./accessing-data-neo4j/HELP.md)
+  * validating-input【5010】[数据校验输入](./validating-input/HELP.md)
+  * actuator-service【5011,5012】[系统监控](./actuator-service/HELP.md)
 ---
 ### 项目信息
 * spring boot version : 3.0.5

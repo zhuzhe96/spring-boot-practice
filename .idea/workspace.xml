@@ -4,20 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加一个新的数据校验的模块">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/annotation/ValidForm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/DataStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/Form.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/ResultData.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/validator/FormValidator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validating-input/src/main/java/com/zhuzhe/validatinginput/advice/ResponseAdvice.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/validating-input/src/main/java/com/zhuzhe/validatinginput/controller/TestController.java" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 新增一个系统监控模块，完善系统监控的配置，可以用于做监控当前项目和运行环境的模块。">
+      <change afterPath="$PROJECT_DIR$/actuator-service/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actuator-service/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actuator-service/src/main/java/com/zhuzhe/actuatorservice/ActuatorServiceApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actuator-service/src/main/java/com/zhuzhe/actuatorservice/controller/TestController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actuator-service/src/main/java/com/zhuzhe/actuatorservice/entity/Greeting.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actuator-service/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/actuator-service/src/test/java/com/zhuzhe/actuatorservice/ActuatorServiceApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/common/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/advice/ControllerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/advice/ControllerExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validating-input/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/validating-input/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validating-input/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/validating-input/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/validating-input/src/main/java/com/zhuzhe/validatinginput/ValidatingInputApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/validating-input/src/main/java/com/zhuzhe/validatinginput/ValidatingInputApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -109,7 +109,39 @@
       <recent name="com.zhuzhe.common.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ValidatingInputApplication">
+  <component name="RunManager" selected="Spring Boot.ActuatorServiceApplication">
+    <configuration name="ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="actuator-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhuzhe.actuatorservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhuzhe.actuatorservice" />
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.actuatorservice.ActuatorServiceApplicationTests" />
+      <option name="METHOD_NAME" value="shouldReturn200WhenSendingRequestToController" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="actuator-service" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhuzhe.actuatorservice.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhuzhe.actuatorservice" />
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.actuatorservice.ActuatorServiceApplicationTests" />
+      <option name="METHOD_NAME" value="shouldReturn200WhenSendingRequestToManagementEndpoint" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="CommonApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="common" />
       <extension name="coverage">
@@ -129,6 +161,13 @@
     <configuration name="AccessingDataNeo4jApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="accessing-data-neo4j" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.accessingdataneo4j.AccessingDataNeo4jApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ActuatorServiceApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="actuator-service" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.actuatorservice.ActuatorServiceApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -204,8 +243,11 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
+      <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" />
       <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
       <item itemvalue="Spring Boot.AccessingDataNeo4jApplication" />
+      <item itemvalue="Spring Boot.ActuatorServiceApplication" />
       <item itemvalue="Spring Boot.ValidatingInputApplication" />
       <item itemvalue="Spring Boot.MessagingRabbitmqApplication" />
       <item itemvalue="Spring Boot.MessagingRedisApplication" />
@@ -219,8 +261,8 @@
     </list>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
-        <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+        <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
+        <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" />
         <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
         <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
         <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
@@ -245,7 +287,7 @@
       <workItem from="1683874521494" duration="3208000" />
       <workItem from="1684746353694" duration="3964000" />
       <workItem from="1684985660066" duration="18847000" />
-      <workItem from="1685080541473" duration="36422000" />
+      <workItem from="1685080541473" duration="43150000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -310,7 +352,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685158379715</updated>
     </task>
-    <option name="localTasksCounter" value="10" />
+    <task id="LOCAL-00010" summary="feature: 完善数据校验模块的内容，包含字段校验，自定义校验器，校验异常统一处理，接口返回体封装。">
+      <created>1685175018895</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1685175018895</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -352,7 +401,9 @@
     <MESSAGE value="feature: 增加neo4j数据库的模块实现代码,存在一个问题,就是role的关联不起作用" />
     <MESSAGE value="fix: 解决role没有尝试关联关系的bug" />
     <MESSAGE value="feature: 加一个新的数据校验的模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 加一个新的数据校验的模块" />
+    <MESSAGE value="feature: 完善数据校验模块的内容，包含字段校验，自定义校验器，校验异常统一处理，接口返回体封装。" />
+    <MESSAGE value="feature: 新增一个系统监控模块，完善系统监控的配置，可以用于做监控当前项目和运行环境的模块。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 新增一个系统监控模块，完善系统监控的配置，可以用于做监控当前项目和运行环境的模块。" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
