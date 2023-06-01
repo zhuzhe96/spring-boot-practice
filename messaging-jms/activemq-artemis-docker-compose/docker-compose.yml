@@ -1,0 +1,17 @@
+version: '3'
+services:
+  artemis:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    network_mode: "host"
+    container_name: artemis
+    privileged: true
+    volumes:
+    - /etc/localtime:/etc/localtime
+    - /home/docker/artemis-instance:/var/lib/artemis-instance
+    ports:
+    - 1883:1883
+    - 8161:8161
+    - 8883:8883

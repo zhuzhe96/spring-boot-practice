@@ -4,18 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 新增一个系统监控模块，完善系统监控的配置，可以用于做监控当前项目和运行环境的模块。">
-      <change afterPath="$PROJECT_DIR$/messaging-jms/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-jms/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/MessagingJmsApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-jms/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-jms/src/test/java/com/zhuzhe/messagingjms/MessagingJmsApplicationTests.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加一个JMS的模块">
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/Email.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/SimpleMessage.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/activemq-artemis-docker-compose/Dockerfile" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/activemq-artemis-docker-compose/docker-compose.yml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/activemq-artemis-docker-compose/docker-run.sh" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/config/JmsConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/producer/MessageProducer.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/receiver/Receiver.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-jms/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-jms/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-jms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-jms/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/MessagingJmsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/MessagingJmsApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/messaging-jms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-jms/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -63,41 +65,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/git_project/test-spring/accessing-data-neo4j&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.50689656&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;76f2679d211ee69918de27dcc9223e09&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "E:/git_project/test-spring/messaging-jms/activemq-artemis-docker-compose",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.50689656",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "spring.configuration.checksum": "76f2679d211ee69918de27dcc9223e09",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring\messaging-jms\activemq-artemis-docker-compose" />
       <recent name="E:\git_project\test-spring\messaging-rabbitmq" />
       <recent name="E:\git_project\test-spring\messaging-redis\src\main\resources" />
       <recent name="E:\git_project\test-spring" />
       <recent name="E:\git_project\test-spring\restful-web" />
-      <recent name="E:\git_project\test-spring\common" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.zhuzhe.schedulingtasks" />
@@ -295,7 +297,7 @@
       <workItem from="1684985660066" duration="18847000" />
       <workItem from="1685080541473" duration="44092000" />
       <workItem from="1685322039696" duration="1841000" />
-      <workItem from="1685414774229" duration="4144000" />
+      <workItem from="1685414774229" duration="16360000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -374,7 +376,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685181767921</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="feature: 加一个JMS的模块">
+      <created>1685583074649</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1685583074649</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -418,7 +427,8 @@
     <MESSAGE value="feature: 加一个新的数据校验的模块" />
     <MESSAGE value="feature: 完善数据校验模块的内容，包含字段校验，自定义校验器，校验异常统一处理，接口返回体封装。" />
     <MESSAGE value="feature: 新增一个系统监控模块，完善系统监控的配置，可以用于做监控当前项目和运行环境的模块。" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 新增一个系统监控模块，完善系统监控的配置，可以用于做监控当前项目和运行环境的模块。" />
+    <MESSAGE value="feature: 加一个JMS的模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 加一个JMS的模块" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
