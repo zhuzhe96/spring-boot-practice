@@ -39,6 +39,7 @@
     <module>accessing-data-neo4j</module>
     <module>validating-input</module>
     <module>actuator-service</module>
+    <module>messaging-jms</module>
   </modules>
 
   <!--统一管理版本号-->
@@ -107,6 +108,11 @@
       <dependency>
         <groupId>com.zhuzhe</groupId>
         <artifactId>actuator-service</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zhuzhe</groupId>
+        <artifactId>messaging-jms</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
     </dependencies>

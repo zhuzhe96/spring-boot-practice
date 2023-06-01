@@ -5,13 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 新增一个系统监控模块，完善系统监控的配置，可以用于做监控当前项目和运行环境的模块。">
-      <change afterPath="$PROJECT_DIR$/actuator-service/HELP.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator-service/pom.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator-service/src/main/java/com/zhuzhe/actuatorservice/ActuatorServiceApplication.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator-service/src/main/java/com/zhuzhe/actuatorservice/controller/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator-service/src/main/java/com/zhuzhe/actuatorservice/entity/Greeting.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator-service/src/main/resources/application.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/actuator-service/src/test/java/com/zhuzhe/actuatorservice/ActuatorServiceApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/MessagingJmsApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/messaging-jms/src/test/java/com/zhuzhe/messagingjms/MessagingJmsApplicationTests.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
@@ -65,31 +63,31 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/git_project/test-spring/accessing-data-neo4j",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.50689656",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "6aa2dfbf4fdf5117f228be261c4ebd77",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/git_project/test-spring/accessing-data-neo4j&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.50689656&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;76f2679d211ee69918de27dcc9223e09&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -109,7 +107,7 @@
       <recent name="com.zhuzhe.common.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.ActuatorServiceApplication">
+  <component name="RunManager" selected="Spring Boot.MessagingJmsApplication">
     <configuration name="ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="actuator-service" />
       <extension name="coverage">
@@ -193,6 +191,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="MessagingJmsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="messaging-jms" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.messagingjms.MessagingJmsApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MessagingRabbitmqApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="messaging-rabbitmq" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.messagingrabbitmq.MessagingRabbitmqApplication" />
@@ -246,6 +251,7 @@
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" />
       <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.MessagingJmsApplication" />
       <item itemvalue="Spring Boot.AccessingDataNeo4jApplication" />
       <item itemvalue="Spring Boot.ActuatorServiceApplication" />
       <item itemvalue="Spring Boot.ValidatingInputApplication" />
@@ -287,7 +293,9 @@
       <workItem from="1683874521494" duration="3208000" />
       <workItem from="1684746353694" duration="3964000" />
       <workItem from="1684985660066" duration="18847000" />
-      <workItem from="1685080541473" duration="43150000" />
+      <workItem from="1685080541473" duration="44092000" />
+      <workItem from="1685322039696" duration="1841000" />
+      <workItem from="1685414774229" duration="4144000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -359,7 +367,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685175018895</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="feature: 新增一个系统监控模块，完善系统监控的配置，可以用于做监控当前项目和运行环境的模块。">
+      <created>1685181767921</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1685181767921</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
