@@ -4,20 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加一个JMS的模块">
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/Email.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/SimpleMessage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-jms/activemq-artemis-docker-compose/Dockerfile" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-jms/activemq-artemis-docker-compose/docker-compose.yml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-jms/activemq-artemis-docker-compose/docker-run.sh" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/config/JmsConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/producer/MessageProducer.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/receiver/Receiver.java" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 完成一个简单的JMS功能, 通过ActiveMQ Artemis平台来支持消息的发送和监听接收.">
+      <change afterPath="$PROJECT_DIR$/batch-processing/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batch-processing/database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batch-processing/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/BatchProcessingApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/mapper/PeopleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batch-processing/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batch-processing/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batch-processing/src/main/resources/sample-data.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/batch-processing/src/test/java/com/zhuzhe/batchprocessing/BatchProcessingApplicationTests.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/main/java/com/zhuzhe/common/entity/People.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-jms/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-jms/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-jms/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-jms/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/MessagingJmsApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-jms/src/main/java/com/zhuzhe/messagingjms/MessagingJmsApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/messaging-jms/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/messaging-jms/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -76,7 +79,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/git_project/test-spring/messaging-jms/activemq-artemis-docker-compose",
+    "last_opened_file_path": "E:/git_project/test-spring/batch-processing",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -85,9 +88,14 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.50689656",
-    "settings.editor.selected.configurable": "preferences.pluginManager",
-    "spring.configuration.checksum": "76f2679d211ee69918de27dcc9223e09",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "spring.configuration.checksum": "517d2d0425ec71be47f050be6ebc780c",
     "vue.rearranger.settings.migration": "true"
+  },
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
+    ]
   }
 }]]></component>
   <component name="ReactorSettings">
@@ -95,11 +103,15 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring\batch-processing" />
       <recent name="E:\git_project\test-spring\messaging-jms\activemq-artemis-docker-compose" />
       <recent name="E:\git_project\test-spring\messaging-rabbitmq" />
       <recent name="E:\git_project\test-spring\messaging-redis\src\main\resources" />
       <recent name="E:\git_project\test-spring" />
-      <recent name="E:\git_project\test-spring\restful-web" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring\batch-processing" />
+      <recent name="E:\git_project\test-spring\batch-processing\src\main\resources" />
     </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.zhuzhe.schedulingtasks" />
@@ -109,7 +121,7 @@
       <recent name="com.zhuzhe.common.entity" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.MessagingJmsApplication">
+  <component name="RunManager" selected="Spring Boot.BatchProcessingApplication">
     <configuration name="ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="actuator-service" />
       <extension name="coverage">
@@ -175,6 +187,13 @@
     <configuration name="AuthenticatingLdapApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="authenticating-ldap" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.authenticatingldap.AuthenticatingLdapApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="BatchProcessingApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="batch-processing" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.batchprocessing.BatchProcessingApplication" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -253,6 +272,7 @@
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" />
       <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.BatchProcessingApplication" />
       <item itemvalue="Spring Boot.MessagingJmsApplication" />
       <item itemvalue="Spring Boot.AccessingDataNeo4jApplication" />
       <item itemvalue="Spring Boot.ActuatorServiceApplication" />
@@ -297,7 +317,8 @@
       <workItem from="1684985660066" duration="18847000" />
       <workItem from="1685080541473" duration="44092000" />
       <workItem from="1685322039696" duration="1841000" />
-      <workItem from="1685414774229" duration="16360000" />
+      <workItem from="1685414774229" duration="25482000" />
+      <workItem from="1685691455912" duration="5270000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -383,7 +404,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685583074649</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="feature: 完成一个简单的JMS功能, 通过ActiveMQ Artemis平台来支持消息的发送和监听接收.">
+      <created>1685614802494</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1685614802494</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -428,7 +456,8 @@
     <MESSAGE value="feature: 完善数据校验模块的内容，包含字段校验，自定义校验器，校验异常统一处理，接口返回体封装。" />
     <MESSAGE value="feature: 新增一个系统监控模块，完善系统监控的配置，可以用于做监控当前项目和运行环境的模块。" />
     <MESSAGE value="feature: 加一个JMS的模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 加一个JMS的模块" />
+    <MESSAGE value="feature: 完成一个简单的JMS功能, 通过ActiveMQ Artemis平台来支持消息的发送和监听接收." />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 完成一个简单的JMS功能, 通过ActiveMQ Artemis平台来支持消息的发送和监听接收." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

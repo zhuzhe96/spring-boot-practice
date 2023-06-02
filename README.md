@@ -18,6 +18,7 @@
   * validating-input【5010】[数据校验输入](./validating-input/HELP.md)
   * actuator-service【5011,5012】[系统监控](./actuator-service/HELP.md)
   * messaging-jms【5013】[Java消息服务](./messaging-jms/HELP.md)
+  * batch-processing【5014】[批量操作](./batch-processing/HELP.md)
 ---
 ### 项目信息
 * spring boot version : 3.0.5

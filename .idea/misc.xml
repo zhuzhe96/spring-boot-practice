@@ -17,6 +17,7 @@
         <option value="$PROJECT_DIR$/validating-input/pom.xml" />
         <option value="$PROJECT_DIR$/actuator-service/pom.xml" />
         <option value="$PROJECT_DIR$/messaging-jms/pom.xml" />
+        <option value="$PROJECT_DIR$/batch-processing/pom.xml" />
       </list>
     </option>
   </component>
