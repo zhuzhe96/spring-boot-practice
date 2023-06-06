@@ -41,6 +41,7 @@
     <module>actuator-service</module>
     <module>messaging-jms</module>
     <module>batch-processing</module>
+    <module>security-rbac</module>
   </modules>
 
   <!--统一管理版本号-->
@@ -119,6 +120,11 @@
       <dependency>
         <groupId>com.zhuzhe</groupId>
         <artifactId>batch-processing</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zhuzhe</groupId>
+        <artifactId>security-rbac</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
     </dependencies>

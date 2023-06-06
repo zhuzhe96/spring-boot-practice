@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="style: 提交新的代码命名">
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 加一个模块的描述文档">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/HELP.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -326,7 +325,7 @@
       <workItem from="1685414774229" duration="25482000" />
       <workItem from="1685691455912" duration="18706000" />
       <workItem from="1685950696491" duration="24065000" />
-      <workItem from="1686030870630" duration="547000" />
+      <workItem from="1686030870630" duration="1627000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -447,7 +446,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686030935758</updated>
     </task>
-    <option name="localTasksCounter" value="18" />
+    <task id="LOCAL-00018" summary="doc: 加一个模块的描述文档">
+      <created>1686031444163</created>
+      <option name="number" value="00018" />
+      <option name="presentableId" value="LOCAL-00018" />
+      <option name="project" value="LOCAL" />
+      <updated>1686031444163</updated>
+    </task>
+    <option name="localTasksCounter" value="19" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -497,7 +503,8 @@
     <MESSAGE value="feature: 实现批量数据导入和导出功能，使用的是Apache POI的功能。同时配合注解实现最小化传参。" />
     <MESSAGE value="feature: 完善Excel批量导出和导入的功能,都实现了工具类的标准,支持任意添加了指定注解的对象的数据导出和导入." />
     <MESSAGE value="style: 提交新的代码命名" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: 提交新的代码命名" />
+    <MESSAGE value="doc: 加一个模块的描述文档" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: 加一个模块的描述文档" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
