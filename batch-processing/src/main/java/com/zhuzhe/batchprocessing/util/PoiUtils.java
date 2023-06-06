@@ -2,14 +2,20 @@ package com.zhuzhe.batchprocessing.util;
 
 import com.zhuzhe.batchprocessing.annotation.ExcelColumn;
 import com.zhuzhe.batchprocessing.annotation.ExcelTable;
-import com.zhuzhe.batchprocessing.entity.People;
 import java.io.IOException;
 import java.io.InputStream;
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.Date;
 import java.util.List;
+import java.util.Map;
 import java.util.Objects;
+import java.util.function.Function;
+import java.util.stream.Collectors;
 import org.apache.commons.codec.binary.StringUtils;
 import org.apache.poi.hssf.usermodel.HSSFWorkbook;
 import org.apache.poi.ss.usermodel.BorderStyle;
@@ -22,7 +28,6 @@ import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.VerticalAlignment;
 import org.apache.poi.ss.usermodel.Workbook;
 import org.apache.poi.xssf.streaming.SXSSFWorkbook;
-import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
 import org.springframework.util.CollectionUtils;
 
@@ -43,7 +48,7 @@ public class PoiUtils {
   /*xlsx格式支持的最大数据列*/
   public static final int XLSX_MAX_COL = 1048576;
 
-  private static void assertListException(boolean condition, String message) {
+  private static void assertException(boolean condition, String message) {
     if (!condition) {
       throw new RuntimeException(message);
     }
@@ -59,20 +64,20 @@ public class PoiUtils {
   public static <T> Workbook writeDataToExcel(List<T> list) {
 
     // 判断数据有效性以及提取类对象
-    assertListException(!CollectionUtils.isEmpty(list), "需要读取为表格的数据不能为空！");
+    assertException(!CollectionUtils.isEmpty(list), "需要读取为表格的数据不能为空！");
 
     // 这里还有其他更精确的方式，因为我这边是默认一个列表存储的元素都是一样的类型，所以简单提取
     Class<?> clazz = list.get(0).getClass();
 
     // 使用反射方式获取注解内容
     var excelTable = clazz.getAnnotation(ExcelTable.class);
-    assertListException(excelTable != null, "数据对象没有添加注解@ExcelTable");
+    assertException(excelTable != null, "数据对象没有添加注解@ExcelTable");
     var tableName = excelTable.name();
     var tableFormat = excelTable.format();
 
     var headers = new ArrayList<String>();
     var widths = new ArrayList<Integer>();
-    var fields = People.class.getDeclaredFields();
+    var fields = clazz.getDeclaredFields();
     for (Field field : fields) {
       var excelColumn = field.getAnnotation(ExcelColumn.class);
       if (excelColumn != null) {
@@ -80,7 +85,8 @@ public class PoiUtils {
         widths.add(excelColumn.width() * 256);
       }
     }
-    assertListException(!headers.isEmpty()&&!widths.isEmpty(), "对象成员没有添加注解@ExcelColumn");
+    assertException(!headers.isEmpty() && !widths.isEmpty(),
+        "对象成员没有添加注解@ExcelColumn");
 
     // 根据需求,创建xls或者创建xlsx的表格（目前只支持这两种）
     Workbook workbook = new SXSSFWorkbook();
@@ -198,64 +204,112 @@ public class PoiUtils {
       } else if (value instanceof Boolean) {
         cell.setCellValue((Boolean) value);
       } else if (value instanceof Date) {
-        cell.setCellValue((Date) value);
+        var sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+        cell.setCellValue(sdf.format((Date) value));
       } else {
         cell.setCellValue(value.toString());
       }
     }
   }
 
-  public static List<People> readDataFormExcel(InputStream inputStream) throws IOException {
-    var workbook = new XSSFWorkbook(inputStream);
-    var sheet = workbook.getSheetAt(0);
+  public static <T> List<T> readDataFormExcel(InputStream inputStream, Class<T> clazz) {
 
-    // 按行读取数据
-    int cols;
-    var list = new ArrayList<People>();
-    for (int i = POSITION_ROW + 1; i < sheet.getLastRowNum(); i++) {
-      var row = sheet.getRow(i);
-      cols = POSITION_COL;
-      var people = People.builder()
-          .name(getCellStringValue(row.getCell(cols++)))
-          .email(getCellStringValue(row.getCell(cols++)))
-          .build();
-      System.out.println("people = " + people);
-      list.add(people);
+    List<T> list = null;
+    try {
+      var excelTable = clazz.getAnnotation(ExcelTable.class);
+      assertException(excelTable != null, "数据对象没有添加注解@ExcelTable");
+      var tableFormat = excelTable.format();
+
+      // 根据实体定义来使用对应的Workbook
+      Workbook workbook = new XSSFWorkbook(inputStream);
+      if (StringUtils.equals("xls", tableFormat)) {
+        workbook = new HSSFWorkbook(inputStream);
+      }
+
+      // 构建注解和field映射map
+      var fields = clazz.getDeclaredFields();
+      Map<String, Field> excelColumnMap = Arrays.stream(fields)
+          .filter(field -> field.isAnnotationPresent(ExcelColumn.class))
+          .collect(Collectors.toMap(field -> field.getAnnotation(ExcelColumn.class).header(),
+              Function.identity(), (o1, o2) -> o1));
+      System.out.println("excelColumnMap = " + excelColumnMap);
+
+      // 校验Excel中是否至少一个Sheet
+      assertException(workbook.getSheetAt(0) != null, "无效Excel文件，文件中至少包含一个表格");
+
+      // 遍历Excel中的表插入到MySQL中(一个Excel中有多个sheet)
+      list = new ArrayList<>();
+      var sheetIterator = workbook.sheetIterator();
+      while (sheetIterator.hasNext()) {
+        var sheet = sheetIterator.next();
+        var headerRow = sheet.getRow(POSITION_ROW);
+        // 遍历表体每一行
+        for (int i = POSITION_ROW + 1; i <= sheet.getLastRowNum(); i++) {
+          var bodyRow = sheet.getRow(i);
+          assertException(headerRow.getLastCellNum() >= bodyRow.getLastCellNum(),
+              "无效数据，请检查表格中数据格式，表头和表体长度一致");
+          T instance = clazz.getDeclaredConstructor().newInstance();
+          //遍历列，匹配实体注解标题名并插入对象
+          for (int j = 0; j <= headerRow.getLastCellNum(); j++) {
+            var header = headerRow.getCell(j);
+            var body = bodyRow.getCell(j);
+            if (header == null || body == null) {
+              continue;
+            }
+            String headerStr = String.valueOf(header);
+            if (excelColumnMap.containsKey(headerStr)) {
+              setInstanceField(instance, excelColumnMap.get(headerStr), body);
+            }
+          }
+          list.add(instance);
+        }
+      }
+      workbook.close();
+    } catch (IOException | InstantiationException | IllegalAccessException |
+             InvocationTargetException | NoSuchMethodException e) {
+      System.out.println("读取表格失败：" + e.getMessage());
+      throw new RuntimeException(e);
     }
-    workbook.close();
     return list;
   }
 
-  private static String getCellStringValue(XSSFCell cell) {
-    try {
-      if (null != cell) {
-        return String.valueOf(cell.getStringCellValue());
-      }
-    } catch (Exception e) {
-      return String.valueOf(getCellIntValue(cell));
-    }
-    return "";
-  }
+  static <T> void setInstanceField(T instance, Field field, Cell cell) {
 
-  private static long getCellLongValue(XSSFCell cell) {
-    try {
-      if (null != cell) {
-        return Long.parseLong("" + cell.getNumericCellValue());
-      }
-    } catch (NumberFormatException e) {
-      e.printStackTrace();
+    if (cell == null) {
+      return;
     }
-    return 0L;
-  }
 
-  private static int getCellIntValue(XSSFCell cell) {
-    try {
-      if (null != cell) {
-        return Integer.parseInt("" + (int) cell.getNumericCellValue());
+    Object value = null;
+    field.setAccessible(true);
+    Class<?> fieldType = field.getType();
+
+    if (fieldType.equals(String.class)) {
+      value = cell.getStringCellValue();
+    } else if (fieldType.equals(Integer.class) || fieldType == int.class) {
+      value = (int) cell.getNumericCellValue();
+    } else if (fieldType.equals(Long.class) || fieldType == long.class) {
+      value = (long) cell.getNumericCellValue();
+    } else if (fieldType.equals(Float.class) || fieldType == float.class) {
+      value = (float) cell.getNumericCellValue();
+    } else if (fieldType.equals(Short.class) || fieldType == short.class) {
+      value = (short) cell.getNumericCellValue();
+    } else if (fieldType.equals(Double.class) || fieldType == double.class) {
+      value = cell.getNumericCellValue();
+    } else if (fieldType.equals(Boolean.class) || fieldType == boolean.class) {
+      value = cell.getBooleanCellValue();
+    } else if (fieldType.equals(Date.class)) {
+      var sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+      try {
+        value = sdf.parse(cell.getStringCellValue());
+      } catch (ParseException e) {
+        throw new RuntimeException(e);
       }
-    } catch (NumberFormatException e) {
-      e.printStackTrace();
     }
-    return 0;
+    try {
+      field.set(instance, value);
+    } catch (IllegalAccessException e) {
+      System.out.println("字段无法访问：" + e.getMessage());
+      throw new RuntimeException(e);
+    }
   }
 }
