@@ -20,6 +20,7 @@
         <module name="common" />
         <module name="scheduling-tasks" />
         <module name="actuator-service" />
+        <module name="security-rbac" />
         <module name="consuming-rest" />
         <module name="h2-service" />
       </profile>
@@ -40,6 +41,7 @@
       <module name="relational-data-access" options="-parameters" />
       <module name="restful-web" options="-parameters" />
       <module name="scheduling-tasks" options="-parameters" />
+      <module name="security-rbac" options="-parameters" />
       <module name="test-spring" options="" />
       <module name="uploading-files" options="-parameters" />
       <module name="validating-input" options="-parameters" />

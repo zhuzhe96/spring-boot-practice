@@ -4,8 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 加一个模块的描述文档">
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加一个由Security实现的RBAC初始模块">
+      <change afterPath="$PROJECT_DIR$/security-rbac/database.sql" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/CustomConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/JwtConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/constant/Consts.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/constant/Status.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/BaseEntity.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/Role.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/User.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -16,8 +33,8 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Record" />
-        <option value="Interface" />
         <option value="AnnotationType" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -258,6 +275,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="SecurityRbacApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="security-rbac" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.securityrbac.SecurityRbacApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="UploadingFilesApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="uploading-files" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.uploadingfiles.UploadingFilesApplication" />
@@ -277,6 +301,7 @@
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" />
       <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
+      <item itemvalue="Spring Boot.SecurityRbacApplication" />
       <item itemvalue="Spring Boot.BatchProcessingApplication" />
       <item itemvalue="Spring Boot.MessagingJmsApplication" />
       <item itemvalue="Spring Boot.AccessingDataNeo4jApplication" />
@@ -325,7 +350,7 @@
       <workItem from="1685414774229" duration="25482000" />
       <workItem from="1685691455912" duration="18706000" />
       <workItem from="1685950696491" duration="24065000" />
-      <workItem from="1686030870630" duration="1627000" />
+      <workItem from="1686030870630" duration="15158000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -453,7 +478,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686031444163</updated>
     </task>
-    <option name="localTasksCounter" value="19" />
+    <task id="LOCAL-00019" summary="feature: 加一个由Security实现的RBAC初始模块">
+      <created>1686032844779</created>
+      <option name="number" value="00019" />
+      <option name="presentableId" value="LOCAL-00019" />
+      <option name="project" value="LOCAL" />
+      <updated>1686032844779</updated>
+    </task>
+    <option name="localTasksCounter" value="20" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -504,7 +536,8 @@
     <MESSAGE value="feature: 完善Excel批量导出和导入的功能,都实现了工具类的标准,支持任意添加了指定注解的对象的数据导出和导入." />
     <MESSAGE value="style: 提交新的代码命名" />
     <MESSAGE value="doc: 加一个模块的描述文档" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: 加一个模块的描述文档" />
+    <MESSAGE value="feature: 加一个由Security实现的RBAC初始模块" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 加一个由Security实现的RBAC初始模块" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

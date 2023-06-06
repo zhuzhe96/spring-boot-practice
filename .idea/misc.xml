@@ -18,6 +18,7 @@
         <option value="$PROJECT_DIR$/actuator-service/pom.xml" />
         <option value="$PROJECT_DIR$/messaging-jms/pom.xml" />
         <option value="$PROJECT_DIR$/batch-processing/pom.xml" />
+        <option value="$PROJECT_DIR$/security-rbac/pom.xml" />
       </list>
     </option>
   </component>
