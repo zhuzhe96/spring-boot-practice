@@ -1,8 +1,8 @@
 package com.zhuzhe.batchprocessing.controller;
 
-import com.zhuzhe.batchprocessing.entity.Perm;
+import com.zhuzhe.batchprocessing.entity.Permission;
 import com.zhuzhe.batchprocessing.service.PeopleService;
-import com.zhuzhe.batchprocessing.service.PermService;
+import com.zhuzhe.batchprocessing.service.PermissionService;
 import com.zhuzhe.batchprocessing.util.PoiUtils;
 import com.zhuzhe.batchprocessing.annotation.ExcelTable;
 import com.zhuzhe.batchprocessing.entity.People;
@@ -26,7 +26,7 @@ public class TestController {
   @Autowired
   private PeopleService peopleService;
   @Autowired
-  private PermService permService;
+  private PermissionService permissionService;
 
   @GetMapping("people/download")
   public void downloadPeopleExcel(HttpServletResponse response) {
@@ -57,15 +57,15 @@ public class TestController {
     return ResponseEntity.ok().build();
   }
 
-  @GetMapping("perm/download")
-  public void downloadPermExcel(HttpServletResponse response) {
+  @GetMapping("permission/download")
+  public void downloadPermissionExcel(HttpServletResponse response) {
     try {
-      var workbook = PoiUtils.writeDataToExcel(permService.list());
+      var workbook = PoiUtils.writeDataToExcel(permissionService.list());
       response.reset();
       response.setContentType("application/vnd.ms-excel");
       response.setHeader("Content-disposition",
-          "attachment;filename=perm_" + System.currentTimeMillis() + "."
-              + Perm.class.getAnnotation(
+          "attachment;filename=permission_" + System.currentTimeMillis() + "."
+              + Permission.class.getAnnotation(
               ExcelTable.class).format());
       OutputStream os = response.getOutputStream();
       workbook.write(os);
@@ -75,11 +75,11 @@ public class TestController {
     }
   }
 
-  @PostMapping("perm/upload")
-  public ResponseEntity<?> uploadPermExcel(@RequestParam(value = "file") MultipartFile file) {
+  @PostMapping("permission/upload")
+  public ResponseEntity<?> uploadPermissionExcel(@RequestParam(value = "file") MultipartFile file) {
     try {
-      List<Perm> list = PoiUtils.readDataFormExcel(file.getInputStream(), Perm.class);
-      permService.saveBatch(list);
+      List<Permission> list = PoiUtils.readDataFormExcel(file.getInputStream(), Permission.class);
+      permissionService.saveBatch(list);
     } catch (IOException e) {
       throw new RuntimeException(e);
     }

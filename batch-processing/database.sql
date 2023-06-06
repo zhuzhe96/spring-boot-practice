@@ -1,4 +1,3 @@
--- people表格
 drop table if exists `people`;
 create table people
 (
@@ -14,9 +13,8 @@ values ('Jone', 'test1@zhuzhe.com'),
        ('Sandy', 'test4@zhuzhe.com'),
        ('Billie', 'test5@zhuzhe.com');
 
--- permission表格
-drop table if exists `perm`;
-create table perm
+drop table if exists `permission`;
+create table permission
 (
     id   bigint not null auto_increment,
     `name` varchar(255) charset utf8mb4 null,
@@ -27,7 +25,7 @@ create table perm
     update_time datetime default CURRENT_TIMESTAMP,
     PRIMARY KEY (`id`)
 )ENGINE=InnoDB AUTO_INCREMENT=1 COMMENT='权限表' collate = utf8mb4_bin;
-insert into perm (name, pid, url, code)
+insert into permission (name, pid, url, code)
 values ('菜单', 0, 'menu','menu'),
        ('页面1', 1, 'menu:page1','page'),
        ('页面2', 1, 'menu:page2','page'),

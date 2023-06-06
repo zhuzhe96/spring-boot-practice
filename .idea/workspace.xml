@@ -4,18 +4,17 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 实现批量数据导入和导出功能，使用的是Apache POI的功能。同时配合注解实现最小化传参。">
-      <change afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/entity/Perm.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/mapper/PermMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/service/PermService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/service/impl/PermServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/batch-processing/src/main/resources/mapper/PermMapper.xml" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="style: 提交新的代码命名">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch-processing/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/HELP.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/batch-processing/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/controller/PeopleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/entity/People.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/entity/People.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/controller/TestController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/entity/Perm.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/entity/Permission.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/mapper/PermMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/mapper/PermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/service/PermService.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/service/PermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/service/impl/PermServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/service/impl/PermissionServiceImpl.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/util/PoiUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/util/PoiUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/resources/mapper/UserMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/resources/mapper/PeopleMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/resources/mapper/PermMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/resources/mapper/PermMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +38,9 @@
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/util/PoiUtils.java" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -331,7 +333,7 @@
       <workItem from="1685322039696" duration="1841000" />
       <workItem from="1685414774229" duration="25482000" />
       <workItem from="1685691455912" duration="18706000" />
-      <workItem from="1685950696491" duration="21964000" />
+      <workItem from="1685950696491" duration="24065000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -438,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1685961124130</updated>
     </task>
-    <option name="localTasksCounter" value="16" />
+    <task id="LOCAL-00016" summary="feature: 完善Excel批量导出和导入的功能,都实现了工具类的标准,支持任意添加了指定注解的对象的数据导出和导入.">
+      <created>1686024798995</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1686024798995</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -486,7 +495,9 @@
     <MESSAGE value="feature: 完成一个简单的JMS功能, 通过ActiveMQ Artemis平台来支持消息的发送和监听接收." />
     <MESSAGE value="feature: 加一个批量导入模块, 已添加mybatis-plus的使用." />
     <MESSAGE value="feature: 实现批量数据导入和导出功能，使用的是Apache POI的功能。同时配合注解实现最小化传参。" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 实现批量数据导入和导出功能，使用的是Apache POI的功能。同时配合注解实现最小化传参。" />
+    <MESSAGE value="feature: 完善Excel批量导出和导入的功能,都实现了工具类的标准,支持任意添加了指定注解的对象的数据导出和导入." />
+    <MESSAGE value="style: 提交新的代码命名" />
+    <option name="LAST_COMMIT_MESSAGE" value="style: 提交新的代码命名" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

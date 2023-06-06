@@ -44,8 +44,10 @@ public class PoiUtils {
   public static final int XLSX_MAX_ROW = 1048575;
   /*一个表中最大支持的列数，这里不做处理，因为垂直拆表的实际场景不多*/
   /*xls格式支持的最大数据列*/
+  @SuppressWarnings("unused")
   public static final int XLS_MAX_COL = 256;
   /*xlsx格式支持的最大数据列*/
+  @SuppressWarnings("unused")
   public static final int XLSX_MAX_COL = 1048576;
 
   private static void assertException(boolean condition, String message) {
@@ -54,13 +56,7 @@ public class PoiUtils {
     }
   }
 
-  /**
-   * 将数据转为Excel表格
-   *
-   * @param list 数据列表
-   * @param <T>
-   * @return
-   */
+  /*将数据转为Excel表格对象*/
   public static <T> Workbook writeDataToExcel(List<T> list) {
 
     // 判断数据有效性以及提取类对象
@@ -123,8 +119,7 @@ public class PoiUtils {
         cols = POSITION_COL;
         var row = sheet.createRow(rows++);
 
-        for (int k = 0; k < fields.length; k++) {
-          var field = fields[k];
+        for (Field field : fields) {
           field.setAccessible(true);
           try {
             var excelColumn = field.getAnnotation(ExcelColumn.class);
@@ -204,7 +199,7 @@ public class PoiUtils {
       } else if (value instanceof Boolean) {
         cell.setCellValue((Boolean) value);
       } else if (value instanceof Date) {
-        var sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+        var sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
         cell.setCellValue(sdf.format((Date) value));
       } else {
         cell.setCellValue(value.toString());
@@ -214,7 +209,7 @@ public class PoiUtils {
 
   public static <T> List<T> readDataFormExcel(InputStream inputStream, Class<T> clazz) {
 
-    List<T> list = null;
+    List<T> list;
     try {
       var excelTable = clazz.getAnnotation(ExcelTable.class);
       assertException(excelTable != null, "数据对象没有添加注解@ExcelTable");
@@ -232,7 +227,7 @@ public class PoiUtils {
           .filter(field -> field.isAnnotationPresent(ExcelColumn.class))
           .collect(Collectors.toMap(field -> field.getAnnotation(ExcelColumn.class).header(),
               Function.identity(), (o1, o2) -> o1));
-      System.out.println("excelColumnMap = " + excelColumnMap);
+      assertException(!excelColumnMap.isEmpty(),"对象成员没有添加注解@ExcelColumn");
 
       // 校验Excel中是否至少一个Sheet
       assertException(workbook.getSheetAt(0) != null, "无效Excel文件，文件中至少包含一个表格");
@@ -298,7 +293,7 @@ public class PoiUtils {
     } else if (fieldType.equals(Boolean.class) || fieldType == boolean.class) {
       value = cell.getBooleanCellValue();
     } else if (fieldType.equals(Date.class)) {
-      var sdf = new SimpleDateFormat("YYYY-MM-dd HH:mm:ss");
+      var sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
       try {
         value = sdf.parse(cell.getStringCellValue());
       } catch (ParseException e) {

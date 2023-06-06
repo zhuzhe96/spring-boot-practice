@@ -14,8 +14,8 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @ExcelTable(name = "权限表")
-@TableName("perm")
-public class Perm {
+@TableName("permission")
+public class Permission {
   @TableId(type = IdType.AUTO)
   private Long id;
   @ExcelColumn(header = "权限名")

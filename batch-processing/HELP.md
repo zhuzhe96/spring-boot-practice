@@ -1,5 +1,9 @@
 # 批量导入数据（Excel）
 
+### 实现方式: Apache poi
+* 测试数据库: [database.sql](./database.sql) 其中就包含两个表, 人员表people和权限表permission
+
+---
 ### xls和xlsx的区别
 
 | XLS                                   | XLSX                           |
