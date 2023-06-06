@@ -7,14 +7,6 @@
     <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="style: 提交新的代码命名">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/batch-processing/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/database.sql" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/database.sql" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/controller/TestController.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/controller/TestController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/entity/Perm.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/entity/Permission.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/mapper/PermMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/mapper/PermissionMapper.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/service/PermService.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/service/PermissionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/service/impl/PermServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/service/impl/PermissionServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/util/PoiUtils.java" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/java/com/zhuzhe/batchprocessing/util/PoiUtils.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/batch-processing/src/main/resources/mapper/PermMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/batch-processing/src/main/resources/mapper/PermMapper.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -65,36 +57,36 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RequestMappingsPanelOrder0": "0",
-    "RequestMappingsPanelOrder1": "1",
-    "RequestMappingsPanelWidth0": "75",
-    "RequestMappingsPanelWidth1": "75",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "WebServerToolWindowFactoryState": "false",
-    "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/git_project/test-spring/batch-processing/src/main/resources/mapper",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.15",
-    "project.structure.side.proportion": "0.50689656",
-    "settings.editor.selected.configurable": "preferences.keymap",
-    "spring.configuration.checksum": "517d2d0425ec71be47f050be6ebc780c",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
+    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
+    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
+    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/git_project/test-spring/batch-processing/src/main/resources/mapper&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.50689656&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;517d2d0425ec71be47f050be6ebc780c&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "mysql"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;mysql&quot;
     ]
   }
-}]]></component>
+}</component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
@@ -334,6 +326,7 @@
       <workItem from="1685414774229" duration="25482000" />
       <workItem from="1685691455912" duration="18706000" />
       <workItem from="1685950696491" duration="24065000" />
+      <workItem from="1686030870630" duration="547000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -447,7 +440,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686024798995</updated>
     </task>
-    <option name="localTasksCounter" value="17" />
+    <task id="LOCAL-00017" summary="style: 提交新的代码命名">
+      <created>1686030935758</created>
+      <option name="number" value="00017" />
+      <option name="presentableId" value="LOCAL-00017" />
+      <option name="project" value="LOCAL" />
+      <updated>1686030935758</updated>
+    </task>
+    <option name="localTasksCounter" value="18" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
