@@ -16,6 +16,7 @@ import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
+import org.springframework.security.web.authentication.AuthenticationFilter;
 
 @Slf4j
 @Configuration
@@ -36,7 +37,7 @@ public class SecurityConfig {
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
     // 插入自定义过滤器
     http.addFilter(authenticationFilter());
-    http.addFilterBefore(jwtAuthenticationFilter(), AuthenticationFilter.class);
+    http.addFilterBefore(jwtAuthenticationFilter(), ApiAuthenticationFilter.class);
 
     //  开启匿名认证
     http.anonymous();
