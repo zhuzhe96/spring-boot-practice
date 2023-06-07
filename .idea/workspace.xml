@@ -4,25 +4,45 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加一个由Security实现的RBAC初始模块">
-      <change afterPath="$PROJECT_DIR$/security-rbac/database.sql" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/CustomConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/JwtConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/SecurityConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/constant/Consts.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/constant/Status.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/BaseEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/User.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="process: 完成部分Security+JWT的权限校验代码.">
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/common/ApiResponse.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/ApiAuthenticationToken.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/Permission.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/vo/UserPrincipal.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/exception/BaseException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/exception/SecurityException.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/handler/ApiAuthSuccessHandler.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/mapper/PermissionMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/mapper/RoleMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/mapper/UserMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationManager.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/ApiAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/service/PermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/service/TokenService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/PermissionService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/RoleService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/UserService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/impl/PermissionServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/impl/RoleServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/impl/UserServiceImpl.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/RedisUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ResponseUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ServletUtil.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/mapper/PermissionMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/SecurityRbacApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/SecurityRbacApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/CustomConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/CustomConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/JwtConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/JwtConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/SecurityConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/constant/Consts.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/common/Consts.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/constant/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/common/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/Role.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/User.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -73,46 +93,47 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/git_project/test-spring/batch-processing/src/main/resources/mapper&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.50689656&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.keymap&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;517d2d0425ec71be47f050be6ebc780c&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "E:/git_project/test-spring/security-rbac/src/main/resources/mapper",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.50689656",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "spring.configuration.checksum": "517d2d0425ec71be47f050be6ebc780c",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring\security-rbac\src\main\resources\mapper" />
       <recent name="E:\git_project\test-spring\batch-processing\src\main\resources\mapper" />
       <recent name="E:\git_project\test-spring\batch-processing" />
       <recent name="E:\git_project\test-spring\messaging-jms\activemq-artemis-docker-compose" />
       <recent name="E:\git_project\test-spring\messaging-rabbitmq" />
-      <recent name="E:\git_project\test-spring\messaging-redis\src\main\resources" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\git_project\test-spring\batch-processing" />
@@ -122,14 +143,14 @@
       <recent name="com.zhuzhe.schedulingtasks" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zhuzhe.securityrbac.service.impl" />
+      <recent name="com.zhuzhe.securityrbac.service" />
+      <recent name="com.zhuzhe.securityrbac.mapper" />
       <recent name="com.zhuzhe.batchprocessing.controller" />
       <recent name="com.zhuzhe.batchprocessing.service.impl" />
-      <recent name="com.zhuzhe.batchprocessing.service" />
-      <recent name="com.zhuzhe.batchprocessing.mapper" />
-      <recent name="com.zhuzhe.common.annotation" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.BatchProcessingApplication">
+  <component name="RunManager" selected="Spring Boot.SecurityRbacApplication">
     <configuration name="PoiUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zhuzhe.batchprocessing.util.PoiUtils" />
       <module name="batch-processing" />
@@ -350,7 +371,7 @@
       <workItem from="1685414774229" duration="25482000" />
       <workItem from="1685691455912" duration="18706000" />
       <workItem from="1685950696491" duration="24065000" />
-      <workItem from="1686030870630" duration="15158000" />
+      <workItem from="1686030870630" duration="44576000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -485,7 +506,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686032844779</updated>
     </task>
-    <option name="localTasksCounter" value="20" />
+    <task id="LOCAL-00020" summary="process: 完成部分Security+JWT的权限校验代码.">
+      <created>1686046281794</created>
+      <option name="number" value="00020" />
+      <option name="presentableId" value="LOCAL-00020" />
+      <option name="project" value="LOCAL" />
+      <updated>1686046281794</updated>
+    </task>
+    <option name="localTasksCounter" value="21" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -537,7 +565,8 @@
     <MESSAGE value="style: 提交新的代码命名" />
     <MESSAGE value="doc: 加一个模块的描述文档" />
     <MESSAGE value="feature: 加一个由Security实现的RBAC初始模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 加一个由Security实现的RBAC初始模块" />
+    <MESSAGE value="process: 完成部分Security+JWT的权限校验代码." />
+    <option name="LAST_COMMIT_MESSAGE" value="process: 完成部分Security+JWT的权限校验代码." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

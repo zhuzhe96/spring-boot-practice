@@ -1,7 +1,5 @@
 package com.zhuzhe.securityrbac.entity;
 
-import java.util.Date;
-import java.util.Set;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -13,10 +11,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
-public class User extends BaseEntity {
-  private String username;
-  private String password;
-  private String nickName;
-  private Date loginTime;
-  private Integer status;
+public class Permission extends BaseEntity{
+  private String name;
+  private String url;
+  private String type;
+  private Long pid;
 }

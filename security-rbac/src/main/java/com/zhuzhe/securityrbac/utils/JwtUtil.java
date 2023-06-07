@@ -2,8 +2,8 @@ package com.zhuzhe.securityrbac.utils;
 
 import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.zhuzhe.securityrbac.config.JwtConfig;
-import com.zhuzhe.securityrbac.constant.Consts;
-import com.zhuzhe.securityrbac.constant.Status;
+import com.zhuzhe.securityrbac.common.Consts;
+import com.zhuzhe.securityrbac.common.Status;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
