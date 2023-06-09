@@ -1,33 +1,29 @@
 package com.zhuzhe.securityrbac.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zhuzhe.securityrbac.common.Status;
 import com.zhuzhe.securityrbac.security.ApiAuthenticationManager;
 import com.zhuzhe.securityrbac.security.filter.ApiAuthenticationFilter;
 import com.zhuzhe.securityrbac.security.filter.JwtAuthenticationFilter;
-import com.zhuzhe.securityrbac.utils.JwtUtil;
+import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.security.config.annotation.authentication.configuration.AuthenticationConfiguration;
 import org.springframework.security.config.annotation.method.configuration.EnableMethodSecurity;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.EnableWebSecurity;
+import org.springframework.security.config.annotation.web.configuration.WebSecurityCustomizer;
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.web.AuthenticationEntryPoint;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.security.web.access.AccessDeniedHandler;
-import org.springframework.security.web.authentication.AuthenticationFilter;
 
 @Slf4j
 @Configuration
-@EnableWebSecurity// 开启Security功能
-@EnableMethodSecurity// 开启后端验证, 对所有执行方法判断权限
+@EnableWebSecurity//开启Security功能
+@EnableMethodSecurity//开启后端验证, 对所有执行方法判断权限
 public class SecurityConfig {
-
-  @Autowired
-  private AuthenticationConfiguration authenticationConfiguration;
-  @Autowired
-  private JwtUtil jwtUtil;
   @Autowired
   private ApiAuthenticationManager apiAuthenticationManager;
 
@@ -35,8 +31,11 @@ public class SecurityConfig {
   @Bean
   @SuppressWarnings("all")
   public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
-    // 插入自定义过滤器
-    http.addFilter(authenticationFilter());
+
+    //登陆认证过滤器
+    http.addFilter(apiAuthenticationFilter());
+
+    //JWT认证过滤器, 在登陆认证过滤器之前执行
     http.addFilterBefore(jwtAuthenticationFilter(), ApiAuthenticationFilter.class);
 
     //  开启匿名认证
@@ -45,7 +44,7 @@ public class SecurityConfig {
     // 禁用Basic认证
     http.httpBasic().disable();
 
-    // 验证路径 除了指定路径的访问放行,其他访问都得经过认证
+    // 验证路径(放行两个路径)
     http.authorizeHttpRequests().requestMatchers("/", "/user/register").permitAll().and()
         .authorizeHttpRequests().anyRequest().authenticated();
 
@@ -53,7 +52,8 @@ public class SecurityConfig {
     http.sessionManagement(s -> s.sessionCreationPolicy(SessionCreationPolicy.STATELESS));
 
     // 设置未授权请求异常处理
-    http.exceptionHandling(e -> e.accessDeniedHandler(accessDeniedHandler()).authenticationEntryPoint(authenticationEntryPoint()));
+    http.exceptionHandling(e -> e.accessDeniedHandler(accessDeniedHandler())
+        .authenticationEntryPoint(authenticationEntryPoint()));
 
     //关闭跨域防护
     http.csrf().disable();
@@ -61,33 +61,42 @@ public class SecurityConfig {
     return http.build();
   }
 
+  /*登陆过滤器*/
   @Bean
-  public ApiAuthenticationFilter authenticationFilter(){
-    var apiAuthenticationFilter = new ApiAuthenticationFilter(apiAuthenticationManager,
-        "/user/login");
-    //apiAuthenticationFilter.setAuthenticationSuccessHandler();
-    return apiAuthenticationFilter;
+  public ApiAuthenticationFilter apiAuthenticationFilter() {
+    return new ApiAuthenticationFilter(apiAuthenticationManager, "/user/login");
   }
 
+  /*JWT过滤器*/
   @Bean
-  public JwtAuthenticationFilter jwtAuthenticationFilter(){
+  public JwtAuthenticationFilter jwtAuthenticationFilter() {
     return new JwtAuthenticationFilter();
   }
 
-  /*登陆成功但是没有授权*/
+  /*权限异常：登录成功。但无权限*/
   @Bean
   public AccessDeniedHandler accessDeniedHandler() {
     return (request, response, accessDeniedException) -> {
-      log.error("[AccessDeniedHandler]: 异常",accessDeniedException);
-      throw new RuntimeException("访问未授权!"+accessDeniedException.getMessage());
+      log.info("[AccessDeniedHandler]: 异常", accessDeniedException);
+      new ObjectMapper().writeValue(response.getWriter(), Status.SC_ACCESS_DENIED);
     };
   }
 
+  /*认证异常：登录失败。*/
   @Bean
-  public AuthenticationEntryPoint authenticationEntryPoint(){
+  public AuthenticationEntryPoint authenticationEntryPoint() {
     return (request, response, authException) -> {
-      log.error("[authenticationEntryPoint]: 异常",authException);
-      throw new RuntimeException("令牌已过期!"+authException.getMessage());
+      log.error("[authenticationEntryPoint]: 异常", authException);
+      response.setContentType("application/json");
+      response.setCharacterEncoding("utf-8");
+      response.setStatus(401);
+      new ObjectMapper().writeValue(response.getWriter(), Map.of(Status.NOT_LOGIN.getCode(), Status.NOT_LOGIN.getMessage()));
     };
+  }
+
+  /*放行所有不需要登录就可以访问的请求*/
+  @Bean
+  public WebSecurityCustomizer webSecurityCustomizer(){
+    return web -> web.ignoring().requestMatchers("/url1","/url2","/user/register");
   }
 }

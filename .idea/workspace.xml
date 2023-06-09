@@ -5,44 +5,26 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="process: 完成部分Security+JWT的权限校验代码.">
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/common/ApiResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/ApiAuthenticationToken.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/AuthController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/Permission.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/vo/UserPrincipal.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/exception/BaseException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/exception/SecurityException.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/handler/ApiAuthSuccessHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/mapper/PermissionMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/mapper/RoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/mapper/UserMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationManager.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/ApiAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/service/PermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/service/TokenService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/PermissionService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/RoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/UserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/impl/PermissionServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/impl/RoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/impl/UserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/RedisUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ResponseUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ServletUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/mapper/PermissionMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/mapper/RoleMapper.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/mapper/UserMapper.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/UserController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/SecurityRbacApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/SecurityRbacApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/common/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/common/Status.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/ApiAuthenticationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationToken.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/CustomConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/CustomConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/JwtConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/JwtConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/constant/Consts.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/common/Consts.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/constant/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/common/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/Role.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/Role.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/User.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/User.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/handler/ApiAuthSuccessHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/mapper/PermissionMapper.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/mapper/PermissionMapper.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/ApiAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/ApiAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/service/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/service/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/PermissionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/PermissionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/impl/PermissionServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/impl/PermissionServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ResponseUtil.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/resources/mapper/PermissionMapper.xml" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/mapper/PermissionMapper.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/test/java/com/zhuzhe/securityrbac/SecurityRbacApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/test/java/com/zhuzhe/securityrbac/SecurityRbacApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,12 +97,13 @@
     "project.structure.proportion": "0.15",
     "project.structure.side.proportion": "0.50689656",
     "settings.editor.selected.configurable": "preferences.keymap",
-    "spring.configuration.checksum": "517d2d0425ec71be47f050be6ebc780c",
+    "spring.configuration.checksum": "7b0456de1ada563efa89cbeafb685b3b",
     "vue.rearranger.settings.migration": "true"
   },
   "keyToStringList": {
     "DatabaseDriversLRU": [
-      "mysql"
+      "mysql",
+      "redis"
     ]
   }
 }]]></component>
@@ -151,6 +134,19 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.SecurityRbacApplication">
+    <configuration name="ApiAuthFailureHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.securityrbac.handler.ApiAuthFailureHandler" />
+      <module name="security-rbac" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhuzhe.securityrbac.handler.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="PoiUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zhuzhe.batchprocessing.util.PoiUtils" />
       <module name="batch-processing" />
@@ -196,16 +192,16 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="CommonApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="common" />
+    <configuration name="SecurityRbacApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="security-rbac" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zhuzhe.common.*" />
+          <option name="PATTERN" value="com.zhuzhe.securityrbac.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.zhuzhe.common" />
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.CommonApplicationTests" />
+      <option name="PACKAGE_NAME" value="com.zhuzhe.securityrbac" />
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.securityrbac.SecurityRbacApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
@@ -318,10 +314,11 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.ApiAuthFailureHandler" />
       <item itemvalue="Application.PoiUtils" />
+      <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" />
-      <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
       <item itemvalue="Spring Boot.SecurityRbacApplication" />
       <item itemvalue="Spring Boot.BatchProcessingApplication" />
       <item itemvalue="Spring Boot.MessagingJmsApplication" />
@@ -340,11 +337,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
+        <item itemvalue="Application.ApiAuthFailureHandler" />
         <item itemvalue="Application.PoiUtils" />
         <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
         <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" />
-        <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
-        <item itemvalue="JUnit.CommonApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -371,7 +368,8 @@
       <workItem from="1685414774229" duration="25482000" />
       <workItem from="1685691455912" duration="18706000" />
       <workItem from="1685950696491" duration="24065000" />
-      <workItem from="1686030870630" duration="44576000" />
+      <workItem from="1686030870630" duration="70167000" />
+      <workItem from="1686298112476" duration="1661000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -513,7 +511,21 @@
       <option name="project" value="LOCAL" />
       <updated>1686046281794</updated>
     </task>
-    <option name="localTasksCounter" value="21" />
+    <task id="LOCAL-00021" summary="process: 完成部分Security+JWT的权限校验代码.">
+      <created>1686133023604</created>
+      <option name="number" value="00021" />
+      <option name="presentableId" value="LOCAL-00021" />
+      <option name="project" value="LOCAL" />
+      <updated>1686133023604</updated>
+    </task>
+    <task id="LOCAL-00022" summary="process: 完成部分Security+JWT的权限校验代码.">
+      <created>1686133080512</created>
+      <option name="number" value="00022" />
+      <option name="presentableId" value="LOCAL-00022" />
+      <option name="project" value="LOCAL" />
+      <updated>1686133080512</updated>
+    </task>
+    <option name="localTasksCounter" value="23" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

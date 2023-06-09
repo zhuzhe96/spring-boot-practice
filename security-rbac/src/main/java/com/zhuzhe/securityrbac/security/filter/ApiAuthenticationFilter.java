@@ -1,12 +1,11 @@
 package com.zhuzhe.securityrbac.security.filter;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zhuzhe.securityrbac.common.Status;
-import com.zhuzhe.securityrbac.config.ApiAuthenticationToken;
+import com.zhuzhe.securityrbac.security.ApiAuthenticationToken;
 import com.zhuzhe.securityrbac.entity.vo.UserPrincipal;
-import com.zhuzhe.securityrbac.entity.vo.UserPrincipal.UserPrincipalBuilder;
-import com.zhuzhe.securityrbac.exception.BaseException;
 import com.zhuzhe.securityrbac.exception.SecurityException;
-import com.zhuzhe.securityrbac.utils.JwtUtil;
+import com.zhuzhe.securityrbac.security.service.TokenService;
 import io.micrometer.common.util.StringUtils;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
@@ -16,44 +15,58 @@ import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
+import org.springframework.security.authentication.BadCredentialsException;
+import org.springframework.security.authentication.LockedException;
 import org.springframework.security.core.Authentication;
 import org.springframework.security.core.AuthenticationException;
 import org.springframework.security.core.context.SecurityContextHolder;
+import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Slf4j
 public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
   @Autowired
-  private JwtUtil jwtUtil;
+  private TokenService tokenService;
 
   public ApiAuthenticationFilter(AuthenticationManager authenticationManager,
       String loginProcessingUrl) {
     super(authenticationManager);
+    // 拦截该请求并进行登陆校验
     setFilterProcessesUrl(loginProcessingUrl);
   }
 
-  /*登陆校验*/
+  /**
+   * 对用户提交的认证信息进行验证
+   * @param request
+   * @param response
+   * @return
+   * @throws AuthenticationException
+   *
+   * 1. 从HttpServletRequest对象中获取用户名和密码
+   * 2. 构建UsernamePasswordAuthenticationToken
+   * 3. 调用AuthenticationManager的authenticate方法进行身份验证，将token传递进去
+   * 4. 验证成功：authenticate方法返回一个Authentication
+   * 5. 返回Authentication
+   */
   @Override
   public Authentication attemptAuthentication(HttpServletRequest request,
       HttpServletResponse response) throws AuthenticationException {
-    //return super.attemptAuthentication(request, response);
-    log.info("[ApiAuthenticationFilter]请求uri={}",request.getRequestURI());
-    // 登陆提交只能post
+    log.info("[ApiAuthenticationFilter]拦截uri={}",request.getRequestURI());
+    // 校验登录请求只能POST方式
     if (!"POST".equals(request.getMethod())){
       throw new SecurityException(Status.REQUEST_NOT_MATCH);
     }
 
     var username = request.getParameter("username");
     var password = request.getParameter("password");
-
-    var userPrincipal = UserPrincipal.builder();
-    ApiAuthenticationToken apiAuthenticationToken;
+    log.info("[ApiAuthenticationFilter]username={},password={}",username, password);
 
     // 登录校验
     if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)){
-      userPrincipal.username(username).password(password);
-      apiAuthenticationToken = ApiAuthenticationToken.unauthenticated(userPrincipal.build());
+      var userPrincipal = UserPrincipal.builder().username(username).password(password).build();
+      // 将登录对象转为自定义的Authentication
+      ApiAuthenticationToken apiAuthenticationToken = ApiAuthenticationToken.unauthenticated(userPrincipal);
       var authenticate = getAuthenticationManager().authenticate(apiAuthenticationToken);
       SecurityContextHolder.getContext().setAuthentication(authenticate);
       return authenticate;
@@ -62,20 +75,39 @@ public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     }
   }
 
-  /*成功时的处理*/
+  /*校验成功时的处理*/
   @Override
   protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
-      FilterChain chain, Authentication authResult) throws IOException, ServletException {
-    SecurityContextHolder.getContext().setAuthentication(authResult);
-    ApiAuthenticationToken token = (ApiAuthenticationToken)authResult;
-    super.successfulAuthentication(request, response, chain, authResult);
+      FilterChain chain, Authentication authentication) throws IOException, ServletException {
+    log.info("[ApiAuthenticationFilter]登陆成功,开始发放令牌");
+    SecurityContextHolder.getContext().setAuthentication(authentication);
+    ApiAuthenticationToken apiAuthenticationToken = (ApiAuthenticationToken)authentication;
+    var jwt = tokenService.createJwt(apiAuthenticationToken.getUserPrincipal());
+    new ObjectMapper().writeValue(response.getWriter(), new JwtVO(jwt));
   }
 
-  /*失败时的处理*/
+  /*校验失败时的处理*/
   @Override
   protected void unsuccessfulAuthentication(HttpServletRequest request,
-      HttpServletResponse response, AuthenticationException failed)
+      HttpServletResponse response, AuthenticationException e)
       throws IOException, ServletException {
-    super.unsuccessfulAuthentication(request, response, failed);
+    log.info("[ApiAuthenticationFilter]登陆失败,清除SecurityContext");
+    SecurityContextHolder.clearContext();
+    super.unsuccessfulAuthentication(request, response, e);
+    if (e instanceof UsernameNotFoundException){
+      new ObjectMapper().writeValue(response.getWriter(), Status.ERROR.custStatusMsg("用户名不存在"));
+    }else if (e instanceof LockedException){
+      new ObjectMapper().writeValue(response.getWriter(), Status.ERROR.custStatusMsg("用户名被冻结"));
+    }else if (e instanceof BadCredentialsException){
+      new ObjectMapper().writeValue(response.getWriter(), Status.ERROR.custStatusMsg("用户名密码不正确"));
+    }else {
+      new ObjectMapper().writeValue(response.getWriter(), Status.ERROR.custStatusMsg("登陆失败"));
+    }
+  }
+
+  record JwtVO(String token, String tokenType){
+    public JwtVO(String token){
+      this(token, "Bearer");
+    }
   }
 }

@@ -20,6 +20,7 @@ public enum Status {
   USERNAME_NOT_FOUND(5001, "用户不存在!"),
   USERNAME_PASSWORD_ERROR(5001, "用户名或密码错误!"),
   USERNAME_EXIST(5002, "用户已存在, 请勿重复创建!"),
+  NOT_LOGIN(5002, "用户未登陆!"),
   TOKEN_EXPIRED(5002, "token已过期, 请重新登录!"),
   TOKEN_PARSE_ERROR(5002, "token解析失败, 请尝试重新登录!"),
   TOKEN_OUT_OF_CTRL(5003, "当前用户已在别处登录, 请尝试更改密码或重新登录!"),
@@ -27,7 +28,12 @@ public enum Status {
 
 
   private final Integer code;
-  private final String message;
+  private String message;
+
+  public Status custStatusMsg(String message) {
+    this.message = message;
+    return this;
+  }
 
   // 使用code获取对象
   public static Status formCode(Integer code) {

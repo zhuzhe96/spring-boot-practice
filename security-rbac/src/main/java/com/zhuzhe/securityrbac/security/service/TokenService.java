@@ -30,7 +30,7 @@ public class TokenService {
   private JwtConfig jwtConfig;
   public long SIXTY_MINUTE = 60L * 60 * 60;
 
-  /*解析token获得用户信息*/
+  /*从请求中解析用户信息 request->jwt->claims->user*/
   public UserPrincipal getUserPrincipal(HttpServletRequest request) {
     String jwt = jwtUtil.getJwtFromRequest(request);
     if (StringUtils.isNotBlank(jwt)) {
@@ -56,7 +56,7 @@ public class TokenService {
     redisUtil.deleteObject(redisKey);
   }
 
-  /*用户刷新， 刷新用户信息缓存时间和重新生成Token*/
+  /*检查用户是否接近过期, 是则刷新过期时间*/
   public void verifyTokenExpire(UserPrincipal userPrincipal) {
     long expireTime = userPrincipal.getExpireTime() == null ? 0 : userPrincipal.getExpireTime();
     long currentTime = System.currentTimeMillis();
@@ -75,7 +75,7 @@ public class TokenService {
     return jwtUtil.createJWT(claims);
   }
 
-  /*刷新用户*/
+  /*更新Redis中的用户*/
   public void refreshRedisToken(UserPrincipal userPrincipal) {
     userPrincipal.setLoginTime(new Date());
     var redisKey = getUserRedisToken(userPrincipal.getId());

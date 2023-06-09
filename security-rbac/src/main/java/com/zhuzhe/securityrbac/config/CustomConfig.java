@@ -1,12 +1,11 @@
 package com.zhuzhe.securityrbac.config;
 
+import com.zhuzhe.securityrbac.entity.Permission;
 import com.zhuzhe.securityrbac.service.PermissionService;
-import com.zhuzhe.securityrbac.service.RoleService;
-import com.zhuzhe.securityrbac.service.UserService;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import java.io.Serializable;
-import java.util.Arrays;
+import java.util.List;
 import javax.crypto.SecretKey;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -21,31 +20,20 @@ import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactor
 import org.springframework.data.redis.core.RedisTemplate;
 import org.springframework.data.redis.serializer.GenericJackson2JsonRedisSerializer;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.springframework.http.MediaType;
-import org.springframework.http.converter.json.MappingJackson2HttpMessageConverter;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
-import org.springframework.web.client.RestTemplate;
 
 @Slf4j
 @Configuration
-@AutoConfigureAfter(RedisAutoConfiguration.class)//执行在Redis配置之后
-@EnableConfigurationProperties(JwtConfig.class)// 配置参数
-@EnableCaching// 启用缓存
+@EnableCaching//将方法返回值缓存起来
+@AutoConfigureAfter(RedisAutoConfiguration.class)//先加载Redis的配置再加载当前的配置
+@EnableConfigurationProperties(JwtConfig.class)//启动JwtConfig读取配置文件
 public class CustomConfig {
   @Autowired
   private JwtConfig jwtConfig;
+  @Autowired
+  private PermissionService permissionService;
 
-  // HTTP的返回模板
-  @Bean
-  public RestTemplate restTemplate(){
-    var template = new RestTemplate();
-    var converter = new MappingJackson2HttpMessageConverter();
-    converter.setSupportedMediaTypes(Arrays.asList(MediaType.TEXT_HTML,MediaType.TEXT_PLAIN));
-    template.getMessageConverters().add(converter);
-    return template;
-  }
-
-  // Redis模板的序列化方式
+  /*Redis值序列化方式*/
   @Bean
   public RedisTemplate<String, Serializable> redisTemplate(LettuceConnectionFactory factory){
     var template = new RedisTemplate<String, Serializable>();
@@ -55,7 +43,7 @@ public class CustomConfig {
     return template;
   }
 
-  // 加密方式
+  //生成签名
   @Bean(name = "signatureKey")
   public SecretKey secretKey(){
     var signature = jwtConfig.getSignature();
@@ -63,18 +51,17 @@ public class CustomConfig {
     return Keys.hmacShaKeyFor(decode);
   }
 
-  // 用户密码加密方式
+  //加密工具
   @Bean
   public BCryptPasswordEncoder encoder(){
     return new BCryptPasswordEncoder();
   }
 
   @Bean
-  public CommandLineRunner commandLineRunner(UserService userService, RoleService roleService, PermissionService permissionService){
+  public CommandLineRunner commandLineRunner(){
     return args -> {
-      log.info("userList = {}", userService.list());
-      log.info("roleList = {}", roleService.list());
-      log.info("permissionList = {}", permissionService.list());
+      var userPermissions = permissionService.getUserPermissions(1L);
+      log.info("userPermissions={}",userPermissions);
     };
   }
 }
