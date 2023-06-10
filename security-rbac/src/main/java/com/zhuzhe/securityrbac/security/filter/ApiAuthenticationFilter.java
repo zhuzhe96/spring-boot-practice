@@ -23,6 +23,7 @@ import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
+/*登录认证，校验表单然后提交给Manager去验证登录*/
 @Slf4j
 public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilter {
 
@@ -32,23 +33,9 @@ public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilte
   public ApiAuthenticationFilter(AuthenticationManager authenticationManager,
       String loginProcessingUrl) {
     super(authenticationManager);
-    // 拦截该请求并进行登陆校验
     setFilterProcessesUrl(loginProcessingUrl);
   }
 
-  /**
-   * 对用户提交的认证信息进行验证
-   * @param request
-   * @param response
-   * @return
-   * @throws AuthenticationException
-   *
-   * 1. 从HttpServletRequest对象中获取用户名和密码
-   * 2. 构建UsernamePasswordAuthenticationToken
-   * 3. 调用AuthenticationManager的authenticate方法进行身份验证，将token传递进去
-   * 4. 验证成功：authenticate方法返回一个Authentication
-   * 5. 返回Authentication
-   */
   @Override
   public Authentication attemptAuthentication(HttpServletRequest request,
       HttpServletResponse response) throws AuthenticationException {
@@ -65,7 +52,6 @@ public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     // 登录校验
     if (StringUtils.isNotBlank(username) && StringUtils.isNotBlank(password)){
       var userPrincipal = UserPrincipal.builder().username(username).password(password).build();
-      // 将登录对象转为自定义的Authentication
       ApiAuthenticationToken apiAuthenticationToken = ApiAuthenticationToken.unauthenticated(userPrincipal);
       var authenticate = getAuthenticationManager().authenticate(apiAuthenticationToken);
       SecurityContextHolder.getContext().setAuthentication(authenticate);
@@ -78,7 +64,7 @@ public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilte
   /*校验成功时的处理*/
   @Override
   protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
-      FilterChain chain, Authentication authentication) throws IOException, ServletException {
+      FilterChain chain, Authentication authentication) throws IOException {
     log.info("[ApiAuthenticationFilter]登陆成功,开始发放令牌");
     SecurityContextHolder.getContext().setAuthentication(authentication);
     ApiAuthenticationToken apiAuthenticationToken = (ApiAuthenticationToken)authentication;

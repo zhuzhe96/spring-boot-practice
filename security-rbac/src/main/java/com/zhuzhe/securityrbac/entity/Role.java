@@ -16,6 +16,8 @@ public class Role extends BaseEntity{
 
   @TableField("`name`")
   private String name;
+  @TableField("`key`")
+  private String key;
   @TableField("`desc`")
   private String desc;
   @TableField("`status`")

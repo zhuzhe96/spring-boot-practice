@@ -21,5 +21,6 @@ public class UserPrincipal implements Serializable {
   private Date updateTime;
   private Date loginTime;
   private Long expireTime;
+  private Set<String> roles;
   private Set<String> permissions;
 }

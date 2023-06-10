@@ -16,9 +16,11 @@ import java.util.Map;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.web.filter.OncePerRequestFilter;
 
+/*身份校验，校验用户是否登录*/
 @Slf4j
 public class JwtAuthenticationFilter extends OncePerRequestFilter {
   @Autowired
@@ -26,7 +28,6 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
   @Autowired
   private UserService userService;
 
-  /*访问校验: 在登陆成功之后*/
   @Override
   protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response,
       FilterChain filterChain) throws ServletException, IOException {
@@ -49,7 +50,9 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
         // 判断账号密码
         if (StringUtils.isNotBlank(userPrincipal.getUsername()) && StringUtils.isNotBlank(userPrincipal.getPassword())){
-          authenticationToken = ApiAuthenticationToken.authenticated(userPrincipal, null);
+          var authorities = userPrincipal.getRoles().stream()
+              .map(SimpleGrantedAuthority::new).toList();
+          authenticationToken = ApiAuthenticationToken.authenticated(userPrincipal, authorities);
         }
         // 更新用户Token
         SecurityContextHolder.getContext().setAuthentication(authenticationToken);

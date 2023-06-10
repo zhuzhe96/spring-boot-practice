@@ -1,11 +1,10 @@
 package com.zhuzhe.securityrbac.config;
 
-import com.zhuzhe.securityrbac.entity.Permission;
 import com.zhuzhe.securityrbac.service.PermissionService;
+import com.zhuzhe.securityrbac.service.RoleService;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import java.io.Serializable;
-import java.util.List;
 import javax.crypto.SecretKey;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,6 +29,8 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class CustomConfig {
   @Autowired
   private JwtConfig jwtConfig;
+  @Autowired
+  private RoleService roleService;
   @Autowired
   private PermissionService permissionService;
 
@@ -62,6 +63,8 @@ public class CustomConfig {
     return args -> {
       var userPermissions = permissionService.getUserPermissions(1L);
       log.info("userPermissions={}",userPermissions);
+      var userRoles = roleService.getUserRoles(1L);
+      log.info("userRoles={}",userRoles);
     };
   }
 }
