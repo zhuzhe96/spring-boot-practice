@@ -42,6 +42,13 @@ public class TokenService {
     return null;
   }
 
+  /*根据用户id获取Redis信息*/
+  public UserPrincipal getUserPrincipal(Long userId) {
+    String redisKey = getUserRedisToken(userId);
+    return redisUtil.getCacheObject(redisKey);
+  }
+
+
   /*设置用户信息到Redis*/
   public void setUserPrincipal(UserPrincipal userPrincipal) {
     if (userPrincipal != null && userPrincipal.getId() != null) {
@@ -51,6 +58,7 @@ public class TokenService {
   }
 
   /*从Redis中删除用户信息*/
+  @SuppressWarnings("unused")
   public void invalidateToken(Long userId) {
     String redisKey = getUserRedisToken(userId);
     redisUtil.deleteObject(redisKey);

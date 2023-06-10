@@ -27,6 +27,7 @@ import org.springframework.security.web.access.AccessDeniedHandler;
 @EnableWebSecurity//开启Security功能
 @EnableMethodSecurity//开启后端验证, 对所有执行方法判断权限
 public class SecurityConfig {
+
   @Autowired
   private CustomPermissionEvaluator permissionEvaluator;
   @Autowired
@@ -82,11 +83,14 @@ public class SecurityConfig {
   @Bean
   public AccessDeniedHandler accessDeniedHandler() {
     return (request, response, accessDeniedException) -> {
-      log.info("[authenticationEntryPoint]: 访问未授权, 异常信息={}", accessDeniedException.getMessage());
+      log.info("[authenticationEntryPoint]: 访问未授权, 异常信息={}",
+          accessDeniedException.getMessage());
       response.setContentType("application/json");
       response.setCharacterEncoding("utf-8");
       response.setStatus(401);
-      new ObjectMapper().writeValue(response.getWriter(), Map.of("code",Status.SC_ACCESS_DENIED.getCode(),"message", Status.SC_ACCESS_DENIED.getMessage()));
+      new ObjectMapper().writeValue(response.getWriter(),
+          Map.of("code", Status.SC_ACCESS_DENIED.getCode(), "message",
+              Status.SC_ACCESS_DENIED.getMessage()));
     };
   }
 
@@ -98,19 +102,20 @@ public class SecurityConfig {
       response.setContentType("application/json");
       response.setCharacterEncoding("utf-8");
       response.setStatus(401);
-      new ObjectMapper().writeValue(response.getWriter(), Map.of(Status.NOT_LOGIN.getCode(), Status.NOT_LOGIN.getMessage()));
+      new ObjectMapper().writeValue(response.getWriter(),
+          Map.of(Status.NOT_LOGIN.getCode(), Status.NOT_LOGIN.getMessage()));
     };
   }
 
   /*放行所有不需要登录就可以访问的请求*/
   @Bean
-  public WebSecurityCustomizer webSecurityCustomizer(){
-    return web -> web.ignoring().requestMatchers("/permit","/user/register");
+  public WebSecurityCustomizer webSecurityCustomizer() {
+    return web -> web.ignoring().requestMatchers("/permit", "/user/register");
   }
 
   /*手动实例化方法级别的安全控制对象,并设置上自定义的权限评估器*/
   @Bean
-  public MethodSecurityExpressionHandler expressionHandler(){
+  public MethodSecurityExpressionHandler expressionHandler() {
     var handler = new DefaultMethodSecurityExpressionHandler();
     // 使用自定义的权限评估器
     handler.setPermissionEvaluator(permissionEvaluator);

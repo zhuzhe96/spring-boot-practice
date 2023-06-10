@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 public class PreAuthorizeController {
 
   @GetMapping("product")
-  @PreAuthorize("hasRole('admin') and hasPermission('', 'product')")
+  @PreAuthorize("hasRole('operator') and hasPermission('', 'product') and hasPermission('','content')")
   public ResponseEntity<?> productOnly(){
     return ResponseEntity.ok(Map.of("code", Status.SUCCESS.getCode(), "message",
         Status.SUCCESS.custStatusMsg("产品管理接口").getMessage()));

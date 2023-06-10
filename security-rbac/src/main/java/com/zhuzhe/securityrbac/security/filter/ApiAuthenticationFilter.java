@@ -61,7 +61,7 @@ public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilte
     }
   }
 
-  /*校验成功时的处理*/
+  /*校验成功时的处理: 将一份信息保存到Redis持久化,一份信息保存到SecurityContext方便使用*/
   @Override
   protected void successfulAuthentication(HttpServletRequest request, HttpServletResponse response,
       FilterChain chain, Authentication authentication) throws IOException {

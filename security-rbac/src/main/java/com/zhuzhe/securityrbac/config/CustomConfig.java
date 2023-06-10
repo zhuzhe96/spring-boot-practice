@@ -1,7 +1,5 @@
 package com.zhuzhe.securityrbac.config;
 
-import com.zhuzhe.securityrbac.service.PermissionService;
-import com.zhuzhe.securityrbac.service.RoleService;
 import io.jsonwebtoken.io.Decoders;
 import io.jsonwebtoken.security.Keys;
 import java.io.Serializable;
@@ -29,10 +27,6 @@ import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 public class CustomConfig {
   @Autowired
   private JwtConfig jwtConfig;
-  @Autowired
-  private RoleService roleService;
-  @Autowired
-  private PermissionService permissionService;
 
   /*Redis值序列化方式*/
   @Bean
@@ -60,11 +54,6 @@ public class CustomConfig {
 
   @Bean
   public CommandLineRunner commandLineRunner(){
-    return args -> {
-      var userPermissions = permissionService.getUserPermissions(1L);
-      log.info("userPermissions={}",userPermissions);
-      var userRoles = roleService.getUserRoles(1L);
-      log.info("userRoles={}",userRoles);
-    };
+    return args -> log.info("应用启动...");
   }
 }

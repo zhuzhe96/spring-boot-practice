@@ -33,6 +33,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
       FilterChain filterChain) throws ServletException, IOException {
     log.info("[JwtAuthenticationFilter]拦截uri={}",request.getRequestURI());
     try {
+      // 访问资源时的登陆状态校验 & 用户信息持久化到Redis
       var userPrincipal = tokenService.getUserPrincipal(request);
       if (userPrincipal!=null){
         // 校验用户是否有效
@@ -40,7 +41,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         if (user==null){
           throw new SecurityException(Status.USERNAME_NOT_FOUND);
         }
-        // 更新用户信息
+        // 同步数据库中的用户
         BeanUtils.copyProperties(user, userPrincipal);
         log.info("复制后的userPrincipal={}",userPrincipal);
 
@@ -48,13 +49,12 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
         ApiAuthenticationToken authenticationToken = null;
         tokenService.verifyTokenExpire(userPrincipal);
 
-        // 判断账号密码
+        // 更新用户的SecurityContext中的对象
         if (StringUtils.isNotBlank(userPrincipal.getUsername()) && StringUtils.isNotBlank(userPrincipal.getPassword())){
           var authorities = userPrincipal.getRoles().stream()
               .map(SimpleGrantedAuthority::new).toList();
           authenticationToken = ApiAuthenticationToken.authenticated(userPrincipal, authorities);
         }
-        // 更新用户Token
         SecurityContextHolder.getContext().setAuthentication(authenticationToken);
       }else {
         log.info("[JwtAuthenticationFilter]Token不存在, 进入下一个过滤器");
