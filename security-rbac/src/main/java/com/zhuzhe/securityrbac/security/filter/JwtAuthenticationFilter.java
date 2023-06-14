@@ -33,7 +33,7 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
       FilterChain filterChain) throws ServletException, IOException {
     log.info("[JwtAuthenticationFilter]拦截uri={}",request.getRequestURI());
     try {
-      // 访问资源时的登陆状态校验 & 用户信息持久化到Redis
+      // 每次访问时先从Redis获得用户，再去构建这个用户线程的SecurityContext
       var userPrincipal = tokenService.getUserPrincipal(request);
       if (userPrincipal!=null){
         // 校验用户是否有效

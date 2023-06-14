@@ -40,7 +40,32 @@ public class JwtUtil {
   @Autowired
   private SecretKey signatureKey;
 
-  // 创建JWT并存储到Redis
+  // 生成jwt
+  public String createJWT(Map<String, Object> claims) {
+    return Jwts.builder().setClaims(claims).signWith(signatureKey).compact();
+  }
+
+  // 从请求中获得JWT
+  public String getJwtFromRequest(HttpServletRequest request) {
+    String bearerToken = request.getHeader(Consts.AUTHORIZATION_HEAD);
+    if (StringUtils.isNotBlank(bearerToken) && bearerToken.startsWith("Bearer ")) {
+      return bearerToken.substring(7);
+    }
+    return null;
+  }
+
+  // 解析jwt
+  public Claims parseJWTToClaims(String jwt) {
+    try {
+      return Jwts.parserBuilder().setSigningKey(signatureKey).build().parseClaimsJws(jwt).getBody();
+    } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException |
+             SignatureException | IllegalArgumentException e) {
+      log.error("Token 无效");
+      throw new RuntimeException(e);
+    }
+  }
+
+  // todo 创建JWT并存储到Redis
   public String createJWT(Long id, String subject, String sessionKey,
       Collection<? extends GrantedAuthority> authorities) {
     var now = new Date();
@@ -65,7 +90,7 @@ public class JwtUtil {
     return jwt;
   }
 
-  // 计算到期时间
+  // todo 计算到期时间
   private Date getExpirationDate(Date now, long ttl) {
     var calendar = Calendar.getInstance();
     calendar.setTime(now);
@@ -73,29 +98,13 @@ public class JwtUtil {
     return calendar.getTime();
   }
 
-  // 通过claims创建JWT
-  public String createJWT(Map<String, Object> claims) {
-    return Jwts.builder().setClaims(claims).signWith(signatureKey).compact();
-  }
-
-  // 解析JWT为Claims
-  public Claims parseJWTToClaims(String jwt) {
-    try {
-      return Jwts.parserBuilder().setSigningKey(signatureKey).build().parseClaimsJws(jwt).getBody();
-    } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException |
-             SignatureException | IllegalArgumentException e) {
-      log.error("Token 无效");
-      throw new RuntimeException(e);
-    }
-  }
-
-  // 生成JWT签名
+  // todo 生成JWT签名
   public String generateSignature() {
     var secretKey = Keys.secretKeyFor(SignatureAlgorithm.HS256);
     return Encoders.BASE64.encode(secretKey.getEncoded());
   }
 
-  // 解析JWT
+  // todo 解析JWT
   public Claims parseJWT(String jwt) {
     try {
       var claims = Jwts.parserBuilder().setSigningKey(signatureKey).build().parseClaimsJws(jwt)
@@ -122,29 +131,20 @@ public class JwtUtil {
     }
   }
 
-  // 设置JWT过期
+  // todo 设置JWT过期
   public void invalidateJWT(HttpServletRequest request) {
     var jwt = getJwtFromRequest(request);
     var id = getIdFromJWT(jwt);
     stringRedisTemplate.delete(Consts.REDIS_JWT_PREFIX + id);
   }
 
-  // 从请求中获得JWT
-  public String getJwtFromRequest(HttpServletRequest request) {
-    String bearerToken = request.getHeader(Consts.AUTHORIZATION_HEAD);
-    if (StringUtils.isNotBlank(bearerToken) && bearerToken.startsWith("Bearer ")) {
-      return bearerToken.substring(7);
-    }
-    return null;
-  }
-
-  // 从jwt中获取用户id
+  // todo 从jwt中获取用户id
   public String getIdFromJWT(String jwt) {
     var claims = parseJWT(jwt);
     return claims.getId();
   }
 
-  // 从jwt中获取用户名
+  // todo 从jwt中获取用户名
   public String getUsernameFromJWT(String jwt) {
     var claims = parseJWT(jwt);
     return claims.getSubject();

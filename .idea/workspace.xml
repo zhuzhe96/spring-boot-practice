@@ -4,27 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 为Security-RBAC模块加上后端方法访问校验,同时校验角色和具体权限">
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/RoleController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/UserRole.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/mapper/UserRoleMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/UserRoleService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/service/impl/UserRoleServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/mapper/UserRoleMapper.xml" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 更改验证逻辑，使得当后端修改角色、权限时可以及时响应到当前的所有用户。">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/CustomConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/CustomConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/PreAuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/PreAuthorizeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/vo/UserPrincipal.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/vo/UserPrincipal.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationManager.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationToken.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationToken.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/CustomPermissionEvaluator.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/CustomPermissionEvaluator.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/ApiAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/ApiAuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/service/PermissionService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/service/TokenService.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/service/TokenService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/test/java/com/zhuzhe/securityrbac/SecurityRbacApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/test/java/com/zhuzhe/securityrbac/SecurityRbacApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -133,7 +120,7 @@
       <recent name="com.zhuzhe.batchprocessing.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SecurityRbacApplication">
+  <component name="RunManager" selected="JUnit.SecurityRbacApplicationTests.testUserInfo">
     <configuration name="ApiAuthFailureHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zhuzhe.securityrbac.handler.ApiAuthFailureHandler" />
       <module name="security-rbac" />
@@ -176,22 +163,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="actuator-service" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zhuzhe.actuatorservice.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.zhuzhe.actuatorservice" />
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.actuatorservice.ActuatorServiceApplicationTests" />
-      <option name="METHOD_NAME" value="shouldReturn200WhenSendingRequestToManagementEndpoint" />
-      <option name="TEST_OBJECT" value="method" />
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="SecurityRbacApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="security-rbac" />
       <extension name="coverage">
@@ -203,6 +174,22 @@
       <option name="PACKAGE_NAME" value="com.zhuzhe.securityrbac" />
       <option name="MAIN_CLASS_NAME" value="com.zhuzhe.securityrbac.SecurityRbacApplicationTests" />
       <option name="METHOD_NAME" value="contextLoads" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SecurityRbacApplicationTests.testUserInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="security-rbac" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhuzhe.securityrbac.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.zhuzhe.securityrbac" />
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.securityrbac.SecurityRbacApplicationTests" />
+      <option name="METHOD_NAME" value="testUserInfo" />
       <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
@@ -316,9 +303,9 @@
     <list>
       <item itemvalue="Application.ApiAuthFailureHandler" />
       <item itemvalue="Application.PoiUtils" />
+      <item itemvalue="JUnit.SecurityRbacApplicationTests.testUserInfo" />
       <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
-      <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" />
       <item itemvalue="Spring Boot.SecurityRbacApplication" />
       <item itemvalue="Spring Boot.BatchProcessingApplication" />
       <item itemvalue="Spring Boot.MessagingJmsApplication" />
@@ -337,11 +324,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="JUnit.SecurityRbacApplicationTests.testUserInfo" />
         <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
         <item itemvalue="Application.ApiAuthFailureHandler" />
         <item itemvalue="Application.PoiUtils" />
         <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
-        <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToManagementEndpoint" />
       </list>
     </recent_temporary>
   </component>
@@ -372,7 +359,9 @@
       <workItem from="1686298112476" duration="1661000" />
       <workItem from="1686306256889" duration="5339000" />
       <workItem from="1686363884202" duration="10892000" />
-      <workItem from="1686379192545" duration="12547000" />
+      <workItem from="1686379192545" duration="12852000" />
+      <workItem from="1686531727556" duration="8968000" />
+      <workItem from="1686548833874" duration="3718000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -542,7 +531,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686382103517</updated>
     </task>
-    <option name="localTasksCounter" value="25" />
+    <task id="LOCAL-00025" summary="feature: 更改验证逻辑，使得当后端修改角色、权限时可以及时响应到当前的所有用户。">
+      <created>1686392393480</created>
+      <option name="number" value="00025" />
+      <option name="presentableId" value="LOCAL-00025" />
+      <option name="project" value="LOCAL" />
+      <updated>1686392393480</updated>
+    </task>
+    <option name="localTasksCounter" value="26" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -572,7 +568,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="修改gitgnore,避免把模块中的HELP.md文件给删除了" />
     <MESSAGE value="修改文件,使得可以在gitee上面查看" />
     <MESSAGE value="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。" />
     <MESSAGE value="feature: 回滚后提交的代码，这里将把master和new-module进行同步。" />
@@ -597,7 +592,8 @@
     <MESSAGE value="process: 完成部分Security+JWT的权限校验代码." />
     <MESSAGE value="feature: 完成Security+JWT的用户登录校验" />
     <MESSAGE value="feature: 为Security-RBAC模块加上后端方法访问校验,同时校验角色和具体权限" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 为Security-RBAC模块加上后端方法访问校验,同时校验角色和具体权限" />
+    <MESSAGE value="feature: 更改验证逻辑，使得当后端修改角色、权限时可以及时响应到当前的所有用户。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 更改验证逻辑，使得当后端修改角色、权限时可以及时响应到当前的所有用户。" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
