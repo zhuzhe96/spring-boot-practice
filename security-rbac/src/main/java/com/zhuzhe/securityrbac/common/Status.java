@@ -2,8 +2,10 @@ package com.zhuzhe.securityrbac.common;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
 
 @Getter
+@NoArgsConstructor
 @AllArgsConstructor
 public enum Status {
   SUCCESS(200, "操作成功!"),
@@ -27,7 +29,7 @@ public enum Status {
   KICK_OUT_SELF(5004, "无法手动踢出自己, 请尝试退出登陆操作!");
 
 
-  private final Integer code;
+  private Integer code;
   private String message;
 
   public Status custStatusMsg(String message) {
@@ -49,6 +51,6 @@ public enum Status {
 
   @Override
   public String toString() {
-    return String.format("Status:{code=%s, message=%s}", getCode(), getMessage());
+    return String.format("{code=%s, message=%s}", getCode(), getMessage());
   }
 }

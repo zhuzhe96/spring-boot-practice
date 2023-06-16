@@ -1,6 +1,7 @@
 package com.zhuzhe.securityrbac.security.filter;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
+import com.zhuzhe.securityrbac.common.ApiResponse;
 import com.zhuzhe.securityrbac.common.Status;
 import com.zhuzhe.securityrbac.entity.vo.UserPrincipal;
 import com.zhuzhe.securityrbac.exception.SecurityException;
@@ -110,7 +111,7 @@ public class ApiAuthenticationFilter extends UsernamePasswordAuthenticationFilte
                   Status.USERNAME_PASSWORD_ERROR.getMessage()));
     } else if (e instanceof LockedException) {
       new ObjectMapper()
-          .writeValue(response.getWriter(), Map.of(Status.USER_DISABLE.getCode(), e.getMessage()));
+          .writeValue(response.getWriter(), ApiResponse.ofStatus(Status.USER_DISABLE));
     } else if (e instanceof BadCredentialsException) {
       new ObjectMapper()
           .writeValue(response.getWriter(), Map.of(Status.USERNAME_PASSWORD_ERROR.getCode(), Status.USERNAME_PASSWORD_ERROR.getMessage()));
