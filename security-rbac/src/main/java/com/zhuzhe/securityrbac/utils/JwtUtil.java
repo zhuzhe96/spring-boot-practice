@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.core.toolkit.StringUtils;
 import com.zhuzhe.securityrbac.config.JwtConfig;
 import com.zhuzhe.securityrbac.common.Consts;
 import com.zhuzhe.securityrbac.common.Status;
+import com.zhuzhe.securityrbac.exception.SecurityException;
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.ExpiredJwtException;
 import io.jsonwebtoken.Jwts;
@@ -30,6 +31,7 @@ import org.springframework.stereotype.Component;
 
 @Slf4j
 @Component
+@SuppressWarnings("unused")
 @EnableConfigurationProperties(JwtConfig.class)
 public class JwtUtil {
 
@@ -58,10 +60,21 @@ public class JwtUtil {
   public Claims parseJWTToClaims(String jwt) {
     try {
       return Jwts.parserBuilder().setSigningKey(signatureKey).build().parseClaimsJws(jwt).getBody();
-    } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException |
-             SignatureException | IllegalArgumentException e) {
-      log.error("Token 无效");
-      throw new RuntimeException(e);
+    } catch (ExpiredJwtException e) {
+      log.error("Token已过期");
+      throw new SecurityException(Status.SC_UNAUTHORIZED);
+    } catch (UnsupportedJwtException e) {
+      log.error("不支持的Token");
+      throw new SecurityException(Status.TOKEN_PARSE_ERROR);
+    } catch (MalformedJwtException e) {
+      log.error("Token无效");
+      throw new SecurityException(Status.TOKEN_PARSE_ERROR);
+    } catch (SignatureException e) {
+      log.error("无效的Token签名");
+      throw new SecurityException(Status.TOKEN_PARSE_ERROR);
+    } catch (IllegalArgumentException e) {
+      log.error("Token参数不存在");
+      throw new SecurityException(Status.TOKEN_PARSE_ERROR);
     }
   }
 
@@ -115,13 +128,13 @@ public class JwtUtil {
       // 获取判断key是否过期
       var expire = stringRedisTemplate.getExpire(redisKey, TimeUnit.MILLISECONDS);
       if (Objects.isNull(expire) || expire <= 0) {
-        throw new SecurityException(Status.TOKEN_EXPIRED.toString());
+        throw new SecurityException(Status.TOKEN_EXPIRED);
       }
 
       // 检查redis中的JWT是否当前一致
       String token = stringRedisTemplate.opsForValue().get(redisKey);
       if (!StringUtils.equals(jwt, token)) {
-        throw new SecurityException(Status.TOKEN_OUT_OF_CTRL.toString());
+        throw new SecurityException(Status.TOKEN_OUT_OF_CTRL);
       }
       return claims;
     } catch (ExpiredJwtException | UnsupportedJwtException | MalformedJwtException |

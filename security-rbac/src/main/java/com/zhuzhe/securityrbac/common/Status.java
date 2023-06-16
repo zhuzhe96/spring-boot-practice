@@ -36,6 +36,7 @@ public enum Status {
   }
 
   // 使用code获取对象
+  @SuppressWarnings("unused")
   public static Status formCode(Integer code) {
     var statuses = Status.values();
     for (Status status : statuses) {

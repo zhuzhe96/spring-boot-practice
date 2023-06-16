@@ -103,7 +103,7 @@ public class SecurityConfig {
       response.setCharacterEncoding("utf-8");
       response.setStatus(401);
       new ObjectMapper().writeValue(response.getWriter(),
-          Map.of(Status.NOT_LOGIN.getCode(), Status.NOT_LOGIN.getMessage()));
+          Map.of(Status.NOT_LOGIN.getCode(), Status.ERROR.custStatusMsg("登陆失败")));
     };
   }
 

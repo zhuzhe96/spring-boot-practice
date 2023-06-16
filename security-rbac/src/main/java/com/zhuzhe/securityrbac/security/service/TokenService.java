@@ -18,10 +18,9 @@ import org.springframework.boot.context.properties.EnableConfigurationProperties
 import org.springframework.stereotype.Service;
 
 @Service
+@SuppressWarnings("unused")
 @EnableConfigurationProperties(JwtConfig.class)
 public class TokenService {
-  // token->jwt->claims->redis->user
-
   @Autowired
   private RedisUtil redisUtil;
   @Autowired
@@ -30,7 +29,12 @@ public class TokenService {
   private JwtConfig jwtConfig;
   public long SIXTY_MINUTE = 60L * 60 * 60;
 
-  /*从请求中解析用户信息 request->jwt->claims->user*/
+  /**
+   * 从请求中获取用户信息
+   * @param request 请求
+   * @return 用户信息
+   * request->jwt token->claims->userId->(Redis)user
+   */
   public UserPrincipal getUserPrincipal(HttpServletRequest request) {
     String jwt = jwtUtil.getJwtFromRequest(request);
     if (StringUtils.isNotBlank(jwt)) {
@@ -42,14 +46,23 @@ public class TokenService {
     return null;
   }
 
-  /*根据用户id获取Redis信息*/
+  /**
+   * 使用用户id获取用户信息
+   * @param userId 用户id
+   * @return 用户信息
+   * userId->get:(Redis)user
+   */
   public UserPrincipal getUserPrincipal(Long userId) {
     String redisKey = getUserRedisToken(userId);
     return redisUtil.getCacheObject(redisKey);
   }
 
 
-  /*设置用户信息到Redis*/
+  /**
+   * 设置用户信息
+   * @param userPrincipal 用户信息
+   * user->set:(Redis)user
+   */
   public void setUserPrincipal(UserPrincipal userPrincipal) {
     if (userPrincipal != null && userPrincipal.getId() != null) {
       String redisKey = getUserRedisToken(userPrincipal.getId());
@@ -57,14 +70,22 @@ public class TokenService {
     }
   }
 
-  /*从Redis中删除用户信息*/
+  /**
+   * 删除用户信息
+   * @param userId 用户id
+   * userId->delete:(Redis)user
+   */
   @SuppressWarnings("unused")
   public void invalidateToken(Long userId) {
     String redisKey = getUserRedisToken(userId);
     redisUtil.deleteObject(redisKey);
   }
 
-  /*检查用户是否接近过期, 是则刷新过期时间*/
+  /**
+   * 验证用户,快过期时就续期
+   * @param userPrincipal 用户信息
+   * user->verify:(Redis)user
+   */
   public void verifyTokenExpire(UserPrincipal userPrincipal) {
     long expireTime = userPrincipal.getExpireTime() == null ? 0 : userPrincipal.getExpireTime();
     long currentTime = System.currentTimeMillis();
@@ -73,7 +94,12 @@ public class TokenService {
     }
   }
 
-  /*根据用户信息生成Token*/
+  /**
+   * 创建签名
+   * @param userPrincipal 用户信息
+   * @return 签名
+   * user->claims->jwt token
+   */
   public String createJwt(UserPrincipal userPrincipal) {
     Map<String, Object> claims = new HashMap<>();
     refreshRedisToken(userPrincipal);
@@ -83,7 +109,11 @@ public class TokenService {
     return jwtUtil.createJWT(claims);
   }
 
-  /*更新Redis中的用户*/
+  /**
+   * 刷新用户
+   * @param userPrincipal 用户信息
+   * user->refresh:(Redis)user
+   */
   public void refreshRedisToken(UserPrincipal userPrincipal) {
     userPrincipal.setLoginTime(new Date());
     var redisKey = getUserRedisToken(userPrincipal.getId());
@@ -91,12 +121,20 @@ public class TokenService {
     redisUtil.setCacheObject(redisKey, userPrincipal, jwtConfig.getTtl(), TimeUnit.MILLISECONDS);
   }
 
-  /*解析jwt*/
+  /**
+   * 解析签名
+   * @return Claims
+   * jwt token->claims
+   */
   public Claims parseJwt(String jwt) {
     return jwtUtil.parseJWTToClaims(jwt);
   }
 
-  /*Redis Key*/
+  /**
+   * 获取用户的Key
+   * @return redisKey
+   * userId->(Redis)key
+   */
   public String getUserRedisToken(Long userId) {
     return Consts.REDIS_USER_PREFIX + userId;
   }
