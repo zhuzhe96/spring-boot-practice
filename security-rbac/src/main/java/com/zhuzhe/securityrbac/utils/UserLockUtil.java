@@ -24,7 +24,7 @@ public class UserLockUtil {
       retryCount = RETRY_COUNT;
     }else {
       retryCount--;
-      if (retryCount==0){
+      if (retryCount<=0){
         setLock(userId);
       }
       ttl = redisUtil.getExpire(retryKey);

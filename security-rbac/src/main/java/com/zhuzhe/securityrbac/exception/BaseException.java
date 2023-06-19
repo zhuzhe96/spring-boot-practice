@@ -1,5 +1,6 @@
 package com.zhuzhe.securityrbac.exception;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.zhuzhe.securityrbac.common.Status;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -8,6 +9,7 @@ import lombok.EqualsAndHashCode;
 @Data
 @AllArgsConstructor
 @EqualsAndHashCode(callSuper = true)
+@JsonIgnoreProperties({"stackTrace", "suppressed", "localizedMessage"})
 public class BaseException extends RuntimeException{
   private Integer code;
   private String message;

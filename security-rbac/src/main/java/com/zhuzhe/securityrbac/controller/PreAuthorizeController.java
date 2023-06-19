@@ -1,7 +1,6 @@
 package com.zhuzhe.securityrbac.controller;
 
-import com.zhuzhe.securityrbac.common.Status;
-import java.util.Map;
+import com.zhuzhe.securityrbac.common.ApiResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -15,7 +14,6 @@ public class PreAuthorizeController {
   @GetMapping("product")
   @PreAuthorize("hasRole('operator') and hasPermission('', 'product') and hasPermission('','content')")
   public ResponseEntity<?> productOnly(){
-    return ResponseEntity.ok(Map.of("code", Status.SUCCESS.getCode(), "message",
-        Status.SUCCESS.custStatusMsg("产品管理接口").getMessage()));
+    return ResponseEntity.ok(ApiResponse.ofSuccess("拥有operator角色和product权限, 可以访问"));
   }
 }

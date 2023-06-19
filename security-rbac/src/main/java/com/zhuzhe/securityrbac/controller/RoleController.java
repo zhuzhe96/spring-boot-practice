@@ -1,6 +1,7 @@
 package com.zhuzhe.securityrbac.controller;
 
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
+import com.zhuzhe.securityrbac.common.ApiResponse;
 import com.zhuzhe.securityrbac.entity.UserRole;
 import com.zhuzhe.securityrbac.service.UserRoleService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,7 +20,7 @@ public class RoleController {
   @PostMapping("bind")
   public ResponseEntity<?> bind(@RequestBody UserRole userRole) {
     userRoleService.save(userRole);
-    return ResponseEntity.ok(null);
+    return ResponseEntity.ok(ApiResponse.ofSuccess());
   }
 
   @DeleteMapping("unbind")
@@ -28,6 +29,6 @@ public class RoleController {
         new QueryWrapper<UserRole>()
             .eq("user_id", userRole.userId())
             .eq("role_id", userRole.roleId()));
-    return ResponseEntity.ok(null);
+    return ResponseEntity.ok(ApiResponse.ofSuccess());
   }
 }

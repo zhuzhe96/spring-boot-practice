@@ -60,10 +60,10 @@ public class ApiAuthenticationManager implements AuthenticationManager {
     if (!encoder.matches(password, presentPassword)) {
       // 登录失败时获取重试
       var retryCount = userLockUtil.getRetryCount(user.getId());
-      if (retryCount!=0)
-        throw new SecurityException(Status.USERNAME_PASSWORD_ERROR.custStatusMsg("用户名或密码错误，剩余登录次数: "+retryCount));
+      if (retryCount>0)
+        throw new SecurityException(Status.USERNAME_PASSWORD_ERROR.getCode(), "用户名或密码错误，剩余登录次数: "+retryCount, null);
       else
-        throw new SecurityException(Status.USERNAME_PASSWORD_ERROR.custStatusMsg("用户名或密码错误，重试次数用完,用户已进入锁定."));
+        throw new SecurityException(Status.USERNAME_PASSWORD_ERROR.getCode(), "用户名或密码错误，重试次数用完,用户已进入锁定.", null);
     }
 
     var address = apiAuthenticationToken.getUserPrincipal().getAddress();
