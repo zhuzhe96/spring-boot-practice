@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 安装官网编写基础的hateoas接口">
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 完善heteoas的REST相关描述">
+      <change afterPath="$PROJECT_DIR$/rest-hateoas/imgs/中间服务器.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-hateoas/imgs/客户端-服务器.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-hateoas/imgs/无状态.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-hateoas/imgs/缓存.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rest-hateoas/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/rest-hateoas/HELP.md" afterDir="false" />
     </list>
@@ -72,7 +76,7 @@
     "WebServerToolWindowFactoryState": "false",
     "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/git_project/test-spring/security-rbac/img",
+    "last_opened_file_path": "E:/git_project/test-spring/rest-hateoas/imgs",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,11 +101,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring\rest-hateoas\imgs" />
       <recent name="E:\git_project\test-spring\security-rbac\img" />
       <recent name="E:\git_project\test-spring\security-rbac\src\main\resources\mapper" />
       <recent name="E:\git_project\test-spring\batch-processing\src\main\resources\mapper" />
       <recent name="E:\git_project\test-spring\batch-processing" />
-      <recent name="E:\git_project\test-spring\messaging-jms\activemq-artemis-docker-compose" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\git_project\test-spring\batch-processing" />
@@ -378,7 +382,7 @@
       <workItem from="1687232051963" duration="1872000" />
       <workItem from="1687244202846" duration="565000" />
       <workItem from="1687244851861" duration="3245000" />
-      <workItem from="1687251387742" duration="4584000" />
+      <workItem from="1687251387742" duration="9630000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -625,7 +629,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687252007939</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="doc: 完善heteoas的REST相关描述">
+      <created>1687262922720</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1687262922720</updated>
+    </task>
+    <option name="localTasksCounter" value="37" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -655,7 +666,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 增加neo4j数据库的模块实现代码,存在一个问题,就是role的关联不起作用" />
     <MESSAGE value="fix: 解决role没有尝试关联关系的bug" />
     <MESSAGE value="feature: 加一个新的数据校验的模块" />
     <MESSAGE value="feature: 完善数据校验模块的内容，包含字段校验，自定义校验器，校验异常统一处理，接口返回体封装。" />
@@ -680,7 +690,8 @@
     <MESSAGE value="doc: 给rbac模块加了一些描述" />
     <MESSAGE value="feature: 加一个新模块, 用于展示REST风格中的超媒体格式.同时更改父pom中spring-boot-starter-parent的版本提升到3.1.0" />
     <MESSAGE value="feature: 安装官网编写基础的hateoas接口" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 安装官网编写基础的hateoas接口" />
+    <MESSAGE value="doc: 完善heteoas的REST相关描述" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: 完善heteoas的REST相关描述" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
