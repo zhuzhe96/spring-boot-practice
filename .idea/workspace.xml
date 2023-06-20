@@ -4,11 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="fix: 重新修改返回格式,使用统一的状态码和返回体.同时新增退出登陆和注册接口(注册接口还在开发中,存在bug)">
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="fix: 修复了注册失败的问题">
+      <change afterPath="$PROJECT_DIR$/security-rbac/img/Jwt加密与解析.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/img/Security+jwt.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/img/Security时序图.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/security-rbac/img/Security调用链.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ResponseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ResponseUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/RoleController.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,7 +77,7 @@
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/git_project/test-spring/security-rbac/src/main/resources/mapper&quot;,
+    &quot;last_opened_file_path&quot;: &quot;E:/git_project/test-spring/security-rbac/img&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
@@ -99,11 +102,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring\security-rbac\img" />
       <recent name="E:\git_project\test-spring\security-rbac\src\main\resources\mapper" />
       <recent name="E:\git_project\test-spring\batch-processing\src\main\resources\mapper" />
       <recent name="E:\git_project\test-spring\batch-processing" />
       <recent name="E:\git_project\test-spring\messaging-jms\activemq-artemis-docker-compose" />
-      <recent name="E:\git_project\test-spring\messaging-rabbitmq" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\git_project\test-spring\batch-processing" />
@@ -368,6 +371,8 @@
       <workItem from="1686912849516" duration="1992000" />
       <workItem from="1687143039755" duration="11894000" />
       <workItem from="1687159694131" duration="17211000" />
+      <workItem from="1687225758043" duration="4611000" />
+      <workItem from="1687232051963" duration="776000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -572,7 +577,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687175385682</updated>
     </task>
-    <option name="localTasksCounter" value="30" />
+    <task id="LOCAL-00030" summary="fix: 修复了注册失败的问题">
+      <created>1687226173760</created>
+      <option name="number" value="00030" />
+      <option name="presentableId" value="LOCAL-00030" />
+      <option name="project" value="LOCAL" />
+      <updated>1687226173760</updated>
+    </task>
+    <option name="localTasksCounter" value="31" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -602,7 +614,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: messaging-redis增加Redis的消息发送接收功能。" />
     <MESSAGE value="feature: 加一个消息队列的模块" />
     <MESSAGE value="feature: 完成RabbitMQ消息队列的功能开发，在官网的接收基础上增加了支持对象的传递、支持消息重试机制、支持消息重试超过次数后由死信队列处理的逻辑。并调通整个流程，附加了RabbitMQ的配置导出文件。" />
     <MESSAGE value="feature: 新增一个访问neo4j数据库的模块" />
@@ -627,7 +638,8 @@
     <MESSAGE value="feature: 增加rbac的登陆限制,包括异地登陆,重试次数" />
     <MESSAGE value="style: 更改代码样式，改为统一返回结构&#10;1. 正常返回：ResponseEntity 和 ApiResponse&#10;2. 异常返回：SecurityException" />
     <MESSAGE value="fix: 重新修改返回格式,使用统一的状态码和返回体.同时新增退出登陆和注册接口(注册接口还在开发中,存在bug)" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 重新修改返回格式,使用统一的状态码和返回体.同时新增退出登陆和注册接口(注册接口还在开发中,存在bug)" />
+    <MESSAGE value="fix: 修复了注册失败的问题" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 修复了注册失败的问题" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
