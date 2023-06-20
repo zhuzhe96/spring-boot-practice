@@ -4,12 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加一个新模块, 用于展示REST风格中的超媒体格式.同时更改父pom中spring-boot-starter-parent的版本提升到3.1.0">
-      <change afterPath="$PROJECT_DIR$/rest-hateoas/src/main/java/com/zhuzhe/resthateoas/controller/GreetingController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest-hateoas/src/main/java/com/zhuzhe/resthateoas/entity/Greeting.java" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 安装官网编写基础的hateoas接口">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rest-hateoas/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/rest-hateoas/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-hateoas/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/rest-hateoas/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -381,7 +378,7 @@
       <workItem from="1687232051963" duration="1872000" />
       <workItem from="1687244202846" duration="565000" />
       <workItem from="1687244851861" duration="3245000" />
-      <workItem from="1687251387742" duration="575000" />
+      <workItem from="1687251387742" duration="4584000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -621,7 +618,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687248801118</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="feature: 安装官网编写基础的hateoas接口">
+      <created>1687252007939</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1687252007939</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -651,7 +655,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 新增一个访问neo4j数据库的模块" />
     <MESSAGE value="feature: 增加neo4j数据库的模块实现代码,存在一个问题,就是role的关联不起作用" />
     <MESSAGE value="fix: 解决role没有尝试关联关系的bug" />
     <MESSAGE value="feature: 加一个新的数据校验的模块" />
@@ -676,7 +679,8 @@
     <MESSAGE value="fix: 修复了注册失败的问题" />
     <MESSAGE value="doc: 给rbac模块加了一些描述" />
     <MESSAGE value="feature: 加一个新模块, 用于展示REST风格中的超媒体格式.同时更改父pom中spring-boot-starter-parent的版本提升到3.1.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 加一个新模块, 用于展示REST风格中的超媒体格式.同时更改父pom中spring-boot-starter-parent的版本提升到3.1.0" />
+    <MESSAGE value="feature: 安装官网编写基础的hateoas接口" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 安装官网编写基础的hateoas接口" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
