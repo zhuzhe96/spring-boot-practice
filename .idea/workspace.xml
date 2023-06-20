@@ -4,26 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="style: 更改代码样式，改为统一返回结构&#10;1. 正常返回：ResponseEntity 和 ApiResponse&#10;2. 异常返回：SecurityException">
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/entity/vo/JwtInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/handler/ApiLogoutSuccessHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JsonUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ResponseUtil.java" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="fix: 重新修改返回格式,使用统一的状态码和返回体.同时新增退出登陆和注册接口(注册接口还在开发中,存在bug)">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/common/Status.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/common/Status.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/CustomConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/CustomConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/SecurityConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/config/SecurityConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/PermitController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/PermitController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/PreAuthorizeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/PreAuthorizeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/RoleController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/UserController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/UserController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/exception/BaseException.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/exception/BaseException.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/ApiAuthenticationManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/ApiAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/ApiAuthenticationFilter.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ServletUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/UserLockUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/UserLockUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/JwtUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ResponseUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/utils/ResponseUtil.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -382,7 +367,7 @@
       <workItem from="1686823694936" duration="28492000" />
       <workItem from="1686912849516" duration="1992000" />
       <workItem from="1687143039755" duration="11894000" />
-      <workItem from="1687159694131" duration="13544000" />
+      <workItem from="1687159694131" duration="17211000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -580,7 +565,14 @@
       <option name="project" value="LOCAL" />
       <updated>1686914199154</updated>
     </task>
-    <option name="localTasksCounter" value="29" />
+    <task id="LOCAL-00029" summary="fix: 重新修改返回格式,使用统一的状态码和返回体.同时新增退出登陆和注册接口(注册接口还在开发中,存在bug)">
+      <created>1687175385682</created>
+      <option name="number" value="00029" />
+      <option name="presentableId" value="LOCAL-00029" />
+      <option name="project" value="LOCAL" />
+      <updated>1687175385682</updated>
+    </task>
+    <option name="localTasksCounter" value="30" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -610,7 +602,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 新增redis消息模块。" />
     <MESSAGE value="feature: messaging-redis增加Redis的消息发送接收功能。" />
     <MESSAGE value="feature: 加一个消息队列的模块" />
     <MESSAGE value="feature: 完成RabbitMQ消息队列的功能开发，在官网的接收基础上增加了支持对象的传递、支持消息重试机制、支持消息重试超过次数后由死信队列处理的逻辑。并调通整个流程，附加了RabbitMQ的配置导出文件。" />
@@ -635,23 +626,10 @@
     <MESSAGE value="doc&amp;style: 该了下代码的顺序和注释" />
     <MESSAGE value="feature: 增加rbac的登陆限制,包括异地登陆,重试次数" />
     <MESSAGE value="style: 更改代码样式，改为统一返回结构&#10;1. 正常返回：ResponseEntity 和 ApiResponse&#10;2. 异常返回：SecurityException" />
-    <option name="LAST_COMMIT_MESSAGE" value="style: 更改代码样式，改为统一返回结构&#10;1. 正常返回：ResponseEntity 和 ApiResponse&#10;2. 异常返回：SecurityException" />
+    <MESSAGE value="fix: 重新修改返回格式,使用统一的状态码和返回体.同时新增退出登陆和注册接口(注册接口还在开发中,存在bug)" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix: 重新修改返回格式,使用统一的状态码和返回体.同时新增退出登陆和注册接口(注册接口还在开发中,存在bug)" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java</url>
-          <line>47</line>
-          <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="java-line">
-          <url>file://$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/security/filter/JwtAuthenticationFilter.java</url>
-          <line>56</line>
-          <option name="timeStamp" value="30" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.springframework.validation.BeanPropertyBindingResult" memberName="autoGrowCollectionLimit" />

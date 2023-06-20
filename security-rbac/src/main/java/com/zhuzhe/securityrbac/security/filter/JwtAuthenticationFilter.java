@@ -12,10 +12,8 @@ import com.zhuzhe.securityrbac.service.UserService;
 import com.zhuzhe.securityrbac.utils.ResponseUtil;
 import io.micrometer.common.util.StringUtils;
 import jakarta.servlet.FilterChain;
-import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import java.io.IOException;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.BeanUtils;
@@ -36,60 +34,50 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
 
   @Override
   protected void doFilterInternal(
-      HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
-      throws ServletException, IOException {
+      HttpServletRequest request, HttpServletResponse response, FilterChain filterChain) {
+
+    var uri = request.getRequestURI();
     log.info("进入jwt过滤器, uri: {}", request.getRequestURI());
-    if (ignoredUrls.contains(request.getRequestURI())){
-      filterChain.doFilter(request, response);
-      return;
-    }
-
-
-    var address = request.getRemoteAddr();
-    var browser = request.getHeader("User-Agent");
-
+    // 放行指定请求
     try {
-      // 每次访问时先从Redis获得用户，再去构建这个用户线程的SecurityContext
-      var userPrincipal = tokenService.getUserPrincipal(request);
-
-      if (userPrincipal != null) {
-        /*校验用户是否异地登陆*/
-        if (!userPrincipal.getAddress().equals(address)
-            || !userPrincipal.getBrowser().equals(browser))
-          throw new SecurityException(Status.TOKEN_OUT_OF_CTRL);
-
-        // 校验用户是否有效
-        var user = userService.getById(userPrincipal.getId());
-        if (user == null) {
-          throw new SecurityException(Status.USERNAME_NOT_FOUND);
+      if (!ignoredUrls.contains(uri)) {
+        var userPrincipal = tokenService.getUserPrincipal(request);
+        if (userPrincipal != null) {
+          // 校验登陆用户是否有效
+          var user = userService.getById(userPrincipal.getId());
+          if (user == null) {
+            throw new SecurityException(Status.USERNAME_NOT_FOUND);
+          }
+          // 每次访问都校验浏览器和ip,如果在别处登陆,则当前的用户请求都将拦截
+          var address = request.getRemoteAddr();
+          var browser = request.getHeader("User-Agent");
+          if (!userPrincipal.getAddress().equals(address)
+              || !userPrincipal.getBrowser().equals(browser))
+            throw new SecurityException(Status.TOKEN_OUT_OF_CTRL);
+          // 判断是否重复登陆
+          if ("/user/login".equals(request.getRequestURI()))
+            throw new SecurityException(Status.ERROR, "用户已登陆, 请勿重复操作");
+          // 同步数据
+          BeanUtils.copyProperties(user, userPrincipal);
+          ApiAuthenticationToken authenticationToken = null;
+          tokenService.verifyTokenExpire(userPrincipal);
+          // 进行登陆校验
+          if (StringUtils.isNotBlank(userPrincipal.getUsername())
+              && StringUtils.isNotBlank(userPrincipal.getPassword())) {
+            List<SimpleGrantedAuthority> authorities = null;
+            var roles = roleService.getUserRoles(userPrincipal.getId());
+            if (CollectionUtils.isNotEmpty(roles))
+              authorities =
+                  roles.stream().map(Role::getKey).map(SimpleGrantedAuthority::new).toList();
+            authenticationToken = ApiAuthenticationToken.authenticated(userPrincipal, authorities);
+          }
+          SecurityContextHolder.getContext().setAuthentication(authenticationToken);
         }
-
-        // 如果是已经登陆还重复登陆的,进行拦截
-        if ("/user/login".equals(request.getRequestURI()))
-          throw new SecurityException(Status.ERROR, "用户已登陆, 请勿重复操作");
-        // 同步数据库中的用户
-        BeanUtils.copyProperties(user, userPrincipal);
-        log.info("复制后的userPrincipal={}", userPrincipal);
-
-        // 刷新Redis中的用户信息
-        ApiAuthenticationToken authenticationToken = null;
-        tokenService.verifyTokenExpire(userPrincipal);
-
-        // 更新用户的SecurityContext中的对象
-        if (StringUtils.isNotBlank(userPrincipal.getUsername())
-            && StringUtils.isNotBlank(userPrincipal.getPassword())) {
-          List<SimpleGrantedAuthority> authorities = null;
-          var roles = roleService.getUserRoles(userPrincipal.getId());
-          if (CollectionUtils.isNotEmpty(roles))
-            authorities =
-                roles.stream().map(Role::getKey).map(SimpleGrantedAuthority::new).toList();
-          authenticationToken = ApiAuthenticationToken.authenticated(userPrincipal, authorities);
-        }
-        SecurityContextHolder.getContext().setAuthentication(authenticationToken);
       }
       log.info("jwt过滤器通过, 进入下一个过滤器");
       filterChain.doFilter(request, response);
-    } catch (RuntimeException e) {
+    } catch (Exception e) {
+      log.info("jwt过滤器发生异常");
       if (e instanceof SecurityException securityException) {
         if (securityException.getCode() == (int) Status.REQUEST_NOT_MATCH.getCode()) {
           responseUtil.renderJson(response, HttpStatus.METHOD_NOT_ALLOWED, (SecurityException) e);

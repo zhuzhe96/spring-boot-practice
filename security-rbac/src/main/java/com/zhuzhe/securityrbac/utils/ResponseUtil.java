@@ -18,7 +18,8 @@ public class ResponseUtil {
   public void setCommonHead(HttpServletResponse response, HttpStatus httpStatus){
     response.setHeader("Access-Control-Allow-Origin","*");
     response.setHeader("Access-Control-Allow-Methods","*");
-    response.setContentType("application/json;charset=UTF-8");
+    response.setCharacterEncoding("UTF-8");
+    response.setContentType("application/json");
     response.setStatus(httpStatus.value());
   }
 
