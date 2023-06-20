@@ -19,6 +19,7 @@
         <module name="restful-web" />
         <module name="common" />
         <module name="scheduling-tasks" />
+        <module name="rest-hateoas" />
         <module name="actuator-service" />
         <module name="security-rbac" />
         <module name="consuming-rest" />
@@ -39,6 +40,7 @@
       <module name="messaging-rabbitmq" options="-parameters" />
       <module name="messaging-redis" options="-parameters" />
       <module name="relational-data-access" options="-parameters" />
+      <module name="rest-hateoas" options="-parameters" />
       <module name="restful-web" options="-parameters" />
       <module name="scheduling-tasks" options="-parameters" />
       <module name="security-rbac" options="-parameters" />

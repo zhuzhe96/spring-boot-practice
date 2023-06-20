@@ -4,14 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="fix: 修复了注册失败的问题">
-      <change afterPath="$PROJECT_DIR$/security-rbac/img/Jwt加密与解析.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/img/Security+jwt.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/img/Security时序图.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/security-rbac/img/Security调用链.png" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 给rbac模块加了一些描述">
+      <change afterPath="$PROJECT_DIR$/rest-hateoas/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-hateoas/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-hateoas/src/main/java/com/zhuzhe/resthateoas/RestHateoasApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-hateoas/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/rest-hateoas/src/test/java/com/zhuzhe/resthateoas/RestHateoasApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/RoleController.java" beforeDir="false" afterPath="$PROJECT_DIR$/security-rbac/src/main/java/com/zhuzhe/securityrbac/controller/RoleController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -123,7 +127,7 @@
       <recent name="com.zhuzhe.batchprocessing.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.SecurityRbacApplication">
+  <component name="RunManager" selected="Spring Boot.RestHateoasApplication">
     <configuration name="ApiAuthFailureHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zhuzhe.securityrbac.handler.ApiAuthFailureHandler" />
       <module name="security-rbac" />
@@ -268,6 +272,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="RestHateoasApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="rest-hateoas" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.resthateoas.RestHateoasApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="RestfulWebApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="restful-web" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.restfulweb.RestfulWebApplication" />
@@ -309,6 +320,7 @@
       <item itemvalue="JUnit.SecurityRbacApplicationTests.testUserInfo" />
       <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
+      <item itemvalue="Spring Boot.RestHateoasApplication" />
       <item itemvalue="Spring Boot.SecurityRbacApplication" />
       <item itemvalue="Spring Boot.BatchProcessingApplication" />
       <item itemvalue="Spring Boot.MessagingJmsApplication" />
@@ -372,7 +384,9 @@
       <workItem from="1687143039755" duration="11894000" />
       <workItem from="1687159694131" duration="17211000" />
       <workItem from="1687225758043" duration="4611000" />
-      <workItem from="1687232051963" duration="776000" />
+      <workItem from="1687232051963" duration="1872000" />
+      <workItem from="1687244202846" duration="565000" />
+      <workItem from="1687244851861" duration="2019000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -584,7 +598,28 @@
       <option name="project" value="LOCAL" />
       <updated>1687226173760</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="doc: 给rbac模块加了一些描述">
+      <created>1687232972251</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1687232972251</updated>
+    </task>
+    <task id="LOCAL-00032" summary="doc: 给rbac模块加了一些描述">
+      <created>1687233067476</created>
+      <option name="number" value="00032" />
+      <option name="presentableId" value="LOCAL-00032" />
+      <option name="project" value="LOCAL" />
+      <updated>1687233067476</updated>
+    </task>
+    <task id="LOCAL-00033" summary="doc: 给rbac模块加了一些描述">
+      <created>1687233114518</created>
+      <option name="number" value="00033" />
+      <option name="presentableId" value="LOCAL-00033" />
+      <option name="project" value="LOCAL" />
+      <updated>1687233114518</updated>
+    </task>
+    <option name="localTasksCounter" value="34" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -614,7 +649,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 加一个消息队列的模块" />
     <MESSAGE value="feature: 完成RabbitMQ消息队列的功能开发，在官网的接收基础上增加了支持对象的传递、支持消息重试机制、支持消息重试超过次数后由死信队列处理的逻辑。并调通整个流程，附加了RabbitMQ的配置导出文件。" />
     <MESSAGE value="feature: 新增一个访问neo4j数据库的模块" />
     <MESSAGE value="feature: 增加neo4j数据库的模块实现代码,存在一个问题,就是role的关联不起作用" />
@@ -639,7 +673,8 @@
     <MESSAGE value="style: 更改代码样式，改为统一返回结构&#10;1. 正常返回：ResponseEntity 和 ApiResponse&#10;2. 异常返回：SecurityException" />
     <MESSAGE value="fix: 重新修改返回格式,使用统一的状态码和返回体.同时新增退出登陆和注册接口(注册接口还在开发中,存在bug)" />
     <MESSAGE value="fix: 修复了注册失败的问题" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 修复了注册失败的问题" />
+    <MESSAGE value="doc: 给rbac模块加了一些描述" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: 给rbac模块加了一些描述" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

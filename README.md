@@ -20,6 +20,7 @@
   * messaging-jms【5013】[Java消息服务](./messaging-jms/HELP.md)
   * batch-processing【5014】[批量操作](./batch-processing/HELP.md)
   * security-rbac【5015】[Security-RBAC权限控制](./security-rbac/HELP.md)
+  * rest-hateoas【5016】[REST超媒体返回](./rest-hateoas/HELP.md)
 ---
 ### 项目信息
 * spring boot version : 3.0.5

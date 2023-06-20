@@ -16,6 +16,7 @@
     <file url="file://$PROJECT_DIR$/messaging-redis/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/messaging-redis/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/relational-data-access/src/main/java" charset="UTF-8" />
+    <file url="file://$PROJECT_DIR$/rest-hateoas/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restful-web/src/main/java" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/restful-web/src/main/resources" charset="UTF-8" />
     <file url="file://$PROJECT_DIR$/scheduling-tasks/src/main/java" charset="UTF-8" />

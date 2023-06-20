@@ -19,6 +19,7 @@
         <option value="$PROJECT_DIR$/messaging-jms/pom.xml" />
         <option value="$PROJECT_DIR$/batch-processing/pom.xml" />
         <option value="$PROJECT_DIR$/security-rbac/pom.xml" />
+        <option value="$PROJECT_DIR$/rest-hateoas/pom.xml" />
       </list>
     </option>
   </component>
