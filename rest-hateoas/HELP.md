@@ -163,6 +163,17 @@ public class EntityList extends CollectionModel<TestEntity>{
 }
 ```
 
+**WebMvcLinkBuilder的常见api**
+* linkTo(controller)：构建指向 Controller 类的链接，表示包含的映射类
+* linkTo(methodOn(controller).method(params))：构建指向 Controller 类中某个具体方法的链接
+* slash(path)：在当前链接后追加路径，比如 /path
+* withRel(rel)：将一个关系 rel 添加到链接中，rel 可以是字符串或者 LinkRelation 类型的枚举值，表示元数据对象的 key
+* withSelfRel()：添加一个 self 关系到链接中
+* withHref(href)：设置链接的 href 属性，href 可以是 URL 字符串或者 URI 类型
+* toUri()：将链接转换成 URI 类型
+* toUriComponentsBuilder()：返回一个 UriComponentsBuilder，可以用于在链接上进一步构建 URI
+
+
 **实现效果**：
 
 发送请求: http://localhost:5016/greeting

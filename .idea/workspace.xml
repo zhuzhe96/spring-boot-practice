@@ -5,15 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 完善heteoas的REST相关描述">
-      <change afterPath="$PROJECT_DIR$/rest-hateoas/imgs/hal规范.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest-hateoas/imgs/hateoas响应表达.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest-hateoas/src/main/java/com/zhuzhe/resthateoas/entity/Book.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest-hateoas/src/main/java/com/zhuzhe/resthateoas/entity/Books.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/rest-hateoas/src/main/java/com/zhuzhe/resthateoas/entity/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/rest-hateoas/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/rest-hateoas/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-hateoas/src/main/java/com/zhuzhe/resthateoas/controller/GreetingController.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-hateoas/src/main/java/com/zhuzhe/resthateoas/controller/HateoasController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/rest-hateoas/src/main/java/com/zhuzhe/resthateoas/entity/Greeting.java" beforeDir="false" afterPath="$PROJECT_DIR$/rest-hateoas/src/main/java/com/zhuzhe/resthateoas/entity/Greeting.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -385,7 +377,7 @@
       <workItem from="1687232051963" duration="1872000" />
       <workItem from="1687244202846" duration="565000" />
       <workItem from="1687244851861" duration="3245000" />
-      <workItem from="1687251387742" duration="26354000" />
+      <workItem from="1687251387742" duration="26673000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -646,7 +638,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687270978733</updated>
     </task>
-    <option name="localTasksCounter" value="38" />
+    <task id="LOCAL-00038" summary="doc: 完善heteoas的REST相关描述">
+      <created>1687329435547</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1687329435547</updated>
+    </task>
+    <option name="localTasksCounter" value="39" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
