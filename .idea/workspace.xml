@@ -5,7 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 完善heteoas的REST相关描述">
-      <change beforePath="$PROJECT_DIR$/rest-hateoas/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/rest-hateoas/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-geode/HELP.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-geode/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-geode/src/main/java/com/zhuzhe/accessingdatageode/AccessingDataGeodeApplication.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-geode/src/main/resources/application.properties" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-geode/src/test/java/com/zhuzhe/accessingdatageode/AccessingDataGeodeApplicationTests.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -192,6 +201,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="AccessingDataGeodeApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="accessing-data-geode" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.accessingdatageode.AccessingDataGeodeApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="AccessingDataNeo4jApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="accessing-data-neo4j" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.accessingdataneo4j.AccessingDataNeo4jApplication" />
@@ -310,6 +326,7 @@
       <item itemvalue="JUnit.SecurityRbacApplicationTests.testUserInfo" />
       <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
+      <item itemvalue="Spring Boot.AccessingDataGeodeApplication" />
       <item itemvalue="Spring Boot.RestHateoasApplication" />
       <item itemvalue="Spring Boot.SecurityRbacApplication" />
       <item itemvalue="Spring Boot.BatchProcessingApplication" />
@@ -377,7 +394,7 @@
       <workItem from="1687232051963" duration="1872000" />
       <workItem from="1687244202846" duration="565000" />
       <workItem from="1687244851861" duration="3245000" />
-      <workItem from="1687251387742" duration="26673000" />
+      <workItem from="1687251387742" duration="28305000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -645,7 +662,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687329435547</updated>
     </task>
-    <option name="localTasksCounter" value="39" />
+    <task id="LOCAL-00039" summary="doc: 完善heteoas的REST相关描述">
+      <created>1687329671212</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1687329671212</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

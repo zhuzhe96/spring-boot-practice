@@ -10,6 +10,7 @@
         <module name="messaging-jms" />
         <module name="accessing-data-neo4j" />
         <module name="messaging-rabbitmq" />
+        <module name="accessing-data-geode" />
         <module name="uploading-files" />
         <module name="validating-input" />
         <module name="batch-processing" />
@@ -29,6 +30,7 @@
   </component>
   <component name="JavacSettings">
     <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="accessing-data-geode" options="-parameters" />
       <module name="accessing-data-neo4j" options="-parameters" />
       <module name="actuator-service" options="-parameters" />
       <module name="authenticating-ldap" options="-parameters" />

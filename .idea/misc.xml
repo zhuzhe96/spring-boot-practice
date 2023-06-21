@@ -20,6 +20,7 @@
         <option value="$PROJECT_DIR$/batch-processing/pom.xml" />
         <option value="$PROJECT_DIR$/security-rbac/pom.xml" />
         <option value="$PROJECT_DIR$/rest-hateoas/pom.xml" />
+        <option value="$PROJECT_DIR$/accessing-data-geode/pom.xml" />
       </list>
     </option>
   </component>
