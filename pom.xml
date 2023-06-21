@@ -43,6 +43,7 @@
     <module>batch-processing</module>
     <module>security-rbac</module>
     <module>rest-hateoas</module>
+    <module>accessing-data-geode</module>
   </modules>
 
   <!--统一管理版本号-->
@@ -131,6 +132,11 @@
       <dependency>
         <groupId>com.zhuzhe</groupId>
         <artifactId>rest-hateoas</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zhuzhe</groupId>
+        <artifactId>accessing-data-geode</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
     </dependencies>
