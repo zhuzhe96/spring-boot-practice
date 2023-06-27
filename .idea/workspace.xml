@@ -5,10 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 新增geode数据库的基本操作模块">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-geode/src/main/java/com/zhuzhe/accessingdatageode/entity/Person.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/accessing-data-geode/src/main/java/com/zhuzhe/accessingdatageode/repository/PersonRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-geode/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-geode/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessing-data-geode/src/main/java/com/zhuzhe/accessingdatageode/AccessingDataGeodeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-geode/src/main/java/com/zhuzhe/accessingdatageode/AccessingDataGeodeApplication.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -120,7 +120,7 @@
       <recent name="com.zhuzhe.batchprocessing.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.RestHateoasApplication">
+  <component name="RunManager" selected="Spring Boot.AccessingDataGeodeApplication">
     <configuration name="ApiAuthFailureHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zhuzhe.securityrbac.handler.ApiAuthFailureHandler" />
       <module name="security-rbac" />
