@@ -21,6 +21,7 @@
         <module name="common" />
         <module name="scheduling-tasks" />
         <module name="rest-hateoas" />
+        <module name="integration-mqtt" />
         <module name="actuator-service" />
         <module name="security-rbac" />
         <module name="consuming-rest" />
@@ -38,6 +39,7 @@
       <module name="common" options="-parameters" />
       <module name="consuming-rest" options="-parameters" />
       <module name="h2-service" options="-parameters" />
+      <module name="integration-mqtt" options="-parameters" />
       <module name="messaging-jms" options="-parameters" />
       <module name="messaging-rabbitmq" options="-parameters" />
       <module name="messaging-redis" options="-parameters" />

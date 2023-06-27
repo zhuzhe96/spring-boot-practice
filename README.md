@@ -22,6 +22,7 @@
   * security-rbac【5015】[Security-RBAC权限控制](./security-rbac/HELP.md)
   * rest-hateoas【5016】[REST超媒体返回](./rest-hateoas/HELP.md)
   * accessing-data-geode【5017】[Geode数据库](./accessing-data-geode/HELP.md)
+  * integration-mqtt【5018】[MQTT服务](./integration-mqtt/HELP.md)
 ---
 ### 项目信息
 * spring boot version : 3.0.5

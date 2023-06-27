@@ -4,11 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 新增geode数据库的基本操作模块">
-      <change afterPath="$PROJECT_DIR$/accessing-data-geode/src/main/java/com/zhuzhe/accessingdatageode/entity/Person.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/accessing-data-geode/src/main/java/com/zhuzhe/accessingdatageode/repository/PersonRepository.java" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 新增官网提供的简单操作教程,基本使用依靠JPA语法&#10;https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#appendix">
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/accessing-data-geode/src/main/java/com/zhuzhe/accessingdatageode/AccessingDataGeodeApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-geode/src/main/java/com/zhuzhe/accessingdatageode/AccessingDataGeodeApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/accessing-data-geode/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/accessing-data-geode/HELP.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -244,6 +245,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <configuration name="IntegrationMqttApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
+      <module name="integration-mqtt" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.integrationmqtt.IntegrationMqttApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="MessagingJmsApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot" nameIsGenerated="true">
       <module name="messaging-jms" />
       <option name="SPRING_BOOT_MAIN_CLASS" value="com.zhuzhe.messagingjms.MessagingJmsApplication" />
@@ -320,6 +328,7 @@
       <item itemvalue="JUnit.SecurityRbacApplicationTests.testUserInfo" />
       <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
       <item itemvalue="JUnit.ActuatorServiceApplicationTests.shouldReturn200WhenSendingRequestToController" />
+      <item itemvalue="Spring Boot.IntegrationMqttApplication" />
       <item itemvalue="Spring Boot.AccessingDataGeodeApplication" />
       <item itemvalue="Spring Boot.RestHateoasApplication" />
       <item itemvalue="Spring Boot.SecurityRbacApplication" />
@@ -673,7 +682,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687331309404</updated>
     </task>
-    <option name="localTasksCounter" value="41" />
+    <task id="LOCAL-00041" summary="feature: 新增官网提供的简单操作教程,基本使用依靠JPA语法&#10;https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#appendix">
+      <created>1687849279990</created>
+      <option name="number" value="00041" />
+      <option name="presentableId" value="LOCAL-00041" />
+      <option name="project" value="LOCAL" />
+      <updated>1687849279990</updated>
+    </task>
+    <option name="localTasksCounter" value="42" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -703,7 +719,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 加一个新的数据校验的模块" />
     <MESSAGE value="feature: 完善数据校验模块的内容，包含字段校验，自定义校验器，校验异常统一处理，接口返回体封装。" />
     <MESSAGE value="feature: 新增一个系统监控模块，完善系统监控的配置，可以用于做监控当前项目和运行环境的模块。" />
     <MESSAGE value="feature: 加一个JMS的模块" />
@@ -728,7 +743,8 @@
     <MESSAGE value="feature: 安装官网编写基础的hateoas接口" />
     <MESSAGE value="doc: 完善heteoas的REST相关描述" />
     <MESSAGE value="feature: 新增geode数据库的基本操作模块" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 新增geode数据库的基本操作模块" />
+    <MESSAGE value="feature: 新增官网提供的简单操作教程,基本使用依靠JPA语法&#10;https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#appendix" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 新增官网提供的简单操作教程,基本使用依靠JPA语法&#10;https://docs.spring.io/spring-data/jpa/docs/current/reference/html/#appendix" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>
