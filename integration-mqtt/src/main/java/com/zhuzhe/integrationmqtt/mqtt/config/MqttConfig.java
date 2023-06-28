@@ -50,7 +50,7 @@ public class MqttConfig {
     MqttAsyncClient sampleClient = null;
 
     try {
-      sampleClient = new MqttAsyncClient(properties.getUrl(), properties.getClientId());
+      sampleClient = new MqttAsyncClient(properties.getUrl(), properties.getClientId(), null);
       sampleClient.connect(options);
       log.info("MQTT 开始连接...");
       // 如果没有连接上,就每隔10ms重试,直到达到超时限制
