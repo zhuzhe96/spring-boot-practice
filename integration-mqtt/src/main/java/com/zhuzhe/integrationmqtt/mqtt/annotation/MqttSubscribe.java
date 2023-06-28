@@ -10,5 +10,5 @@ import java.lang.annotation.Target;
 @Retention(RetentionPolicy.RUNTIME)
 public @interface MqttSubscribe {
   String topic() default "\\.*.*";
-  String value() default "";
+  int qos() default 0;
 }

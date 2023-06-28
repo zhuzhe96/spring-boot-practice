@@ -1,4 +1,4 @@
-package com.zhuzhe.integrationmqtt.mqtt.consumer;
+package com.zhuzhe.integrationmqtt.receiver;
 
 import com.zhuzhe.integrationmqtt.mqtt.annotation.MqttConsumerHandler;
 import com.zhuzhe.integrationmqtt.mqtt.annotation.MqttSubscribe;
@@ -10,9 +10,14 @@ import org.springframework.stereotype.Component;
 @Component
 @MqttConsumerHandler
 @SuppressWarnings("unused")
-public class TestConsumer {
-  @MqttSubscribe(topic = "/public/device")
-  public void messageAccept(String topic, MqttMessage message) {
+public class DeviceReceiver {
+  @MqttSubscribe(topic = "/public/cloud/M1313")
+  public void acceptM1313(String topic, MqttMessage message) {
+    log.info("MQTT 消息回调! topic={}, message={}", topic, message.toString());
+  }
+
+  @MqttSubscribe(topic = "/public/cloud/L3DN-1A")
+  public void acceptL3DN1A(String topic, MqttMessage message) {
     log.info("MQTT 消息回调! topic={}, message={}", topic, message.toString());
   }
 }

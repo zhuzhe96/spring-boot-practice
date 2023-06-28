@@ -56,21 +56,20 @@ public class MultiHandlerDispatchHandler extends MqttMessageDispatchHandler
             throw new RuntimeException("使用@MqttConsumerHandler注解的类中必须提供回调方法！");
           }
           // 一个类中只找出一个回调方法
-          Method handlerMethod = null;
           for (Method method : methods) {
             var annotation = method.getAnnotation(MqttSubscribe.class);
             if (annotation != null) {
-              handlerMethod = method;
-              break;
+              Method handlerMethod = method;
+              // 将回调方法存储到map中
+              Objects.requireNonNull(handlerMethod, "当前类中没有回调方法");
+              MqttSubscribe mqttSubscribe =
+                  AnnotationUtils.getAnnotation(handlerMethod, MqttSubscribe.class);
+              Objects.requireNonNull(mqttSubscribe, "当前回调方法的配置为空！");
+              String pattern = mqttSubscribe.topic();
+              var consumerHandler = new ConsumerHandler(beanName, beanObj, handlerMethod, pattern);
+              consumerHandlers.add(consumerHandler);
             }
           }
-          // 将回调方法存储到map中
-          Objects.requireNonNull(handlerMethod, "当前类中没有回调方法");
-          MqttSubscribe mqttSubscribe = AnnotationUtils.getAnnotation(handlerMethod, MqttSubscribe.class);
-          Objects.requireNonNull(mqttSubscribe, "当前回调方法的配置为空！");
-          String pattern = mqttSubscribe.topic();
-          var consumerHandler = new ConsumerHandler(beanName, beanObj, handlerMethod, pattern);
-          consumerHandlers.add(consumerHandler);
         });
   }
 
