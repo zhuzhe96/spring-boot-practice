@@ -5,21 +5,20 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: MQTT模块增加一个对调用请求获取结果的方法的缓存设计。公用模块增加部分对Java中锁的概念的理解帮助的代码和文档。">
-      <change afterPath="$PROJECT_DIR$/common/img/JVM中记录锁的信息.jpg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/img/锁的状态.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/zhuzhe/common/BlockedLockTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/zhuzhe/common/NonBlockingLockTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/config/CustomConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/DeviceController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Device.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/DeviceService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/img/01.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/img/02.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/img/03.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/img/04.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/img/05.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/img/06.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/img/07.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/zhuzhe/common/ReadWriteLockTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/zhuzhe/common/ReentrantLockTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/zhuzhe/common/SpinLockTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/zhuzhe/common/UnfairLockTest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/common/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/common/HELP.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/IntegrationMqttApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/IntegrationMqttApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/DevicePayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/dto/DevicePayload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/ClientService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/src/test/java/com/zhuzhe/common/CommonApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/common/src/test/java/com/zhuzhe/common/CommonApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -131,33 +130,7 @@
       <recent name="com.zhuzhe.batchprocessing.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.NonBlockingLockTest">
-    <configuration name="BlockedLockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.BlockedLockTest" />
-      <module name="common" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zhuzhe.common.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="MultiHandlerDispatchHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.integrationmqtt.mqtt.handler.MultiHandlerDispatchHandler" />
-      <module name="integration-mqtt" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.zhuzhe.integrationmqtt.mqtt.handler.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
+  <component name="RunManager" selected="Application.UnfairLockTest">
     <configuration name="NonBlockingLockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.NonBlockingLockTest" />
       <module name="common" />
@@ -171,34 +144,54 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityRbacApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="security-rbac" />
+    <configuration name="ReadWriteLockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.ReadWriteLockTest" />
+      <module name="common" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zhuzhe.securityrbac.*" />
+          <option name="PATTERN" value="com.zhuzhe.common.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.zhuzhe.securityrbac" />
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.securityrbac.SecurityRbacApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SecurityRbacApplicationTests.testUserInfo" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="security-rbac" />
+    <configuration name="ReentrantLockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.ReentrantLockTest" />
+      <module name="common" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zhuzhe.securityrbac.*" />
+          <option name="PATTERN" value="com.zhuzhe.common.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.zhuzhe.securityrbac" />
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.securityrbac.SecurityRbacApplicationTests" />
-      <option name="METHOD_NAME" value="testUserInfo" />
-      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SpinLockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.SpinLockTest" />
+      <module name="common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhuzhe.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UnfairLockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.UnfairLockTest" />
+      <module name="common" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.zhuzhe.common.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -330,11 +323,11 @@
       </method>
     </configuration>
     <list>
-      <item itemvalue="Application.BlockedLockTest" />
-      <item itemvalue="Application.MultiHandlerDispatchHandler" />
       <item itemvalue="Application.NonBlockingLockTest" />
-      <item itemvalue="JUnit.SecurityRbacApplicationTests.testUserInfo" />
-      <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
+      <item itemvalue="Application.ReadWriteLockTest" />
+      <item itemvalue="Application.ReentrantLockTest" />
+      <item itemvalue="Application.SpinLockTest" />
+      <item itemvalue="Application.UnfairLockTest" />
       <item itemvalue="Spring Boot.IntegrationMqttApplication" />
       <item itemvalue="Spring Boot.AccessingDataGeodeApplication" />
       <item itemvalue="Spring Boot.RestHateoasApplication" />
@@ -356,11 +349,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.UnfairLockTest" />
+        <item itemvalue="Application.ReadWriteLockTest" />
+        <item itemvalue="Application.SpinLockTest" />
+        <item itemvalue="Application.ReentrantLockTest" />
         <item itemvalue="Application.NonBlockingLockTest" />
-        <item itemvalue="Application.BlockedLockTest" />
-        <item itemvalue="Application.MultiHandlerDispatchHandler" />
-        <item itemvalue="JUnit.SecurityRbacApplicationTests.testUserInfo" />
-        <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
       </list>
     </recent_temporary>
   </component>
@@ -408,7 +401,7 @@
       <workItem from="1687335871061" duration="43000" />
       <workItem from="1687335920605" duration="1190000" />
       <workItem from="1687337206714" duration="1693000" />
-      <workItem from="1687855661581" duration="40291000" />
+      <workItem from="1687855661581" duration="53164000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -725,7 +718,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687942982504</updated>
     </task>
-    <option name="localTasksCounter" value="46" />
+    <task id="LOCAL-00046" summary="feature: MQTT模块增加一个对调用请求获取结果的方法的缓存设计。公用模块增加部分对Java中锁的概念的理解帮助的代码和文档。">
+      <created>1688010670945</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1688010670945</updated>
+    </task>
+    <option name="localTasksCounter" value="47" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
