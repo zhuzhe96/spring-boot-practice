@@ -4,9 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 完善基本的调用流程,实现一个从服务器调MQTT代理的过程.同时MQTT回复时服务器的处理流程.制定好通信规范.其中&#10;调设备端为:&#10;&gt; /public/device/{deviceId}&#10;调服务器端为:&#10;&gt; /public/cloud/{deviceId}">
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: MQTT模块增加一个对调用请求获取结果的方法的缓存设计。公用模块增加部分对Java中锁的概念的理解帮助的代码和文档。">
+      <change afterPath="$PROJECT_DIR$/common/img/JVM中记录锁的信息.jpg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/img/锁的状态.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/zhuzhe/common/BlockedLockTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/common/src/test/java/com/zhuzhe/common/NonBlockingLockTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/config/CustomConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/DeviceController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Device.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/DeviceService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/common/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/common/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/IntegrationMqttApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/IntegrationMqttApplication.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/DevicePayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/dto/DevicePayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/ClientService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/ClientService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -19,9 +32,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Record" />
-        <option value="AnnotationType" />
         <option value="Interface" />
+        <option value="AnnotationType" />
+        <option value="Record" />
         <option value="Class" />
       </list>
     </option>
@@ -72,7 +85,7 @@
     "WebServerToolWindowFactoryState": "false",
     "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
     "jdk.selected.JAVA_MODULE": "17",
-    "last_opened_file_path": "E:/git_project/test-spring/rest-hateoas/imgs",
+    "last_opened_file_path": "E:/git_project/test-spring/common/img",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,11 +110,11 @@
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring\common\img" />
       <recent name="E:\git_project\test-spring\rest-hateoas\imgs" />
       <recent name="E:\git_project\test-spring\security-rbac\img" />
       <recent name="E:\git_project\test-spring\security-rbac\src\main\resources\mapper" />
       <recent name="E:\git_project\test-spring\batch-processing\src\main\resources\mapper" />
-      <recent name="E:\git_project\test-spring\batch-processing" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\git_project\test-spring\batch-processing" />
@@ -118,13 +131,13 @@
       <recent name="com.zhuzhe.batchprocessing.service.impl" />
     </key>
   </component>
-  <component name="RunManager" selected="Spring Boot.IntegrationMqttApplication">
-    <configuration name="ApiAuthFailureHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.securityrbac.handler.ApiAuthFailureHandler" />
-      <module name="security-rbac" />
+  <component name="RunManager" selected="Application.NonBlockingLockTest">
+    <configuration name="BlockedLockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.BlockedLockTest" />
+      <module name="common" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zhuzhe.securityrbac.handler.*" />
+          <option name="PATTERN" value="com.zhuzhe.common.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -145,12 +158,12 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="PoiUtils" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.batchprocessing.util.PoiUtils" />
-      <module name="batch-processing" />
+    <configuration name="NonBlockingLockTest" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.common.NonBlockingLockTest" />
+      <module name="common" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zhuzhe.batchprocessing.util.*" />
+          <option name="PATTERN" value="com.zhuzhe.common.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -317,9 +330,9 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.BlockedLockTest" />
       <item itemvalue="Application.MultiHandlerDispatchHandler" />
-      <item itemvalue="Application.ApiAuthFailureHandler" />
-      <item itemvalue="Application.PoiUtils" />
+      <item itemvalue="Application.NonBlockingLockTest" />
       <item itemvalue="JUnit.SecurityRbacApplicationTests.testUserInfo" />
       <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
       <item itemvalue="Spring Boot.IntegrationMqttApplication" />
@@ -343,11 +356,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.NonBlockingLockTest" />
+        <item itemvalue="Application.BlockedLockTest" />
         <item itemvalue="Application.MultiHandlerDispatchHandler" />
         <item itemvalue="JUnit.SecurityRbacApplicationTests.testUserInfo" />
         <item itemvalue="JUnit.SecurityRbacApplicationTests.contextLoads" />
-        <item itemvalue="Application.ApiAuthFailureHandler" />
-        <item itemvalue="Application.PoiUtils" />
       </list>
     </recent_temporary>
   </component>
@@ -395,7 +408,7 @@
       <workItem from="1687335871061" duration="43000" />
       <workItem from="1687335920605" duration="1190000" />
       <workItem from="1687337206714" duration="1693000" />
-      <workItem from="1687855661581" duration="24964000" />
+      <workItem from="1687855661581" duration="40291000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -705,7 +718,14 @@
       <option name="project" value="LOCAL" />
       <updated>1687941109139</updated>
     </task>
-    <option name="localTasksCounter" value="45" />
+    <task id="LOCAL-00045" summary="fix: 取消Mqtt的默认消息持久化, 解决项目同级出现莫名文件夹和空.lck文件的情况.">
+      <created>1687942982504</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1687942982504</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -735,8 +755,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 完成一个简单的JMS功能, 通过ActiveMQ Artemis平台来支持消息的发送和监听接收." />
-    <MESSAGE value="feature: 加一个批量导入模块, 已添加mybatis-plus的使用." />
     <MESSAGE value="feature: 实现批量数据导入和导出功能，使用的是Apache POI的功能。同时配合注解实现最小化传参。" />
     <MESSAGE value="feature: 完善Excel批量导出和导入的功能,都实现了工具类的标准,支持任意添加了指定注解的对象的数据导出和导入." />
     <MESSAGE value="style: 提交新的代码命名" />
@@ -760,7 +778,9 @@
     <MESSAGE value="feature: 加一个新模块, 实现调用MQTT服务器的功能。" />
     <MESSAGE value="feature: 实现一个基于发布订阅设计的MQTT消费者端代码。" />
     <MESSAGE value="feature: 完善基本的调用流程,实现一个从服务器调MQTT代理的过程.同时MQTT回复时服务器的处理流程.制定好通信规范.其中&#10;调设备端为:&#10;&gt; /public/device/{deviceId}&#10;调服务器端为:&#10;&gt; /public/cloud/{deviceId}" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 完善基本的调用流程,实现一个从服务器调MQTT代理的过程.同时MQTT回复时服务器的处理流程.制定好通信规范.其中&#10;调设备端为:&#10;&gt; /public/device/{deviceId}&#10;调服务器端为:&#10;&gt; /public/cloud/{deviceId}" />
+    <MESSAGE value="fix: 取消Mqtt的默认消息持久化, 解决项目同级出现莫名文件夹和空.lck文件的情况." />
+    <MESSAGE value="feature: MQTT模块增加一个对调用请求获取结果的方法的缓存设计。公用模块增加部分对Java中锁的概念的理解帮助的代码和文档。" />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: MQTT模块增加一个对调用请求获取结果的方法的缓存设计。公用模块增加部分对Java中锁的概念的理解帮助的代码和文档。" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

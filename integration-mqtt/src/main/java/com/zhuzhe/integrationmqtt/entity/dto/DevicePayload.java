@@ -1,4 +1,4 @@
-package com.zhuzhe.integrationmqtt.mqtt.payload;
+package com.zhuzhe.integrationmqtt.entity.dto;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

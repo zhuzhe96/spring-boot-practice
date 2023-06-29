@@ -2,7 +2,7 @@ package com.zhuzhe.integrationmqtt.service;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
-import com.zhuzhe.integrationmqtt.mqtt.payload.DevicePayload;
+import com.zhuzhe.integrationmqtt.entity.dto.DevicePayload;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.MqttAsyncClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
