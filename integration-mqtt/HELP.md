@@ -61,7 +61,7 @@ mqtt.group=watch,camera,battery
 * mac: 036915CC0CBF
 
 * 获取手表的网络信息
-  ```http request
+  ```
     GET http://localhost:5018/watch/network/{sn}/{mac}/{wifiName}
   ```
   返回结果：
@@ -111,7 +111,7 @@ mqtt.group=watch,camera,battery
     }
   ```
 * 设置手表的网络信息
-  ```http request
+  ```
     POST http://localhost:5018/watch/network/{sn}/{mac}
   ```
   ```json
@@ -163,8 +163,43 @@ mqtt.group=watch,camera,battery
       "token": "e9b839760e3a422888bfbc5c59a24ddc"
     }
   ```
+* 设备上线（设备端请求让手表设备上线，这里不是前端调接口）
+  Mqtt对话：
+
+  Topic: /test/cloud/watch/2022000000000001785/036915CC0CBF QoS: 0
+  ```json
+    {
+      "id": "036915CC0CBF",
+      "type": "GET",
+      "url": "/zhuzhe/prod/online",
+      "timestamp": 1688464130503,
+      "status": 200,
+      "message": null,
+      "token": "b5ff8e1079db4e458ef8612824315b52",
+      "data": {
+        "key": "123123"
+      }
+    }
+  ```
+  Topic: /test/device/watch/2022000000000001785/036915CC0CBF QoS: 0
+  ```json
+    {
+      "id": "036915CC0CBF",
+      "type": "ACK",
+      "url": "/zhuzhe/prod/online",
+      "timestamp": 1688466967954,
+      "status": 200,
+      "message": null,
+      "token": "b5ff8e1079db4e458ef8612824315b52",
+      "data": {
+        "result": "成功上线!"
+      }
+    }
+  ```
+  
+### 相机产品
 * 获取相机的基础数据
-  ```http request
+  ```
     GET http://localhost:5018/camera/{sn}/{mac}
   ```
   返回结果：
@@ -203,39 +238,6 @@ mqtt.group=watch,camera,battery
         "id": "123",
         "manufacturer": "zhuzhe",
         "model": "nighttime"
-      }
-    }
-  ```
-* 设备上线（设备端请求让手表设备上线，这里不是前端调接口）
-  Mqtt对话：
-
-  Topic: /test/cloud/watch/2022000000000001785/036915CC0CBF QoS: 0
-  ```json
-    {
-      "id": "036915CC0CBF",
-      "type": "GET",
-      "url": "/zhuzhe/prod/online",
-      "timestamp": 1688464130503,
-      "status": 200,
-      "message": null,
-      "token": "b5ff8e1079db4e458ef8612824315b52",
-      "data": {
-        "key": "123123"
-      }
-    }
-  ```
-  Topic: /test/device/watch/2022000000000001785/036915CC0CBF QoS: 0
-  ```json
-    {
-      "id": "036915CC0CBF",
-      "type": "ACK",
-      "url": "/zhuzhe/prod/online",
-      "timestamp": 1688466967954,
-      "status": 200,
-      "message": null,
-      "token": "b5ff8e1079db4e458ef8612824315b52",
-      "data": {
-        "result": "成功上线!"
       }
     }
   ```
