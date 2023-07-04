@@ -9,7 +9,7 @@ import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.web.util.UriComponentsBuilder;
 
-// 自动主题订阅处理器
+// 主题订阅者
 public class MqttTopicSubscriber implements InitializingBean {
   private static final Logger log = LoggerFactory.getLogger(MqttTopicSubscriber.class);
   public final MqttProperties properties;

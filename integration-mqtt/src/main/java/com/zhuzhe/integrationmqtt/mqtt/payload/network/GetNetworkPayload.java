@@ -1,25 +1,27 @@
 package com.zhuzhe.integrationmqtt.mqtt.payload.network;
 
 import com.zhuzhe.integrationmqtt.mqtt.payload.MqttStatus;
-import com.zhuzhe.integrationmqtt.mqtt.payload.PayloadHeader;
+import com.zhuzhe.integrationmqtt.mqtt.payload.MessagePayload;
 import com.zhuzhe.integrationmqtt.mqtt.payload.PayloadUrlStorage;
 import java.time.Clock;
+import java.util.UUID;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
 @Data
 @EqualsAndHashCode(callSuper = true)
-public class GetNetworkPayload extends PayloadHeader {
+public class GetNetworkPayload extends MessagePayload {
   private String wifiName;
 
-  public GetNetworkPayload(String id, String wifiName) {
+  public GetNetworkPayload(String mac, String wifiName) {
     super(
-        id,
+        mac,
         "GET",
         PayloadUrlStorage.NETWORK,
         Clock.systemDefaultZone().millis(),
         MqttStatus.SUCCESS.getCode(),
-        null);
+        null,
+        UUID.randomUUID().toString().replace("-", ""));
     this.wifiName = wifiName;
   }
 }

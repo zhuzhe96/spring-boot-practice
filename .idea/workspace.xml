@@ -4,42 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="fix: 去掉无用的代码">
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Network.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttDispatchHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttTopicSubscriber.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/annotation/MqttSubscribeHandler.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/callback/AbstractMessageDispatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/callback/DeviceMessageDispatcher.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/callback/MessageCallback.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/MqttStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadHeader.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadUrlStorage.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkAckPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkAckPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchPublishService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchSubscribeService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/encodings.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 为mqtt模块重构新的发布订阅处理代码.使其基本流程正常.为后续开发异步回调功能提供基础.">
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/ClientController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/annotation/MqttConsumerHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/config/CustomConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/config/CustomConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/DeviceController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Device.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttDispatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttDispatchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttTopicSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttTopicSubscriber.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/annotation/MqttSubscribe.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/annotation/MqttSubscribe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/annotation/MqttSubscribeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/annotation/MqttSubscribeHandler.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttProperties.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttProperties.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/MqttMessageDispatchHandler.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/MultiHandlerDispatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/PublishSubscribeDispatchHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/subscribe/AbstractMqttCallback.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/subscribe/MqttAutoSubscribe.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/subscribe/MqttMessageCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttMessageCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/utils/SslUtil.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/receiver/DeviceReceiver.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/ClientService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/DeviceService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/PublishSubscribeDispatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/PublishSubscribeDispatchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/callback/AbstractMessageDispatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/callback/DeviceMessageDispatcher.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/callback/MessageCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/MessageCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadHeader.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/MessagePayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkAckPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkAckPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkAckPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkAckPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/DeviceService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchPublishService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/pubsub/WatchPublishService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchSubscribeService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/pubsub/WatchSubscribeService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/test/java/com/zhuzhe/integrationmqtt/IntegrationMqttApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/test/java/com/zhuzhe/integrationmqtt/IntegrationMqttApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -158,12 +149,12 @@
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.IntegrationMqttApplication">
-    <configuration name="DeviceService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.integrationmqtt.service.DeviceService" />
+    <configuration name="AsyncCallbackDispatchHandler" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.integrationmqtt.mqtt.handler.AsyncCallbackDispatchHandler" />
       <module name="integration-mqtt" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zhuzhe.integrationmqtt.service.*" />
+          <option name="PATTERN" value="com.zhuzhe.integrationmqtt.mqtt.handler.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
@@ -197,18 +188,15 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IntegrationMqttApplicationTests.contextLoads" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="WatchService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.integrationmqtt.service.WatchService" />
       <module name="integration-mqtt" />
       <extension name="coverage">
         <pattern>
-          <option name="PATTERN" value="com.zhuzhe.integrationmqtt.*" />
+          <option name="PATTERN" value="com.zhuzhe.integrationmqtt.service.pubsub.*" />
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
-      <option name="PACKAGE_NAME" value="com.zhuzhe.integrationmqtt" />
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.integrationmqtt.IntegrationMqttApplicationTests" />
-      <option name="METHOD_NAME" value="contextLoads" />
-      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -356,10 +344,10 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="Application.AsyncCallbackDispatchHandler" />
+      <item itemvalue="Application.WatchService" />
       <item itemvalue="Application.IntegrationMqttApplicationTests" />
       <item itemvalue="Application.MqttConfig" />
-      <item itemvalue="Application.DeviceService" />
-      <item itemvalue="JUnit.IntegrationMqttApplicationTests.contextLoads" />
       <item itemvalue="JUnit.IntegrationMqttApplicationTests.generateMacAndSn" />
       <item itemvalue="Spring Boot.IntegrationMqttApplication" />
       <item itemvalue="Spring Boot.AccessingDataGeodeApplication" />
@@ -382,11 +370,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.WatchService" />
+        <item itemvalue="Application.AsyncCallbackDispatchHandler" />
         <item itemvalue="JUnit.IntegrationMqttApplicationTests.generateMacAndSn" />
         <item itemvalue="Application.MqttConfig" />
         <item itemvalue="Application.IntegrationMqttApplicationTests" />
-        <item itemvalue="JUnit.IntegrationMqttApplicationTests.contextLoads" />
-        <item itemvalue="Application.DeviceService" />
       </list>
     </recent_temporary>
   </component>
@@ -437,7 +425,7 @@
       <workItem from="1687855661581" duration="86390000" />
       <workItem from="1688348907092" duration="16198000" />
       <workItem from="1688370150090" duration="1725000" />
-      <workItem from="1688371883528" duration="2150000" />
+      <workItem from="1688371883528" duration="15528000" />
     </task>
     <task id="LOCAL-00001" summary="修改gitgnore,避免把模块中的HELP.md文件给删除了">
       <created>1681208032479</created>
@@ -775,7 +763,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688033054792</updated>
     </task>
-    <option name="localTasksCounter" value="49" />
+    <task id="LOCAL-00049" summary="feature: 为mqtt模块重构新的发布订阅处理代码.使其基本流程正常.为后续开发异步回调功能提供基础.">
+      <created>1688374227908</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1688374227908</updated>
+    </task>
+    <option name="localTasksCounter" value="50" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -808,7 +803,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="style: 提交新的代码命名" />
     <MESSAGE value="doc: 加一个模块的描述文档" />
     <MESSAGE value="feature: 加一个由Security实现的RBAC初始模块" />
     <MESSAGE value="process: 完成部分Security+JWT的权限校验代码." />
@@ -833,7 +827,8 @@
     <MESSAGE value="feature: MQTT模块增加一个对调用请求获取结果的方法的缓存设计。公用模块增加部分对Java中锁的概念的理解帮助的代码和文档。" />
     <MESSAGE value="doc: 加多一些对多线程锁概念的记录。" />
     <MESSAGE value="fix: 去掉无用的代码" />
-    <option name="LAST_COMMIT_MESSAGE" value="fix: 去掉无用的代码" />
+    <MESSAGE value="feature: 为mqtt模块重构新的发布订阅处理代码.使其基本流程正常.为后续开发异步回调功能提供基础." />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 为mqtt模块重构新的发布订阅处理代码.使其基本流程正常.为后续开发异步回调功能提供基础." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

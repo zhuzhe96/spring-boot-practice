@@ -2,7 +2,6 @@ package com.zhuzhe.integrationmqtt.mqtt.config;
 
 import com.zhuzhe.integrationmqtt.mqtt.MqttDispatchHandler;
 import com.zhuzhe.integrationmqtt.mqtt.MqttTopicSubscriber;
-import com.zhuzhe.integrationmqtt.mqtt.handler.PublishSubscribeDispatchHandler;
 import java.time.Clock;
 import lombok.extern.slf4j.Slf4j;
 import org.eclipse.paho.client.mqttv3.MqttAsyncClient;
@@ -70,12 +69,13 @@ public class MqttConfig {
     return client;
   }
 
-  // 消息处理者
-  @Bean
-  public MqttDispatchHandler mqttDispatchHandler() {
-    return new PublishSubscribeDispatchHandler();
-  }
-
+  // 消息处理者：发布订阅模式
+//  @Bean
+//  public MqttDispatchHandler mqttDispatchHandler(MqttProperties properties) {
+//    //return new PublishSubscribeDispatchHandler();
+//  }
+  
+  
   // 主题订阅
   @Bean
   @ConditionalOnMissingBean(MqttTopicSubscriber.class)

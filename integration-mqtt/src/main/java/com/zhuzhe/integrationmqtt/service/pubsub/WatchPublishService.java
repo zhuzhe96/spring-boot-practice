@@ -1,4 +1,4 @@
-package com.zhuzhe.integrationmqtt.service;
+package com.zhuzhe.integrationmqtt.service.pubsub;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
@@ -11,6 +11,7 @@ import org.eclipse.paho.client.mqttv3.MqttMessage;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+// 发布订阅模式：发布者
 @Slf4j
 @Service
 public class WatchPublishService {

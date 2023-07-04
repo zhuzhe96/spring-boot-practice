@@ -12,7 +12,7 @@ import org.slf4j.LoggerFactory;
 public abstract class MqttDispatchHandler implements MqttMessageCallback {
   private static final Logger log = LoggerFactory.getLogger(MqttDispatchHandler.class);
 
-  private MqttAsyncClient client;
+  protected MqttAsyncClient client;
   private MqttTopicSubscriber subscriber;
 
   public MqttDispatchHandler() {

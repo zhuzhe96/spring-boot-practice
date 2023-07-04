@@ -4,7 +4,7 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zhuzhe.integrationmqtt.mqtt.MqttDispatchHandler;
 import com.zhuzhe.integrationmqtt.mqtt.annotation.MqttSubscribe;
 import com.zhuzhe.integrationmqtt.mqtt.annotation.MqttSubscribeHandler;
-import com.zhuzhe.integrationmqtt.mqtt.payload.PayloadHeader;
+import com.zhuzhe.integrationmqtt.mqtt.payload.MessagePayload;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
@@ -19,13 +19,7 @@ import org.springframework.context.ApplicationContext;
 import org.springframework.context.ApplicationContextAware;
 import org.springframework.core.annotation.AnnotationUtils;
 
-/**
- * 发布订阅回调处理者
- * 1. 利用注解实现消息发布和回调处理
- * 2. 发布和处理分离开两个方法,这是和其他mq一样的处理方式
- * 3. 适合发布后不理解获得结果,而是等待回调处理后手动刷新
- * 4. 不适合类似Get请求获取数据立即返回的那种场景
- */
+// 发布订阅模式：消息处理者
 public class PublishSubscribeDispatchHandler extends MqttDispatchHandler
     implements InitializingBean, ApplicationContextAware {
   private static final Logger log = LoggerFactory.getLogger(PublishSubscribeDispatchHandler.class);
@@ -51,7 +45,7 @@ public class PublishSubscribeDispatchHandler extends MqttDispatchHandler
         String group = handler.group();
         String url = handler.url();
         var payloadHeader =
-            new ObjectMapper().readValue(mqttMessage.getPayload(), PayloadHeader.class);
+            new ObjectMapper().readValue(mqttMessage.getPayload(), MessagePayload.class);
         if (topic.contains(group) && url.equals(payloadHeader.getUrl())) {
           try {
             handler.handleMethod().invoke(handler.beanObject(), mqttMessage);

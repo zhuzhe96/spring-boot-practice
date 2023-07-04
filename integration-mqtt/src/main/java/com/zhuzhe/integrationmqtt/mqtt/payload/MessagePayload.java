@@ -1,5 +1,6 @@
 package com.zhuzhe.integrationmqtt.mqtt.payload;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,7 +9,8 @@ import lombok.NoArgsConstructor;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class PayloadHeader {
+@JsonIgnoreProperties(ignoreUnknown = true)
+public class MessagePayload {
   // 设备id
   private String id;
   // 请求类型
@@ -21,4 +23,6 @@ public class PayloadHeader {
   private int status;
   // 消息信息: 当发生异常时,将从这里提示异常信息
   private String message;
+  // token，用来做异步回调模式中区分请求
+  private String token;
 }
