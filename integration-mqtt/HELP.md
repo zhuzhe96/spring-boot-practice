@@ -19,7 +19,13 @@ docker run -d --name emqx -p 1883:1883 -p 8083:8083 -p 8084:8084 -p 8883:8883 -p
 ### 连接测试
 
 MQTTX官网：https://mqttx.app/zh
+
 连接操作:https://www.emqx.io/docs/zh/v5/getting-started/getting-started.html
+
+启动后测试接口
+
+![cloud-send-device](img/cloud-send-device.png)
+
 
 ### 主题订阅
 
@@ -60,6 +66,10 @@ mqtt.group=watch,camera,battery
 
 [WatchService.java](src/main/java/com/zhuzhe/integrationmqtt/service/WatchService.java)
 
+消息处理者
+
+[AsyncCallbackDispatchHandler.java](src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java)
+
 
 > 方式二: 请求发布订阅
 
@@ -70,3 +80,7 @@ mqtt.group=watch,camera,battery
 [WatchPublishService.java](src/main/java/com/zhuzhe/integrationmqtt/service/pubsub/WatchPublishService.java)
 
 [WatchSubscribeService.java](src/main/java/com/zhuzhe/integrationmqtt/service/pubsub/WatchSubscribeService.java)
+
+消息处理者
+
+[PublishSubscribeDispatchHandler.java](src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/PublishSubscribeDispatchHandler.java)
