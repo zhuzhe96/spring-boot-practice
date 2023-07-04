@@ -10,10 +10,10 @@ import com.zhuzhe.integrationmqtt.mqtt.payload.online.SetOnlineAckPayload.Online
 import com.zhuzhe.integrationmqtt.mqtt.payload.online.SetOnlinePayload;
 import java.io.IOException;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.stereotype.Service;
+import org.springframework.stereotype.Component;
 
 @Slf4j
-@Service
+@Component
 @MqttSubscribe("watch")
 @SuppressWarnings("unused")
 public class WatchReplyService {
