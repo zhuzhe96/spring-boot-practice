@@ -29,6 +29,10 @@ public enum MqttStatus {
     this.message = message;
   }
 
+  public static boolean isSuccess(int code){
+    return code == SUCCESS.getCode();
+  }
+
   // 自定义序列化
   public static class Serializer extends JsonSerializer<MqttStatus> {
     @Override

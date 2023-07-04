@@ -8,6 +8,7 @@ import java.util.UUID;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
+// 云端请求设备端的内容
 @Data
 @EqualsAndHashCode(callSuper = true)
 public class GetNetworkPayload extends MessagePayload {

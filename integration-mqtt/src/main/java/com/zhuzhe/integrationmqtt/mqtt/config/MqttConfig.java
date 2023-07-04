@@ -68,13 +68,6 @@ public class MqttConfig {
     }
     return client;
   }
-
-  // 消息处理者：发布订阅模式
-//  @Bean
-//  public MqttDispatchHandler mqttDispatchHandler(MqttProperties properties) {
-//    //return new PublishSubscribeDispatchHandler();
-//  }
-  
   
   // 主题订阅
   @Bean

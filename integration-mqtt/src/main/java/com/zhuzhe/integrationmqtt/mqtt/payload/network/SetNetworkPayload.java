@@ -5,6 +5,7 @@ import com.zhuzhe.integrationmqtt.mqtt.payload.MqttStatus;
 import com.zhuzhe.integrationmqtt.mqtt.payload.MessagePayload;
 import com.zhuzhe.integrationmqtt.mqtt.payload.PayloadUrlStorage;
 import java.time.Clock;
+import java.util.UUID;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 
@@ -21,7 +22,7 @@ public class SetNetworkPayload extends MessagePayload {
         Clock.systemDefaultZone().millis(),
         MqttStatus.SUCCESS.getCode(),
         null,
-        null);
+        UUID.randomUUID().toString().replace("-", ""));
     this.data = data;
   }
 }

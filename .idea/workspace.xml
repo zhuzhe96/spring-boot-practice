@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加了一个异步回调的方式" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 给mqtt模块加点描述">
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Watch.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/online/SetOnlineAckPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/online/SetOnlinePayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchReplyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/MessageCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/MessageCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/PublishSubscribeDispatchHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/MqttStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/MqttStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadUrlStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadUrlStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkAckPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkAckPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/pubsub/WatchPublishService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/pubsub/WatchSubscribeService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,48 +83,48 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RequestMappingsPanelOrder0&quot;: &quot;0&quot;,
-    &quot;RequestMappingsPanelOrder1&quot;: &quot;1&quot;,
-    &quot;RequestMappingsPanelWidth0&quot;: &quot;75&quot;,
-    &quot;RequestMappingsPanelWidth1&quot;: &quot;75&quot;,
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;database.data.extractors.current.export.id&quot;: &quot;Comma-separated (CSV)_id&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;17&quot;,
-    &quot;last_opened_file_path&quot;: &quot;E:/git_project/test-spring/common/img&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.50689656&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;File.Encoding&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;50f19f9acae6c11ed8e8127d3f417807&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "database.data.extractors.current.export.id": "Comma-separated (CSV)_id",
+    "jdk.selected.JAVA_MODULE": "17",
+    "last_opened_file_path": "E:/git_project/test-spring/integration-mqtt/img",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15",
+    "project.structure.side.proportion": "0.50689656",
+    "settings.editor.selected.configurable": "File.Encoding",
+    "spring.configuration.checksum": "50f19f9acae6c11ed8e8127d3f417807",
+    "vue.rearranger.settings.migration": "true"
   },
-  &quot;keyToStringList&quot;: {
-    &quot;DatabaseDriversLRU&quot;: [
-      &quot;mysql&quot;,
-      &quot;redis&quot;
+  "keyToStringList": {
+    "DatabaseDriversLRU": [
+      "mysql",
+      "redis"
     ]
   }
-}</component>
+}]]></component>
   <component name="ReactorSettings">
     <option name="notificationShown" value="true" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="E:\git_project\test-spring\integration-mqtt\img" />
       <recent name="E:\git_project\test-spring\common\img" />
       <recent name="E:\git_project\test-spring\rest-hateoas\imgs" />
       <recent name="E:\git_project\test-spring\security-rbac\img" />
       <recent name="E:\git_project\test-spring\security-rbac\src\main\resources\mapper" />
-      <recent name="E:\git_project\test-spring\batch-processing\src\main\resources\mapper" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="E:\git_project\test-spring\batch-processing" />
@@ -398,14 +418,7 @@
       <workItem from="1687855661581" duration="86390000" />
       <workItem from="1688348907092" duration="16198000" />
       <workItem from="1688370150090" duration="1725000" />
-      <workItem from="1688371883528" duration="16118000" />
-    </task>
-    <task id="LOCAL-00002" summary="修改文件,使得可以在gitee上面查看">
-      <created>1681208237938</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1681208237938</updated>
+      <workItem from="1688371883528" duration="27031000" />
     </task>
     <task id="LOCAL-00003" summary="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。">
       <created>1681352620083</created>
@@ -743,7 +756,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688438396568</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="doc: 给mqtt模块加点描述">
+      <created>1688438882747</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1688438882748</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -776,7 +796,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 加一个由Security实现的RBAC初始模块" />
     <MESSAGE value="process: 完成部分Security+JWT的权限校验代码." />
     <MESSAGE value="feature: 完成Security+JWT的用户登录校验" />
     <MESSAGE value="feature: 为Security-RBAC模块加上后端方法访问校验,同时校验角色和具体权限" />
@@ -801,7 +820,8 @@
     <MESSAGE value="fix: 去掉无用的代码" />
     <MESSAGE value="feature: 为mqtt模块重构新的发布订阅处理代码.使其基本流程正常.为后续开发异步回调功能提供基础." />
     <MESSAGE value="feature: 加了一个异步回调的方式" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 加了一个异步回调的方式" />
+    <MESSAGE value="doc: 给mqtt模块加点描述" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: 给mqtt模块加点描述" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

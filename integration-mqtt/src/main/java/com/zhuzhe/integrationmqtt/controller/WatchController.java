@@ -1,7 +1,7 @@
 package com.zhuzhe.integrationmqtt.controller;
 
 import com.zhuzhe.integrationmqtt.entity.Network;
-import com.zhuzhe.integrationmqtt.service.pubsub.WatchPublishService;
+import com.zhuzhe.integrationmqtt.entity.Watch;
 import com.zhuzhe.integrationmqtt.service.WatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -16,21 +16,21 @@ import org.springframework.web.context.request.async.DeferredResult;
 @RestController
 @RequestMapping("watch")
 public class WatchController {
-  
   @Autowired
-  private WatchPublishService watchPublishService;
-  @Autowired
-  private WatchService watchService;
+  private WatchService service;
 
-  @GetMapping("network/{sn}/{mac}/{wifiName}")
-  public DeferredResult<Network> get(@PathVariable String sn, @PathVariable String mac, @PathVariable String wifiName){
-    return watchService.getNetwork(sn, mac, wifiName);
+  @GetMapping("{deviceId:\\d+}")
+  public ResponseEntity<Watch> get(@PathVariable("deviceId") Long id) {
+    return ResponseEntity.ok(service.get(id));
   }
 
-  // 这里的发布订阅只是一种简单尝试，实际上使用上面的异步回调可以做到所有的get和set操作
+  @GetMapping("network/{sn}/{mac}/{wifiName}")
+  public DeferredResult<?> getNetwork(@PathVariable String sn, @PathVariable String mac, @PathVariable String wifiName){
+    return service.getNetwork(sn, mac, wifiName);
+  }
+
   @PostMapping("network/{sn}/{mac}")
-  public ResponseEntity<?> post(@PathVariable String sn,@PathVariable String mac, @RequestBody Network network){
-    watchPublishService.setNetWork(sn,mac,network);
-    return ResponseEntity.ok(null);
+  public DeferredResult<?> setNetwork(@PathVariable String sn,@PathVariable String mac, @RequestBody Network network){
+    return service.setNetwork(sn,mac,network);
   }
 }
