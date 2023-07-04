@@ -7,6 +7,7 @@ import com.fasterxml.jackson.databind.annotation.JsonSerialize;
 import java.io.IOException;
 import lombok.Getter;
 
+// Mqtt状态信息
 @Getter
 @JsonSerialize(using = MqttStatus.Serializer.class)// 自定义序列化方式
 public enum MqttStatus {

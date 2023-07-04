@@ -4,26 +4,20 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 给mqtt模块加点描述">
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Watch.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/online/SetOnlineAckPayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/online/SetOnlinePayload.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchReplyService.java" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 合并前面的发布订阅设计, 完善一整套完整的 云端-&gt;设备端 设备端-&gt;云端的调用和回复流程.">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Network.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttConfig.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/MessageCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/MessageCallback.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/PublishSubscribeDispatchHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttMessageCallback.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttMessageCallback.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/annotation/MqttSubscribe.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/annotation/MqttSubscribe.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/annotation/MqttSubscribeHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/annotation/MqttSubscribeHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/MessagePayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/MessagePayload.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/MqttStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/MqttStatus.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadUrlStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadUrlStorage.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkAckPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkAckPayload.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkPayload.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/pubsub/WatchPublishService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/pubsub/WatchSubscribeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkAckPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkAckPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/online/SetOnlineAckPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/online/SetOnlineAckPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/online/SetOnlinePayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/online/SetOnlinePayload.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -418,14 +412,7 @@
       <workItem from="1687855661581" duration="86390000" />
       <workItem from="1688348907092" duration="16198000" />
       <workItem from="1688370150090" duration="1725000" />
-      <workItem from="1688371883528" duration="27031000" />
-    </task>
-    <task id="LOCAL-00003" summary="新增“任务调度”、“h2数据服务”、“使用RESTful”三个模块。">
-      <created>1681352620083</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1681352620083</updated>
+      <workItem from="1688371883528" duration="28442000" />
     </task>
     <task id="LOCAL-00004" summary="feature: 回滚后提交的代码，这里将把master和new-module进行同步。">
       <created>1682048245651</created>
@@ -763,7 +750,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688438882748</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="feature: 合并前面的发布订阅设计, 完善一整套完整的 云端-&gt;设备端 设备端-&gt;云端的调用和回复流程.">
+      <created>1688460620401</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1688460620401</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -796,7 +790,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="process: 完成部分Security+JWT的权限校验代码." />
     <MESSAGE value="feature: 完成Security+JWT的用户登录校验" />
     <MESSAGE value="feature: 为Security-RBAC模块加上后端方法访问校验,同时校验角色和具体权限" />
     <MESSAGE value="feature: 更改验证逻辑，使得当后端修改角色、权限时可以及时响应到当前的所有用户。" />
@@ -821,7 +814,8 @@
     <MESSAGE value="feature: 为mqtt模块重构新的发布订阅处理代码.使其基本流程正常.为后续开发异步回调功能提供基础." />
     <MESSAGE value="feature: 加了一个异步回调的方式" />
     <MESSAGE value="doc: 给mqtt模块加点描述" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: 给mqtt模块加点描述" />
+    <MESSAGE value="feature: 合并前面的发布订阅设计, 完善一整套完整的 云端-&gt;设备端 设备端-&gt;云端的调用和回复流程." />
+    <option name="LAST_COMMIT_MESSAGE" value="feature: 合并前面的发布订阅设计, 完善一整套完整的 云端-&gt;设备端 设备端-&gt;云端的调用和回复流程." />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

@@ -15,7 +15,6 @@ import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 import org.springframework.web.context.request.async.DeferredResult;
 
-// 异步回调模式：请求异步回调
 @Slf4j
 @Service
 public class WatchService {

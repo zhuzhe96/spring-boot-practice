@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-// 公用的有效荷载
+// 公用荷载
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -23,6 +23,6 @@ public class MessagePayload {
   private int status;
   // 消息信息: 当发生异常时,将从这里提示异常信息
   private String message;
-  // token，用来做异步回调模式中区分请求
+  // token，用来识别一对发送和回复的消息
   private String token;
 }

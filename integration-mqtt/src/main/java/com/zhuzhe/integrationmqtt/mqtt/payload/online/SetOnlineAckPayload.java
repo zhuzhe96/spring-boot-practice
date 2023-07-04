@@ -8,7 +8,7 @@ import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.ToString;
 
-// 云端回复设备端的内容
+// 云端回复设备端的消息
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
