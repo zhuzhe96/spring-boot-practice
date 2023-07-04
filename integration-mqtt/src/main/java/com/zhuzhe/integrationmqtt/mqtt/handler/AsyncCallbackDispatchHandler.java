@@ -112,7 +112,7 @@ public class AsyncCallbackDispatchHandler extends MqttDispatchHandler
         var sendTopic = properties.getSendTopic();
         var param = handleTopic.split("/");
         var topic = UriComponentsBuilder.fromPath(sendTopic).buildAndExpand(reply.group()).toUriString();
-        topic = topic.replace("/+/+", "") + "/" + param[2] + "/" + param[3];
+        topic = topic.replace("/+/+", "") + "/" + param[4] + "/" + param[5];
         client.publish(topic, new MqttMessage(new ObjectMapper().writeValueAsBytes(messagePayload)));
       } catch (Exception e) {
         log.error("MQTT 执行回复异常! 原因: ", e);
