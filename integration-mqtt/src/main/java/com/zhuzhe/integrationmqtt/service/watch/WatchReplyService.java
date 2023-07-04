@@ -1,4 +1,4 @@
-package com.zhuzhe.integrationmqtt.service;
+package com.zhuzhe.integrationmqtt.service.watch;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zhuzhe.integrationmqtt.mqtt.annotation.MqttSubscribe;

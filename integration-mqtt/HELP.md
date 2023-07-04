@@ -1,6 +1,10 @@
-# 使用spring integration系列的MQTT
+# spring integration mqtt
 
-### 基于spring-integration-mqtt实现的MQTT服务
+## 基于spring-integration-mqtt实现的MQTT服务
+1. 实现基本的通过代理服务器的云端消息发送和回复, 也实现了对设备端的调用和回复
+2. 代码设计上尽量兼容多主题监听和处理
+
+
 
 ## 使用的MQTT Broker: EMQX
 

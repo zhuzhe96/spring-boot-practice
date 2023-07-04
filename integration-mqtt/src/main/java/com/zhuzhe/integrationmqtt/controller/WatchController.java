@@ -2,7 +2,7 @@ package com.zhuzhe.integrationmqtt.controller;
 
 import com.zhuzhe.integrationmqtt.entity.Network;
 import com.zhuzhe.integrationmqtt.entity.Watch;
-import com.zhuzhe.integrationmqtt.service.WatchService;
+import com.zhuzhe.integrationmqtt.service.watch.WatchService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;

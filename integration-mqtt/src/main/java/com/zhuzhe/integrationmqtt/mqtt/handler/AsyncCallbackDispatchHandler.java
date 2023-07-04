@@ -174,9 +174,10 @@ public class AsyncCallbackDispatchHandler extends MqttDispatchHandler
           }
           executeReply(topic,payload,optional.get());
         }
-        case PayloadUrlStorage.NETWORK,
-            PayloadUrlStorage.BACKGROUND,
-            PayloadUrlStorage.TIMED_TASK -> {
+        case PayloadUrlStorage.WATCH_NETWORK,
+            PayloadUrlStorage.WATCH_BACKGROUND,
+            PayloadUrlStorage.WATCH_TIMED_TASK,
+            PayloadUrlStorage.CAMERA_BASE_INFO -> {
           var token = messagePayload.getToken();
           var callback = callbackCache.getIfPresent(token);
           if (callback == null) {

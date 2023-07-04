@@ -4,8 +4,22 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 修改部分代码的命名和注释">
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchReplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchReplyService.java" afterDir="false" />
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 接收设备端调用服务换注解">
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/CameraController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Camera.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/camera/GetCameraAckPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/camera/GetCameraPayload.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/camera/CameraService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadUrlStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadUrlStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/GetNetworkPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchReplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/watch/WatchReplyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/WatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/watch/WatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -116,11 +130,11 @@
       <recent name="com.zhuzhe.schedulingtasks" />
     </key>
     <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="com.zhuzhe.integrationmqtt.mqtt.payload.camera" />
       <recent name="com.zhuzhe.securityrbac.service.impl" />
       <recent name="com.zhuzhe.securityrbac.service" />
       <recent name="com.zhuzhe.securityrbac.mapper" />
       <recent name="com.zhuzhe.batchprocessing.controller" />
-      <recent name="com.zhuzhe.batchprocessing.service.impl" />
     </key>
   </component>
   <component name="RunManager" selected="Spring Boot.IntegrationMqttApplication">
@@ -164,7 +178,7 @@
       </method>
     </configuration>
     <configuration name="WatchService" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.integrationmqtt.service.WatchService" />
+      <option name="MAIN_CLASS_NAME" value="com.zhuzhe.integrationmqtt.service.watch.WatchService" />
       <module name="integration-mqtt" />
       <extension name="coverage">
         <pattern>
@@ -400,14 +414,7 @@
       <workItem from="1687855661581" duration="86390000" />
       <workItem from="1688348907092" duration="16198000" />
       <workItem from="1688370150090" duration="1725000" />
-      <workItem from="1688371883528" duration="28911000" />
-    </task>
-    <task id="LOCAL-00005" summary="feature: 完成RabbitMQ消息队列的功能开发，在官网的接收基础上增加了支持对象的传递、支持消息重试机制、支持消息重试超过次数后由死信队列处理的逻辑。并调通整个流程，附加了RabbitMQ的配置导出文件。">
-      <created>1685072690352</created>
-      <option name="number" value="00005" />
-      <option name="presentableId" value="LOCAL-00005" />
-      <option name="project" value="LOCAL" />
-      <updated>1685072690352</updated>
+      <workItem from="1688371883528" duration="31219000" />
     </task>
     <task id="LOCAL-00006" summary="feature: 新增一个访问neo4j数据库的模块">
       <created>1685081121447</created>
@@ -745,7 +752,14 @@
       <option name="project" value="LOCAL" />
       <updated>1688461995632</updated>
     </task>
-    <option name="localTasksCounter" value="54" />
+    <task id="LOCAL-00054" summary="doc: 接收设备端调用服务换注解">
+      <created>1688462221183</created>
+      <option name="number" value="00054" />
+      <option name="presentableId" value="LOCAL-00054" />
+      <option name="project" value="LOCAL" />
+      <updated>1688462221183</updated>
+    </task>
+    <option name="localTasksCounter" value="55" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -778,7 +792,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="feature: 为Security-RBAC模块加上后端方法访问校验,同时校验角色和具体权限" />
     <MESSAGE value="feature: 更改验证逻辑，使得当后端修改角色、权限时可以及时响应到当前的所有用户。" />
     <MESSAGE value="doc&amp;style: 该了下代码的顺序和注释" />
     <MESSAGE value="feature: 增加rbac的登陆限制,包括异地登陆,重试次数" />
@@ -803,9 +816,19 @@
     <MESSAGE value="doc: 给mqtt模块加点描述" />
     <MESSAGE value="feature: 合并前面的发布订阅设计, 完善一整套完整的 云端-&gt;设备端 设备端-&gt;云端的调用和回复流程." />
     <MESSAGE value="doc: 修改部分代码的命名和注释" />
-    <option name="LAST_COMMIT_MESSAGE" value="doc: 修改部分代码的命名和注释" />
+    <MESSAGE value="doc: 接收设备端调用服务换注解" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: 接收设备端调用服务换注解" />
   </component>
   <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java</url>
+          <line>156</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
     <pin-to-top-manager>
       <pinned-members>
         <PinnedItemInfo parentTag="org.springframework.validation.BeanPropertyBindingResult" memberName="autoGrowCollectionLimit" />

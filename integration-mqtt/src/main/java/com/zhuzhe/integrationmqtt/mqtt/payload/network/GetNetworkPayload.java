@@ -18,7 +18,7 @@ public class GetNetworkPayload extends MessagePayload {
     super(
         mac,
         "GET",
-        PayloadUrlStorage.NETWORK,
+        PayloadUrlStorage.WATCH_NETWORK,
         Clock.systemDefaultZone().millis(),
         MqttStatus.SUCCESS.getCode(),
         null,
