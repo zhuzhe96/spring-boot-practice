@@ -25,5 +25,6 @@ public class SetOnlinePayload extends MessagePayload {
     super(id, type, url, timestamp, status, message, token);
     this.data = data;
   }
+
   public record OnlineParam(String key) {}
 }

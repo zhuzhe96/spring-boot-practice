@@ -16,8 +16,7 @@ import org.springframework.web.context.request.async.DeferredResult;
 @RestController
 @RequestMapping("watch")
 public class WatchController {
-  @Autowired
-  private WatchService service;
+  @Autowired private WatchService service;
 
   @GetMapping("{deviceId:\\d+}")
   public ResponseEntity<Watch> get(@PathVariable("deviceId") Long id) {
@@ -25,12 +24,14 @@ public class WatchController {
   }
 
   @GetMapping("network/{sn}/{mac}/{wifiName}")
-  public DeferredResult<?> getNetwork(@PathVariable String sn, @PathVariable String mac, @PathVariable String wifiName){
+  public DeferredResult<?> getNetwork(
+      @PathVariable String sn, @PathVariable String mac, @PathVariable String wifiName) {
     return service.getNetwork(sn, mac, wifiName);
   }
 
   @PostMapping("network/{sn}/{mac}")
-  public DeferredResult<?> setNetwork(@PathVariable String sn,@PathVariable String mac, @RequestBody Network network){
-    return service.setNetwork(sn,mac,network);
+  public DeferredResult<?> setNetwork(
+      @PathVariable String sn, @PathVariable String mac, @RequestBody Network network) {
+    return service.setNetwork(sn, mac, network);
   }
 }

@@ -11,9 +11,10 @@ import org.springframework.context.annotation.Configuration;
 public class CustomConfig {
   // 自定义缓存过滤器，设定10s缓存用于限流
   @Bean
-  public CacheManager callCacheManager(){
+  public CacheManager callCacheManager() {
     var manager = new CaffeineCacheManager("callCache");
-    Caffeine<Object, Object> caffeine = Caffeine.newBuilder().expireAfterWrite(10, TimeUnit.SECONDS);
+    Caffeine<Object, Object> caffeine =
+        Caffeine.newBuilder().expireAfterWrite(10, TimeUnit.SECONDS);
     manager.setCaffeine(caffeine);
     return manager;
   }

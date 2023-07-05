@@ -9,7 +9,7 @@ import lombok.Getter;
 
 // Mqtt状态信息
 @Getter
-@JsonSerialize(using = MqttStatus.Serializer.class)// 自定义序列化方式
+@JsonSerialize(using = MqttStatus.Serializer.class) // 自定义序列化方式
 public enum MqttStatus {
   // 成功
   SUCCESS(200, "success"),
@@ -30,7 +30,7 @@ public enum MqttStatus {
     this.message = message;
   }
 
-  public static boolean isSuccess(int code){
+  public static boolean isSuccess(int code) {
     return code == SUCCESS.getCode();
   }
 

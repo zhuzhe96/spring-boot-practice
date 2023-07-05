@@ -48,6 +48,7 @@ public class AsyncCallbackDispatchHandler extends MqttDispatchHandler
   private record MessageReply(Object obj, Method method, String group, String url) {}
 
   private final List<MessageReply> replyCache = new ArrayList<>();
+
   private final ScheduledExecutorService executorService =
       new ScheduledThreadPoolExecutor(
           8,
@@ -57,10 +58,10 @@ public class AsyncCallbackDispatchHandler extends MqttDispatchHandler
             thread.setUncaughtExceptionHandler((t, e) -> log.error("线程执行发生异常! 原因: ", e));
             return thread;
           });
-  // mqtt配置
-  private final MqttProperties properties;
-  // Spring容器
+
   private ApplicationContext context;
+  private final MqttProperties properties;
+  private final ObjectMapper objectMapper;
 
   @Override
   public void setApplicationContext(
@@ -105,20 +106,25 @@ public class AsyncCallbackDispatchHandler extends MqttDispatchHandler
   }
 
   public void executeReply(String handleTopic, byte[] payload, MessageReply reply) {
-    executorService.submit(()->{
-      try {
-        var messagePayload = (MessagePayload) reply.method().invoke(reply.obj(), (Object) payload);
-        // 消息发布
-        var sendTopic = properties.getSendTopic();
-        var param = handleTopic.split("/");
-        var topic = UriComponentsBuilder.fromPath(sendTopic).buildAndExpand(reply.group()).toUriString();
-        topic = topic.replace("/+/+", "") + "/" + param[4] + "/" + param[5];
-        client.publish(topic, new MqttMessage(new ObjectMapper().writeValueAsBytes(messagePayload)));
-      } catch (Exception e) {
-        log.error("MQTT 执行回复异常! 原因: ", e);
-        e.printStackTrace();
-      }
-    });
+    executorService.submit(
+        () -> {
+          try {
+            var messagePayload =
+                (MessagePayload) reply.method().invoke(reply.obj(), (Object) payload);
+            // 消息发布
+            var sendTopic = properties.getSendTopic();
+            var param = handleTopic.split("/");
+            var topic =
+                UriComponentsBuilder.fromPath(sendTopic)
+                    .buildAndExpand(reply.group())
+                    .toUriString();
+            topic = topic.replace("/+/+", "") + "/" + param[4] + "/" + param[5];
+            client.publish(topic, new MqttMessage(objectMapper.writeValueAsBytes(messagePayload)));
+          } catch (Exception e) {
+            log.error("MQTT 执行回复异常! 原因: ", e);
+            e.printStackTrace();
+          }
+        });
   }
 
   // 发送消息并将回调函数添加缓存
@@ -131,7 +137,7 @@ public class AsyncCallbackDispatchHandler extends MqttDispatchHandler
       var sendTopic = properties.getSendTopic();
       var topic = UriComponentsBuilder.fromPath(sendTopic).buildAndExpand(group).toUriString();
       topic = topic.replace("/+/+", "") + "/" + sn + "/" + mac;
-      client.publish(topic, new MqttMessage(new ObjectMapper().writeValueAsBytes(payload)));
+      client.publish(topic, new MqttMessage(objectMapper.writeValueAsBytes(payload)));
     } catch (MqttException | JsonProcessingException e) {
       log.error("消息发送失败! 原因: ", e);
       e.printStackTrace();
@@ -155,7 +161,7 @@ public class AsyncCallbackDispatchHandler extends MqttDispatchHandler
   public void messageArrived(String topic, MqttMessage message) {
     try {
       var payload = message.getPayload();
-      var messagePayload = new ObjectMapper().readValue(payload, MessagePayload.class);
+      var messagePayload = objectMapper.readValue(payload, MessagePayload.class);
       if (StringUtils.isBlank(messagePayload.getUrl()))
         throw new RuntimeException("无效的Mqtt消息, 原因: url为空!");
 
@@ -168,11 +174,11 @@ public class AsyncCallbackDispatchHandler extends MqttDispatchHandler
               replyCache.stream()
                   .filter(r -> topic.contains(r.group()) && r.url().equals(messagePayload.getUrl()))
                   .findFirst();
-          if (optional.isEmpty()){
+          if (optional.isEmpty()) {
             log.info("找不到回复方法!");
             return;
           }
-          executeReply(topic,payload,optional.get());
+          executeReply(topic, payload, optional.get());
         }
         case PayloadUrlStorage.WATCH_NETWORK,
             PayloadUrlStorage.WATCH_BACKGROUND,

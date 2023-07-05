@@ -24,5 +24,6 @@ public interface PayloadUrlStorage {
   String WATCH_TIMED_TASK = "/zhuzhe/prod/timed_task";
 
   /*相机设备: 云端请求设备端接口*/
+  // 基本信息
   String CAMERA_BASE_INFO = "/zhuzhe/prod/base_info";
 }

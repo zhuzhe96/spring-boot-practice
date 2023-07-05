@@ -5,19 +5,14 @@ import org.eclipse.paho.client.mqttv3.MqttAsyncClient;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-/**
- * 回调处理者抽象父类
- * 这里做抽象是为了给子类提供断线重连功能
- */
-public abstract class MqttDispatchHandler implements MqttTopicReconnect {
+/** 回调处理者抽象父类 这里做抽象是为了给子类提供断线重连功能 */
+public abstract class MqttDispatchHandler implements MqttServerReconnect {
   private static final Logger log = LoggerFactory.getLogger(MqttDispatchHandler.class);
 
   protected MqttAsyncClient client;
   private MqttTopicSubscriber subscriber;
 
-  public MqttDispatchHandler() {
-
-  }
+  public MqttDispatchHandler() {}
 
   @Override
   public void setMqttTopicSubscriber(MqttTopicSubscriber subscriber) {

@@ -20,6 +20,7 @@ import org.springframework.web.context.request.async.DeferredResult;
 @Service
 public class WatchService {
   public static final String group = "watch";
+  @Autowired private ObjectMapper objectMapper;
   @Autowired private AsyncCallbackDispatchHandler handler;
 
   @Cacheable(cacheNames = "callCache", cacheManager = "callCacheManager", key = "#id")
@@ -31,7 +32,9 @@ public class WatchService {
 
   // 云端 -> 设备端: 发送并异步回调
   public DeferredResult<Network> getNetwork(String sn, String mac, String wifiName) {
-    var result = new DeferredResult<Network>(PayloadUrlStorage.TIMEOUT, () -> new RuntimeException("获取设备网络信息超时!"));
+    var result =
+        new DeferredResult<Network>(
+            PayloadUrlStorage.TIMEOUT, () -> new RuntimeException("获取设备网络信息超时!"));
     log.info("开始通过MQTT调用设备端...");
     handler.sendMessage(
         group,
@@ -40,16 +43,16 @@ public class WatchService {
         new GetNetworkPayload(mac, wifiName),
         (bytes) -> {
           log.info("MQTT 回调处理");
-          var getNetworkAckPayload =
-              new ObjectMapper().readValue(bytes, GetNetworkAckPayload.class);
+          var getNetworkAckPayload = objectMapper.readValue(bytes, GetNetworkAckPayload.class);
           log.info("MQTT 回调处理成功! Payload={}", getNetworkAckPayload);
           result.setResult(getNetworkAckPayload.getData());
         });
     return result;
   }
 
-  public DeferredResult<Object> setNetwork(String sn, String mac, Network network){
-    var result = new DeferredResult<>(PayloadUrlStorage.TIMEOUT, () -> new RuntimeException("设置设备网络信息超时!"));
+  public DeferredResult<Object> setNetwork(String sn, String mac, Network network) {
+    var result =
+        new DeferredResult<>(PayloadUrlStorage.TIMEOUT, () -> new RuntimeException("设置设备网络信息超时!"));
     log.info("开始通过MQTT调用设备端...");
     handler.sendMessage(
         group,
@@ -58,9 +61,8 @@ public class WatchService {
         new SetNetworkPayload(mac, network),
         (bytes) -> {
           log.info("MQTT 回调处理");
-          var setNetworkAckPayload =
-              new ObjectMapper().readValue(bytes, SetNetworkAckPayload.class);
-          if (!MqttStatus.isSuccess(setNetworkAckPayload.getStatus())){
+          var setNetworkAckPayload = objectMapper.readValue(bytes, SetNetworkAckPayload.class);
+          if (!MqttStatus.isSuccess(setNetworkAckPayload.getStatus())) {
             result.setResult(MqttStatus.FAILURE);
           }
           log.info("MQTT 回调处理成功! Payload={}", setNetworkAckPayload);

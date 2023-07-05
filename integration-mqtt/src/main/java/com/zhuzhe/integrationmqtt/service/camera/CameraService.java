@@ -15,11 +15,13 @@ import org.springframework.web.context.request.async.DeferredResult;
 @Service
 public class CameraService {
   public static final String group = "camera";
-  @Autowired
-  private AsyncCallbackDispatchHandler handler;
+  @Autowired private ObjectMapper objectMapper;
+  @Autowired private AsyncCallbackDispatchHandler handler;
 
   public DeferredResult<Camera> get(String sn, String mac) {
-    var result = new DeferredResult<Camera>(PayloadUrlStorage.TIMEOUT, () -> new RuntimeException("获取相机基础信息超时!"));
+    var result =
+        new DeferredResult<Camera>(
+            PayloadUrlStorage.TIMEOUT, () -> new RuntimeException("获取相机基础信息超时!"));
     log.info("开始通过MQTT调用设备端...");
     handler.sendMessage(
         group,
@@ -28,8 +30,7 @@ public class CameraService {
         new GetCameraPayload(mac),
         (bytes) -> {
           log.info("MQTT 回调处理");
-          var getCameraAckPayload =
-              new ObjectMapper().readValue(bytes, GetCameraAckPayload.class);
+          var getCameraAckPayload = objectMapper.readValue(bytes, GetCameraAckPayload.class);
           log.info("MQTT 回调处理成功! Payload={}", getCameraAckPayload);
           result.setResult(getCameraAckPayload.getData());
         });

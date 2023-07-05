@@ -35,9 +35,12 @@ public class MqttTopicSubscriber implements InitializingBean {
     var handleTopic = properties.getHandleTopic();
     var groups = properties.getGroup().split(",");
 
-    var topics = Arrays.stream(groups).map(group -> UriComponentsBuilder.fromPath(handleTopic)
-        .buildAndExpand(group)
-        .toUriString()).toArray(String[]::new);
+    var topics =
+        Arrays.stream(groups)
+            .map(
+                group ->
+                    UriComponentsBuilder.fromPath(handleTopic).buildAndExpand(group).toUriString())
+            .toArray(String[]::new);
 
     try {
       // 给处理器提供主题订阅信息和客户端

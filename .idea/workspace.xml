@@ -4,10 +4,25 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="feature: 加一个相机的调用回调，方便对照理解">
+    <list default="true" id="6b5c61bb-06c0-4e7f-b75d-9464358d250d" name="Changes" comment="doc: 修改配置">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/integration-mqtt/HELP.md" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/HELP.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/config/CustomConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/config/CustomConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/controller/WatchController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Network.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Network.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Watch.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/entity/Watch.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttDispatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttDispatchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttTopicReconnect.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttServerReconnect.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttTopicSubscriber.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/MqttTopicSubscriber.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/config/MqttConfig.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/handler/AsyncCallbackDispatchHandler.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/MqttStatus.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/MqttStatus.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadUrlStorage.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/PayloadUrlStorage.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkAckPayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/network/SetNetworkAckPayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/online/SetOnlinePayload.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/mqtt/payload/online/SetOnlinePayload.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/camera/CameraService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/camera/CameraService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/watch/WatchReplyService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/watch/WatchReplyService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/watch/WatchService.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/main/java/com/zhuzhe/integrationmqtt/service/watch/WatchService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/integration-mqtt/src/test/java/com/zhuzhe/integrationmqtt/IntegrationMqttApplicationTests.java" beforeDir="false" afterPath="$PROJECT_DIR$/integration-mqtt/src/test/java/com/zhuzhe/integrationmqtt/IntegrationMqttApplicationTests.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -402,28 +417,7 @@
       <workItem from="1687855661581" duration="86390000" />
       <workItem from="1688348907092" duration="16198000" />
       <workItem from="1688370150090" duration="1725000" />
-      <workItem from="1688371883528" duration="34358000" />
-    </task>
-    <task id="LOCAL-00007" summary="feature: 增加neo4j数据库的模块实现代码,存在一个问题,就是role的关联不起作用">
-      <created>1685096938800</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1685096938800</updated>
-    </task>
-    <task id="LOCAL-00008" summary="fix: 解决role没有尝试关联关系的bug">
-      <created>1685157537088</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1685157537088</updated>
-    </task>
-    <task id="LOCAL-00009" summary="feature: 加一个新的数据校验的模块">
-      <created>1685158379715</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1685158379715</updated>
+      <workItem from="1688371883528" duration="37370000" />
     </task>
     <task id="LOCAL-00010" summary="feature: 完善数据校验模块的内容，包含字段校验，自定义校验器，校验异常统一处理，接口返回体封装。">
       <created>1685175018895</created>
@@ -747,7 +741,28 @@
       <option name="project" value="LOCAL" />
       <updated>1688464438613</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="fix&amp;doc: 增加模块的基本实现功能描述，还有处理了一个bug.">
+      <created>1688467547462</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1688467547462</updated>
+    </task>
+    <task id="LOCAL-00057" summary="doc: 修改配置">
+      <created>1688467679368</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1688467679368</updated>
+    </task>
+    <task id="LOCAL-00058" summary="doc: 修改配置">
+      <created>1688467812291</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1688467812291</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -780,8 +795,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="doc&amp;style: 该了下代码的顺序和注释" />
-    <MESSAGE value="feature: 增加rbac的登陆限制,包括异地登陆,重试次数" />
     <MESSAGE value="style: 更改代码样式，改为统一返回结构&#10;1. 正常返回：ResponseEntity 和 ApiResponse&#10;2. 异常返回：SecurityException" />
     <MESSAGE value="fix: 重新修改返回格式,使用统一的状态码和返回体.同时新增退出登陆和注册接口(注册接口还在开发中,存在bug)" />
     <MESSAGE value="fix: 修复了注册失败的问题" />
@@ -805,7 +818,9 @@
     <MESSAGE value="doc: 修改部分代码的命名和注释" />
     <MESSAGE value="doc: 接收设备端调用服务换注解" />
     <MESSAGE value="feature: 加一个相机的调用回调，方便对照理解" />
-    <option name="LAST_COMMIT_MESSAGE" value="feature: 加一个相机的调用回调，方便对照理解" />
+    <MESSAGE value="fix&amp;doc: 增加模块的基本实现功能描述，还有处理了一个bug." />
+    <MESSAGE value="doc: 修改配置" />
+    <option name="LAST_COMMIT_MESSAGE" value="doc: 修改配置" />
   </component>
   <component name="XDebuggerManager">
     <pin-to-top-manager>

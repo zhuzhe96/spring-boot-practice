@@ -9,6 +9,4 @@ import lombok.ToString;
 @Data
 @ToString(callSuper = true)
 @EqualsAndHashCode(callSuper = true)
-public class SetNetworkAckPayload extends MessagePayload {
-
-}
+public class SetNetworkAckPayload extends MessagePayload {}

@@ -1,5 +1,6 @@
 package com.zhuzhe.integrationmqtt.mqtt.config;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.zhuzhe.integrationmqtt.mqtt.MqttDispatchHandler;
 import com.zhuzhe.integrationmqtt.mqtt.MqttTopicSubscriber;
 import java.time.Clock;
@@ -24,7 +25,7 @@ public class MqttConfig {
   }
 
   private MqttConnectOptions getMqttConnectOptions(MqttProperties properties) {
-    log.info("连接配置：{}",properties);
+    log.info("连接配置：{}", properties);
     // 配置连接服务器信息
     var options = new MqttConnectOptions();
     options.setServerURIs(new String[] {properties.getUrl()});
@@ -68,12 +69,17 @@ public class MqttConfig {
     }
     return client;
   }
-  
+
   // 主题订阅
   @Bean
   @ConditionalOnMissingBean(MqttTopicSubscriber.class)
   public MqttTopicSubscriber mqttAutoSubscriber(
       MqttProperties properties, MqttAsyncClient client, MqttDispatchHandler handler) {
     return new MqttTopicSubscriber(properties, client, handler);
+  }
+
+  @Bean
+  public ObjectMapper objectMapper() {
+    return new ObjectMapper();
   }
 }

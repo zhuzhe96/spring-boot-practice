@@ -10,9 +10,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 class IntegrationMqttApplicationTests {
 
   @Test
-  void contextLoads() {
-    
-  }
+  void contextLoads() {}
 
   /*测试工具: 随机mac和sn*/
   @Test
