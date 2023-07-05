@@ -8,7 +8,7 @@
   <!--继承本项目的父工程-->
   <parent>
     <groupId>com.zhuzhe</groupId>
-    <artifactId>test-spring</artifactId>
+    <artifactId>spring-boot-practice</artifactId>
     <version>0.0.1-SNAPSHOT</version>
   </parent>
 

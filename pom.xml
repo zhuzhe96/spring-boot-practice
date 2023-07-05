@@ -15,10 +15,10 @@
 
   <!--基本信息-->
   <groupId>com.zhuzhe</groupId>
-  <artifactId>test-spring</artifactId>
+  <artifactId>spring-boot-practice</artifactId>
   <version>0.0.1-SNAPSHOT</version>
-  <name>test-spring</name>
-  <description>test-spring</description>
+  <name>spring-boot-practice</name>
+  <description>spring-boot-practice</description>
   <packaging>pom</packaging>
   <properties>
     <java.version>17</java.version>
