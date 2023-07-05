@@ -1,4 +1,4 @@
-# Spring 案例
+# spring boot 案例
 
 * 项目使用多模块结构,思路来自：[SpringBoot多模块项目构建](https://cloud.tencent.com/developer/article/2141489)
 * 项目是根据官网学习，官网地址：[Spring官网概要](https://spring.io/guides)
