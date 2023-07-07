@@ -1,8 +1,8 @@
 package com.zhuzhe.accessingdatamongodb.service;
 
+import jakarta.annotation.Resource;
 import java.util.Set;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.CollectionOptions;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.query.Criteria;
@@ -11,9 +11,10 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
+@SuppressWarnings({"unused"})
 public class CollectionService {
 
-  @Autowired
+  @Resource
   private MongoTemplate template;
 
   // 判断是否存在

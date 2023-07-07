@@ -11,7 +11,7 @@ import org.springframework.data.mongodb.core.mapping.MongoId;
 @ToString
 @Accessors(chain = true)
 public class User {
-  @MongoId
+  @MongoId//根据时间戳生成,批量插入时会有相同id的情况
   private String id;
   private String name;
   private String sex;
@@ -19,6 +19,6 @@ public class User {
   private Integer age;
   @JsonFormat(pattern = "yyyy-MM-dd", timezone = "GMT+8")
   private Date birthday;
-  private String remake;
+  private String address;
   private Status status;
 }

@@ -1,19 +1,21 @@
 package com.zhuzhe.accessingdatamongodb.service;
 
+import jakarta.annotation.Resource;
 import java.util.ArrayList;
 import lombok.extern.slf4j.Slf4j;
 import org.bson.Document;
 import org.bson.conversions.Bson;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Service;
 
 // 视图（Views）是基于一个或多个集合的查询结果而创建的虚拟集合
 @Slf4j
 @Service
+@SuppressWarnings("unused")
 public class ViewService {
 
-  @Autowired private MongoTemplate template;
+  @Resource
+  private MongoTemplate template;
 
   public boolean exists(String collectionName) {
     return template.collectionExists(collectionName);
