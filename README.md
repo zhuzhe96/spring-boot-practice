@@ -26,5 +26,23 @@
   * accessing-data-mongodb【5019】[MongoDB数据库](./accessing-data-mongodb/HELP.md)
 ---
 ### 项目信息
-* spring boot version : 3.0.5
+* spring boot version : 3.1.0
 * java version : 17.0.6
+* Maven 配置 ：
+  ```xml
+    <mirrors>
+      <mirror>
+        <id>maven-default-http-blocker</id>
+        <mirrorOf>external:http:*</mirrorOf>
+        <name>Pseudo repository to mirror external repositories initially using HTTP.</name>
+        <url>http://0.0.0.0/</url>
+        <blocked>true</blocked>
+      </mirror>
+      <mirror>
+        <id>aliyunmaven</id>
+        <mirrorOf>*</mirrorOf>
+        <name>阿里云公共仓库</name>
+        <url>https://maven.aliyun.com/repository/public</url>
+      </mirror>
+    </mirrors>
+  ```
