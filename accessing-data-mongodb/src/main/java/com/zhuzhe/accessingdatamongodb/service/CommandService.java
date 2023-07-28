@@ -8,15 +8,17 @@ import org.springframework.stereotype.Service;
 
 @Slf4j
 @Service
-@SuppressWarnings("unused")
-public class RunCommandService {
+public class CommandService {
+
   @Resource
   private MongoTemplate template;
 
+
   /**
    * 运行指定命令
+   * <a href="https://www.mongodb.com/docs/manual/reference/command/">MongoDB命令</a>
    */
-  public Document runCommand(String jsonCommand){
+  public Document runCommand(String jsonCommand) {
     var command = Document.parse(jsonCommand);
     return template.getDb().runCommand(command);
   }
