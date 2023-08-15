@@ -24,6 +24,7 @@
   * accessing-data-geode【5017】[Geode数据库](./accessing-data-geode/HELP.md)
   * integration-mqtt【5018】[MQTT服务](./integration-mqtt/HELP.md)
   * accessing-data-mongodb【5019】[MongoDB数据库](./accessing-data-mongodb/HELP.md)
+  * quartz-tasks【5020】[Quartz定时任务](./quartz-tasks/HELP.md)
 ---
 ### 项目信息
 * spring boot version : 3.1.0

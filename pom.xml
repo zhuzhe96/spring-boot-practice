@@ -46,6 +46,7 @@
     <module>accessing-data-geode</module>
     <module>integration-mqtt</module>
     <module>accessing-data-mongodb</module>
+    <module>quartz-tasks</module>
   </modules>
 
   <!--统一管理版本号-->
@@ -149,6 +150,11 @@
       <dependency>
         <groupId>com.zhuzhe</groupId>
         <artifactId>accessing-data-mongodb</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zhuzhe</groupId>
+        <artifactId>quartz-tasks</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
     </dependencies>
