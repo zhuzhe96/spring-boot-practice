@@ -2,16 +2,15 @@ package com.zhuzhe.accessingdatamongodb.entity;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import java.util.Date;
+import java.util.List;
+import lombok.Builder;
 import lombok.Data;
-import lombok.ToString;
-import lombok.experimental.Accessors;
-import org.springframework.data.mongodb.core.mapping.MongoId;
+import org.springframework.data.mongodb.core.mapping.Document;
 
 @Data
-@ToString
-@Accessors(chain = true)
+@Builder
+@Document(collection = "user")
 public class User {
-  @MongoId//根据时间戳生成,批量插入时会有相同id的情况
   private String id;
   private String name;
   private String sex;
@@ -21,4 +20,6 @@ public class User {
   private Date birthday;
   private String address;
   private Status status;
+  private String role;
+  private List<Device> devices;
 }
