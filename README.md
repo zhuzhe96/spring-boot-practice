@@ -26,6 +26,7 @@
   * accessing-data-mongodb【5019】[MongoDB数据库](./accessing-data-mongodb/HELP.md)
   * quartz-tasks【5020】[Quartz定时任务](./quartz-tasks/HELP.md)
   * jdk-new-feature【5021】[Jdk新特性练习](./jdk-new-feature/HELP.md)
+  * accessing-data-jpa【5022】[JPA操作数据库](./accessing-data-jpa/HELP.md)
 ---
 ### 项目信息
 * spring boot version : 3.1.0
