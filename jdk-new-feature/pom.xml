@@ -21,6 +21,10 @@
 
   <dependencies>
     <!--私有依赖-->
+    <dependency>
+      <groupId>org.projectlombok</groupId>
+      <artifactId>lombok</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

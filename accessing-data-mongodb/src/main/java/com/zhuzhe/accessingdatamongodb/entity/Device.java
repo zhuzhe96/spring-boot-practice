@@ -1,6 +1,5 @@
 package com.zhuzhe.accessingdatamongodb.entity;
 
-import java.time.LocalDateTime;
 import lombok.Builder;
 import lombok.Data;
 import org.springframework.data.annotation.CreatedDate;
@@ -26,9 +25,9 @@ public class Device {
   String userId;
   String groupId;
   @CreatedDate
-  private LocalDateTime create = LocalDateTime.now();;
+  private Long create;
   @LastModifiedDate
-  private LocalDateTime update;
+  private Long update;
   @Version
   private Long version;
   private String role;
