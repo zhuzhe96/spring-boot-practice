@@ -48,6 +48,7 @@
     <module>accessing-data-mongodb</module>
     <module>quartz-tasks</module>
     <module>jdk-new-feature</module>
+    <module>accessing-data-jpa</module>
   </modules>
 
   <!--统一管理版本号-->
@@ -161,6 +162,11 @@
       <dependency>
         <groupId>com.zhuzhe</groupId>
         <artifactId>jdk-new-feature</artifactId>
+        <version>0.0.1-SNAPSHOT</version>
+      </dependency>
+      <dependency>
+        <groupId>com.zhuzhe</groupId>
+        <artifactId>accessing-data-jpa</artifactId>
         <version>0.0.1-SNAPSHOT</version>
       </dependency>
     </dependencies>
