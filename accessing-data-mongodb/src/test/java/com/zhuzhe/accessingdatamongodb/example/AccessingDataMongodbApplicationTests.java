@@ -9,7 +9,6 @@ import static com.zhuzhe.accessingdatamongodb.util.DataUtil.randomSexCode;
 import com.zhuzhe.accessingdatamongodb.entity.Device;
 import com.zhuzhe.accessingdatamongodb.entity.Status;
 import com.zhuzhe.accessingdatamongodb.entity.User;
-import java.util.ArrayList;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
@@ -19,6 +18,8 @@ import org.springframework.dao.OptimisticLockingFailureException;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.data.mongodb.core.aggregation.AddFieldsOperation;
 import org.springframework.data.mongodb.core.aggregation.Aggregation;
+import org.springframework.data.mongodb.core.aggregation.ArrayOperators.Filter;
+import org.springframework.data.mongodb.core.aggregation.ComparisonOperators.Eq;
 import org.springframework.data.mongodb.core.aggregation.ConvertOperators.ToObjectId;
 import org.springframework.data.mongodb.core.aggregation.ConvertOperators.ToString;
 import org.springframework.data.mongodb.core.aggregation.LookupOperation;
@@ -28,9 +29,6 @@ import org.springframework.data.mongodb.core.query.Query;
 @Slf4j
 @SpringBootTest
 class AccessingDataMongodbApplicationTests {
-
-  private static List<String> deviceIds = new ArrayList<>();
-  private static List<String> userIds = new ArrayList<>();
   private static final String type = "BW-TT2";
   private static final String swr = "1.3.13";
   private static final String hw = "0.0.8";
@@ -47,7 +45,7 @@ class AccessingDataMongodbApplicationTests {
   void example02() {
     log.info("=============插入设备数据==============");
     try {
-      for (int i = 0; i < 10; i++) {
+      for (int i = 0; i < 1000; i++) {
         var mac = randomMAC();
         Device device = Device.builder()
             .mac(mac)
@@ -57,6 +55,7 @@ class AccessingDataMongodbApplicationTests {
             .swr(swr)
             .hw(hw)
             .role("test")
+            .active(getNum(0, 1)==1)
             .build();
         template.insert(device);
       }
@@ -70,7 +69,7 @@ class AccessingDataMongodbApplicationTests {
   void example03() {
     log.info("=============插入用户数据==============");
     try {
-      for (int i = 0; i < 5; i++) {
+      for (int i = 0; i < 1000; i++) {
         var user = User.builder()
             .name(randomName())
             .sex(randomSexCode())
@@ -105,6 +104,7 @@ class AccessingDataMongodbApplicationTests {
       device.setHw("1.9.8");
       template.save(device);
       log.info("ver={}", device.getVersion());
+      assert preDevice != null;
       template.save(preDevice);
     } catch (Exception e) {
       if (e instanceof OptimisticLockingFailureException) {
@@ -121,7 +121,7 @@ class AccessingDataMongodbApplicationTests {
     try {
       var user = template.find(Query.query(Criteria.where("role").is("test")), User.class).stream()
           .findAny().orElseThrow();
-      for (int i = 0; i < 3; i++) {
+      for (int i = 0; i < 300; i++) {
         var device = template.find(
             Query.query(Criteria.where("role").is("test").and("userId").is(null)),
             Device.class).stream().findAny().orElseThrow();
@@ -183,6 +183,21 @@ class AccessingDataMongodbApplicationTests {
 
   @Test
   void example08() {
+    log.info("=============关联查询测试(一对多 + 列表类型成员过滤)==============");
+    var addFieldsOperation = AddFieldsOperation.addField("uid").withValue(ToString.toString("$_id")).build();
+    var lookupOperation = LookupOperation.newLookup().from("device").localField("uid").foreignField("userId").as("devices");
+    var matchOperation = Aggregation.match(Criteria.where("devices").ne(List.of()));
+    var projectOperation = Aggregation.project().andInclude("_id", "_class")
+        .and(Filter.filter("devices").as("list").by(
+        Eq.valueOf("$$list.active").equalToValue(true))).as("devices");
+    var aggregation = Aggregation.newAggregation(addFieldsOperation, lookupOperation,
+        matchOperation, projectOperation);
+    var users = template.aggregate(aggregation, "user", User.class).getMappedResults();
+    log.info("pass users={}", users);
+  }
+
+  @Test
+  void example09() {
     log.info("=============测试数据清理==============");
     try {
       template.remove(Query.query(Criteria.where("role").is("test")), Device.class);
