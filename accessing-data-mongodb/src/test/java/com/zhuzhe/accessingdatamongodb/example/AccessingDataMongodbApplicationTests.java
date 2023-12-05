@@ -25,6 +25,7 @@ import org.springframework.data.mongodb.core.aggregation.ConvertOperators.ToStri
 import org.springframework.data.mongodb.core.aggregation.LookupOperation;
 import org.springframework.data.mongodb.core.query.Criteria;
 import org.springframework.data.mongodb.core.query.Query;
+import org.springframework.data.mongodb.core.query.Update;
 
 @Slf4j
 @SpringBootTest
@@ -119,14 +120,11 @@ class AccessingDataMongodbApplicationTests {
   void example05() {
     log.info("=============数据更新测试==============");
     try {
-      var user = template.find(Query.query(Criteria.where("role").is("test")), User.class).stream()
-          .findAny().orElseThrow();
-      for (int i = 0; i < 300; i++) {
-        var device = template.find(
-            Query.query(Criteria.where("role").is("test").and("userId").is(null)),
-            Device.class).stream().findAny().orElseThrow();
-        device.setUserId(user.getId());
-        template.save(device);
+      for (var i = 1; i< 500; i++) {
+        var user = template.findOne(Query.query(Criteria.where("role").is("test")).limit(1), User.class);
+        assert user != null;
+        template.updateMulti(Query.query(Criteria.where("role").is("test").and("userId").is(null)).limit(10),
+            Update.update("userId", user.getId()), Device.class);
       }
       log.info("pass");
     } catch (Exception e) {
