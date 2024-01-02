@@ -1,0 +1,30 @@
+server:
+  port: 5022
+spring:
+  # 数据库资源设置
+  datasource:
+    url: jdbc:mysql://localhost:3306/test_db?ServerTimeZone=GMT%2B8
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: zhuzhe@96
+    driver-class-name: com.mysql.cj.jdbc.Driver
+  # JPA基础设置
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    open-in-view: false
+    properties:
+      hibernate:
+        jdbc:
+          batch_size: 100
+          batch_versioned_data: true
+# 日志设置
+logging:
+  level:
+    root: info
+    com.zhuzhe: debug
+    web: debug
+    org.hibernate.sql: debug
+  file:
+    name: logs/accessing-data-jpa.log

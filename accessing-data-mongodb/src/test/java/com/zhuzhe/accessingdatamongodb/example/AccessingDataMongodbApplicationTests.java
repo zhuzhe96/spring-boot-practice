@@ -8,6 +8,7 @@ import static com.zhuzhe.accessingdatamongodb.util.DataUtil.randomSexCode;
 
 import com.zhuzhe.accessingdatamongodb.entity.Device;
 import com.zhuzhe.accessingdatamongodb.entity.Status;
+import com.zhuzhe.accessingdatamongodb.entity.ThirdPartDevice;
 import com.zhuzhe.accessingdatamongodb.entity.User;
 import java.util.List;
 import lombok.extern.slf4j.Slf4j;
@@ -46,7 +47,7 @@ class AccessingDataMongodbApplicationTests {
   void example02() {
     log.info("=============插入设备数据==============");
     try {
-      for (int i = 0; i < 1000; i++) {
+      for (int i = 0; i < 1; i++) {
         var mac = randomMAC();
         Device device = Device.builder()
             .mac(mac)
@@ -196,6 +197,31 @@ class AccessingDataMongodbApplicationTests {
 
   @Test
   void example09() {
+    log.info("=============插入设备数据==============");
+    try {
+      for (int i = 0; i < 1; i++) {
+        var mac = randomMAC();
+        ThirdPartDevice thirdPartDevice = ThirdPartDevice.builder()
+            .desc("测试数据aaaaaa")
+            .mac(mac)
+            .sn(type)
+            .type(type)
+            .name(type + "-" + mac.substring(mac.length() - 4))
+            .swr(swr)
+            .hw(hw)
+            .role("test")
+            .active(getNum(0, 1)==1)
+            .build();
+        template.insert(thirdPartDevice);
+      }
+      log.info("pass");
+    } catch (Exception e) {
+      log.error("error");
+    }
+  }
+
+  @Test
+  void example10() {
     log.info("=============测试数据清理==============");
     try {
       template.remove(Query.query(Criteria.where("role").is("test")), Device.class);

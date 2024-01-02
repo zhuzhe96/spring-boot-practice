@@ -12,6 +12,9 @@ import java.util.function.BiFunction;
 import java.util.function.BinaryOperator;
 import java.util.function.Function;
 import java.util.stream.Collectors;
+import lombok.Builder;
+import lombok.Data;
+import lombok.ToString;
 import org.springframework.util.CollectionUtils;
 
 public class ConvertUtil {
@@ -183,5 +186,83 @@ public class ConvertUtil {
    */
   public static <T> BinaryOperator<T> next() {
     return (pre, next) -> next;
+  }
+
+  @Data
+  @Builder
+  private static class TestData {
+    private Long id;
+    private String name;
+
+    @Override
+    public String toString() {
+      return "TestData{" +
+          "id=" + id +
+          ", name='" + name + '\'' +
+          '}';
+    }
+  }
+
+  @Data
+  private static class TwoValue<T extends List<?>, D extends List<?>> {
+
+    private T addList;
+    private D delList;
+
+    public TwoValue(T addList, D delList) {
+      this.addList = addList;
+      this.delList = delList;
+    }
+
+    @Override
+    public String toString() {
+      return "TwoValue{" +
+          "addList=" + addList +
+          ", delList=" + delList +
+          '}';
+    }
+  }
+
+  public static <T> TwoValue<List<T>, List<T>> filterAdd0rDel(List<T> dtolist, List<T> joinlist,
+      Function<T, String> function) {
+    //需要新增的
+    List<T> addList = new ArrayList<>();
+    //需要删除的
+    List<T> delList = new ArrayList<>();
+
+    if (!CollectionUtils.isEmpty(joinlist)) {
+      var dtoMap = dtolist.stream().collect(Collectors.toMap(function, Function.identity()));
+      var joinMap = joinlist.stream().collect(Collectors.toMap(function, Function.identity()));
+      for (T dto : dtolist) {
+        // 新增的
+        if (!joinMap.containsKey(function.apply(dto))) {
+          addList.add(dto);
+        }
+      }
+      for (T join : joinlist) {
+        // 删除的
+        if (!dtoMap.containsKey(function.apply(join))) {
+          delList.add(join);
+        }
+      }
+    } else {
+      addList = dtolist;
+    }
+    return new TwoValue<>(addList, delList);
+  }
+
+  public static void main(String[] args) {
+    //[1,[2,3],4,5]
+    var dtoList = new ArrayList<TestData>(
+        List.of(TestData.builder().id(1001L).name("zhuzhe01").build(),
+            TestData.builder().id(1002L).name("zhuzhe02").build(),
+            TestData.builder().id(1003L).name("zhuzhe03").build()));
+    var joinList = new ArrayList<TestData>(
+        List.of(TestData.builder().id(1002L).name("zhuzhe02").build(),
+            TestData.builder().id(1003L).name("zhuzhe03").build(),
+            TestData.builder().id(1004L).name("zhuzhe04").build(),
+            TestData.builder().id(1005L).name("zhuzhe05").build()));
+    var twoValue = filterAdd0rDel(dtoList, joinList, TestData::getName);
+    System.out.println("twoValue = " + twoValue);
   }
 }
