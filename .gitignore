@@ -31,3 +31,6 @@ build/
 
 ### VS Code ###
 .vscode/
+
+### 过滤服务日志 ###
+*/logs/*.log

@@ -27,4 +27,4 @@ logging:
     web: debug
     org.hibernate.sql: debug
   file:
-    name: logs/accessing-data-jpa.log
+    name: accessing-data-jpa/logs/accessing-data-jpa.log
