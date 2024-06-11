@@ -4,28 +4,23 @@ import jakarta.persistence.Column;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
-import java.io.Serial;
-import java.io.Serializable;
-import javax.persistence.MappedSuperclass;
+import jakarta.persistence.MappedSuperclass;
+import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 
 /**
  * 实体父类
  */
 @Data
+@SuperBuilder
 @MappedSuperclass
-public abstract class BaseEntity implements Serializable {
-  @Serial
-  private static final long serialVersionUID = -4336519258736806392L;
-  /**主键ID*/
+@NoArgsConstructor
+@AllArgsConstructor
+public abstract class BaseEntity {
   @Id
-  @Column(name = "id", unique = true)
   @GeneratedValue(strategy = GenerationType.IDENTITY)
+  @Column(name = "`id`")
   private Long id;
-
-  public BaseEntity() {}
-
-  public BaseEntity(Long id) {
-    this.id = id;
-  }
 }
