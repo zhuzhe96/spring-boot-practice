@@ -5,6 +5,7 @@ import com.zhuzhe.accessingdatajpa.domain.vo.DeviceVO;
 import com.zhuzhe.accessingdatajpa.repository.DeviceRepository;
 import com.zhuzhe.accessingdatajpa.service.DeviceService;
 import java.util.List;
+import java.util.stream.Collectors;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.data.domain.Page;
@@ -20,19 +21,21 @@ public class DeviceServiceImpl implements DeviceService {
   private final DeviceRepository deviceRepository;
 
   @Override
-  public List<Device> getList(Long userId) {
-    return deviceRepository.findByUserId(userId);
+  public List<DeviceVO> getList(Long userId) {
+    return deviceRepository.findByUserId(userId).stream().map(Device::toViewObject).collect(
+        Collectors.toList());
   }
 
   @Override
-  public Device getLast() {
-    return deviceRepository.getLast();
+  public DeviceVO getLast() {
+    return deviceRepository.getLast().toViewObject();
   }
 
   @Override
-  public Page<Device> getPage(String sortField,Integer pageNo, Integer pageSize) {
+  public Page<DeviceVO> getPage(String sortField,Integer pageNo, Integer pageSize) {
     var sort = Sort.by(Direction.DESC, sortField);
-    return deviceRepository.findAll(PageRequest.of(pageNo, pageSize, sort));
+    var page = deviceRepository.findAll(PageRequest.of(pageNo, pageSize, sort));
+    return page.map(Device::toViewObject);
   }
 
   @Override
@@ -45,6 +48,6 @@ public class DeviceServiceImpl implements DeviceService {
 
   @Override
   public void save(DeviceVO vo) {
-    deviceRepository.save(vo.toPO());
+    deviceRepository.save(vo.toPersistentObject());
   }
 }

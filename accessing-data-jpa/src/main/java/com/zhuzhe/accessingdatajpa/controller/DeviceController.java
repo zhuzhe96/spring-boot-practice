@@ -17,7 +17,6 @@ import org.springframework.web.bind.annotation.RestController;
 @RequiredArgsConstructor
 @RequestMapping("device")
 public class DeviceController {
-
   private final DeviceService deviceService;
 
   @GetMapping("list/{userId:\\d+}")
@@ -38,9 +37,9 @@ public class DeviceController {
     return ResponseEntity.ok(deviceService.getPage(sortField, pageNo, pageSize));
   }
 
-  @PutMapping("{id:\\d+}")
-  public ResponseEntity<?> modifyUserId(@PathVariable Long id, @RequestBody DeviceVO vo) {
-    deviceService.modifyUserId(id, vo.userId());
+  @PutMapping("modifyUserId")
+  public ResponseEntity<?> modifyUserId(@RequestBody DeviceVO vo) {
+    deviceService.modifyUserId(vo.id(), vo.userId());
     return ResponseEntity.ok().build();
   }
 
