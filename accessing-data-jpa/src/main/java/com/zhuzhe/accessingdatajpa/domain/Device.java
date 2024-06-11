@@ -18,7 +18,7 @@ import lombok.experimental.SuperBuilder;
 @AllArgsConstructor
 @Table(name = "device")
 @EqualsAndHashCode(callSuper = true)
-public class Device extends BaseEntity  {
+public class Device extends BaseEntity {
   private String mac;
   private String sn;
   private Boolean online;
