@@ -1,6 +1,6 @@
 package com.zhuzhe.accessingdatajpa.repository;
 
-import com.zhuzhe.accessingdatajpa.domain.Device;
+import com.zhuzhe.accessingdatajpa.domain.po.Device;
 import java.util.List;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;

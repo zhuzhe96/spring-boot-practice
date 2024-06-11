@@ -1,6 +1,7 @@
-package com.zhuzhe.accessingdatajpa.domain;
+package com.zhuzhe.accessingdatajpa.domain.po;
 
 
+import com.zhuzhe.accessingdatajpa.domain.BaseEntity;
 import com.zhuzhe.accessingdatajpa.domain.vo.DeviceVO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;

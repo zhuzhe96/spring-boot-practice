@@ -1,6 +1,6 @@
 package com.zhuzhe.accessingdatajpa.controller;
 
-import com.zhuzhe.accessingdatajpa.domain.vo.DeviceVO;
+import com.zhuzhe.accessingdatajpa.domain.dto.DeviceDTO;
 import com.zhuzhe.accessingdatajpa.service.DeviceService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -38,14 +38,14 @@ public class DeviceController {
   }
 
   @PutMapping("modifyUserId")
-  public ResponseEntity<?> modifyUserId(@RequestBody DeviceVO vo) {
-    deviceService.modifyUserId(vo.id(), vo.userId());
+  public ResponseEntity<?> modifyUserId(@RequestBody DeviceDTO dto) {
+    deviceService.modifyUserId(dto.getId(), dto.getUserId());
     return ResponseEntity.ok().build();
   }
 
   @PostMapping("save")
-  public ResponseEntity<?> save(@RequestBody DeviceVO vo) {
-    deviceService.save(vo);
+  public ResponseEntity<?> save(@RequestBody DeviceDTO dto) {
+    deviceService.save(dto);
     return ResponseEntity.ok().build();
   }
 }

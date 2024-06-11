@@ -1,6 +1,7 @@
 package com.zhuzhe.accessingdatajpa.service.impl;
 
-import com.zhuzhe.accessingdatajpa.domain.Device;
+import com.zhuzhe.accessingdatajpa.domain.dto.DeviceDTO;
+import com.zhuzhe.accessingdatajpa.domain.po.Device;
 import com.zhuzhe.accessingdatajpa.domain.vo.DeviceVO;
 import com.zhuzhe.accessingdatajpa.repository.DeviceRepository;
 import com.zhuzhe.accessingdatajpa.service.DeviceService;
@@ -47,7 +48,7 @@ public class DeviceServiceImpl implements DeviceService {
   }
 
   @Override
-  public void save(DeviceVO vo) {
-    deviceRepository.save(vo.toPersistentObject());
+  public void save(DeviceDTO dto) {
+    deviceRepository.save(dto.toPersistentObject());
   }
 }
