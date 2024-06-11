@@ -34,6 +34,6 @@ public interface DeviceRepository extends JpaRepository<Device, Long> {
    */
   @Modifying
   @Transactional
-  @Query("update Device dev set dev.userId = ?1 where dev.id = ?2")
+  @Query("update Device dev set dev.userId = ?1, dev.updateTime = local_datetime where dev.id = ?2")
   Integer modifyUserIdById(Long userId, Long devId);
 }
