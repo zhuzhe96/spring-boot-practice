@@ -28,7 +28,7 @@ import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 @AllArgsConstructor
 @DynamicInsert
 @DynamicUpdate
-@EntityListeners(value = AuditingEntityListener.class)
+@EntityListeners(AuditingEntityListener.class)
 public abstract class BaseEntity implements Serializable {
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
