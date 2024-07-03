@@ -10,9 +10,12 @@ import jakarta.persistence.PreUpdate;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.stereotype.Component;
 
+/**
+ * 实体操作监听
+ */
 @Slf4j
 @Component
-public class CustomizeListener {
+public class EntityListener {
   private final String LOG_PREFIX = "[JPA持久化监听]: ";
 
   @PrePersist
@@ -22,7 +25,7 @@ public class CustomizeListener {
 
   @PostPersist
   public void postPersist(final BaseEntity entity) {
-    log.info("{} [{}], id={}", LOG_PREFIX, "新增操作之后", entity.getId());
+    log.info("{} [{}], id={}", LOG_PREFIX, "加载之后", entity.getId());
   }
 
   @PreUpdate
